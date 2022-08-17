@@ -1,0 +1,330 @@
+.container{
+    background-color: rgb(72, 138, 150);
+}
+@mixin subMenu($top, $left) {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: 200px;
+    height: auto;
+    background-color: #212121;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: .5s all;
+    font-family: 'Heebo', sans-serif;
+}
+
+.header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    .container{
+        position: relative;
+    }
+}
+.header-content {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 2fr 3fr 120px;
+    grid-template-rows: 100%;
+    align-items: center;
+    .logo {
+        width: 170px;
+        height: 54px;
+        background-color: purple;
+    }
+    .header-menu{
+        height: 100%;
+        ul{
+            height: 100%;
+            li{
+                a:before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    background-color: transparent;
+                    bottom: 30px;
+                    left: 0px;
+                }
+                a{
+                    text-decoration: none;
+                    font-family: 'Heebo', sans-serif;
+                    font-weight: bold;
+                    font-size: 0.8125rem;
+                    letter-spacing: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    color: white;
+                    display: block;
+                    height: 100%;
+                    line-height: 100px;
+                    transition: .5s all;
+                }
+                .active:before  {
+                    background-color: white;
+                }
+                &:hover > a {
+                    opacity: 0.75;
+                }
+            }
+            .home{
+                position: relative;
+                &:hover .home-sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .home-sub-menu {
+                    @include subMenu(100px, -15px);
+                    li{
+                        a{
+                            line-height: normal;
+                            padding: 10px 30px;
+                        }
+                    }
+                    .sub-item-featured {
+                        background-image: url(../../assets/arrow-right.png);
+                        background-position: 93%;
+                        background-repeat: no-repeat;
+                        background-size: 6%;
+                        position: relative;
+                        transition: .5s all;
+                        .sub-sub-menu-featured{
+                            @include subMenu(0px, 200px);
+                            width: 220px;
+                            background-color: #292929;
+                        }
+                        &:hover .sub-sub-menu-featured{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                        &:hover {
+                            background-image: url(../../assets/arrow-right-hover.png);
+                        }
+                    }
+                }
+            }
+            .destinations{
+                .destinations-hover{
+                    @include subMenu(100px, 0px);
+                    width: 100%;
+                    color: white;
+                    transition: .5s all;
+                    .tab-title-items {
+                        border-right: 1px solid #393939;
+                        width: 230px;
+                        padding: 10px 30px;
+                        .tab-title-item{
+                            cursor: pointer;
+                            padding-left: 10px;
+                            &:hover {
+                                background-color: #393939;
+                            }
+                        }
+                    }
+                    .tab-container{
+                        .tab-content{
+                            justify-content: space-around
+                        }
+                    }
+                }
+                &:hover .destinations-hover{
+                    opacity: 1;
+                    visibility: visible;
+                    display: block;
+                }
+            }
+            .guides {
+                .guides-hover {
+                    @include subMenu(100px, 0px);
+                    width: 100%;
+                    color: white;
+                    justify-content: space-around;
+                }
+                &:hover .guides-hover{
+                    opacity: 1;
+                    visibility: visible;
+                    display: flex;
+                }
+            }
+            .features {
+                .features-hover {
+                    @include subMenu(100px, 0px);
+                    width: 100%;
+                    .features-logo {
+                        font-weight: 700;
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+                    a{
+                        line-height: 36px;
+                        font-weight: 400;
+                    }
+                }
+                &:hover .features-hover{
+                    opacity: 1;
+                    visibility: visible;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+            .elements{
+                position: relative;
+                &:hover .elements-sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .elements-sub-menu {
+                    @include subMenu(100px, -15px);
+                    li{
+                        a{
+                            line-height: normal;
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+            }
+            .pages{
+                position: relative;
+                &:hover .pages-sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .pages-sub-menu {
+                    @include subMenu(100px, -15px);
+                    li{
+                        a{
+                            line-height: normal;
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+            }
+            .shop{
+                position: relative;
+                &:hover .shop-sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .shop-sub-menu {
+                    @include subMenu(100px, -15px);
+                    li{
+                        a{
+                            line-height: normal;
+                            padding: 10px 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-buttons {
+        .cart {
+            width: 40px;
+            height: 40px;
+            background-image: url(../../assets/cart.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            cursor: pointer;
+            transition: .5s all;
+            &:hover {
+                background-image: url(../../assets/cart-hover.png);
+            }
+        }
+        .search {
+            width: 40px;
+            height: 40px;
+            background-image: url(../../assets/search.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            cursor: pointer;
+            transition: .5s all;
+            &:hover {
+                background-image: url(../../assets/search-hover.png);
+            }
+        }
+        .menu {
+            width: 40px;
+            height: 40px;
+            background-image: url(../../assets/dots.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            cursor: pointer;
+            transition: .5s all;
+            &:hover {
+                background-image: url(../../assets/dots-hover.png);
+            }
+        }
+        .burger-menu {
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 1500px) {
+
+}
+
+// Laptop
+@media(max-width: 1200px) {
+
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .header-content {
+        grid-template-columns: 1fr 120px;
+        .header-menu{
+            display: none;
+        }
+    }
+}
+
+// mobile
+@media(max-width: 576px) {
+    .header-content{
+        grid-template-columns: 1fr 50px;
+        .header-buttons{
+            justify-content: flex-end;
+            .cart{
+                display: none;
+            }
+            .search {
+                display: none;
+            }
+            .menu{
+                display: none;
+            }
+            .burger-menu {
+                display: block;
+                position: relative;
+                width: 30px;
+                height: 25px;
+                span:nth-child(1) {
+                    position: absolute;
+                    top: 0;
+                    background-color: white;
+                    width: 100%;
+                    height: 2px;
+                }
+                span:nth-child(2) {
+                    position: absolute;
+                    top: 12px;
+                    background-color: white;
+                    width: 100%;
+                    height: 2px;
+                }
+                span:nth-child(3) {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: white;
+                    width: 100%;
+                    height: 2px;
+                }
+            }
+        }
+    }
+}
