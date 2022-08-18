@@ -1,7 +1,6 @@
 import ArticleHeader from 'components/ArticleHeader/ArticleHeader'
 import React from 'react'
 import './Header.scss'
-// import logo from 'assets/logo.png'
 
 type Props = {}
 
@@ -12,13 +11,16 @@ const Header = (props: Props) => {
                 <div className="container">
                     <div className="header-content">
                         <div className="logo">
-                            <a href="">{/* <img src={logo} alt="" /> */}</a>
+                            <a href="">
+                                <img src="images/logo.png" alt="" />
+                            </a>
                         </div>
                         <div className="header-menu">
                             <ul className="row">
                                 <li className="home">
-                                    <a href="" className="active">
+                                    <a href="">
                                         HOME
+                                        <div className="undeline show"></div>
                                     </a>
                                     <ul className="home-sub-menu">
                                         <li>
@@ -62,7 +64,10 @@ const Header = (props: Props) => {
                                     </ul>
                                 </li>
                                 <li className="destinations">
-                                    <a href="">DESTINATIONS</a>
+                                    <a href="">
+                                        DESTINATIONS
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <div className="destinations-hover">
                                         <div className="destinations-tabs row">
                                             <div className="tab-title-items">
@@ -83,65 +88,116 @@ const Header = (props: Props) => {
                                                 <div className="tab-content row">
                                                     <div className="tab-content-all">
                                                         <ArticleHeader
-                                                            img="img"
+                                                            img="images/europe-article-1.jpg"
                                                             desc="Nice and Cozy House for Stay – Travel Guide"
                                                         />
                                                     </div>
                                                     <div className="tab-content-all">
                                                         <ArticleHeader
-                                                            img="img"
+                                                            img="images/asia-article-1.jpg"
                                                             desc="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
                                                         />
                                                     </div>
                                                     <div className="tab-content-all">
                                                         <ArticleHeader
-                                                            img="img"
+                                                            img="images/europe-article-2.jpg"
                                                             desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="tab-content">
-                                                    <div className="tab-content-asia"></div>
-                                                    <div className="tab-content-asia"></div>
-                                                    <div className="tab-content-asia"></div>
+                                                <div className="tab-content row">
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/asia-article-1.jpg"
+                                                            desc="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/asia-article-2.jpg"
+                                                            desc="The Complete Guide – Singapore’s Gardens by the Bay"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/asia-article-3.jpg"
+                                                            desc="Everything You Need to Know About Buddhism in Thailand"
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <div className="tab-content">
-                                                    <div className="tab-content-australia"></div>
-                                                    <div className="tab-content-australia"></div>
-                                                    <div className="tab-content-australia"></div>
+                                                <div className="tab-content row">
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/australia-article-1.jpg"
+                                                            desc="Penguin Parade Australia: Penguins Don’t Live Just in Antarctica"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/australia-article-2.jpg"
+                                                            desc="What’s the Best Cruise Tour to see Emperor Penguins?"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/australia-article-3.jpg"
+                                                            desc="Just Cannot Miss! The Best Location for Whale Watching in Port Stephens"
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <div className="tab-content">
-                                                    <div className="tab-content-europe"></div>
-                                                    <div className="tab-content-europe"></div>
-                                                    <div className="tab-content-europe"></div>
+                                                <div className="tab-content row">
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/europe-article-1.jpg"
+                                                            desc="Nice and Cozy House for Stay – Travel Guide"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/europe-article-2.jpg"
+                                                            desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
+                                                        />
+                                                    </div>
+                                                    <div className="tab-content-all">
+                                                        <ArticleHeader
+                                                            img="images/europe-article-3.jpg"
+                                                            desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li className="guides">
-                                    <a href="">GUIDES</a>
+                                    <a href="">
+                                        GUIDES
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <div className="guides-hover">
                                         <ArticleHeader
-                                            img="img"
+                                            img="images/australia-article-1.jpg"
                                             desc="Penguin Parade Australia: Penguins Don’t Live Just in Antarctica"
                                         />
                                         <ArticleHeader
-                                            img="img"
+                                            img="images/europe-article-3.jpg"
                                             desc="Seven Artisan Villages in Finland You Simply Must Visit"
                                         />
                                         <ArticleHeader
-                                            img="img"
+                                            img="images/australia-article-2.jpg"
                                             desc="What’s the Best Cruise Tour to see Emperor Penguins?"
                                         />
                                         <ArticleHeader
-                                            img="img"
+                                            img="images/australia-article-3.jpg"
                                             desc="Just Cannot Miss! The Best Location for Whale Watching in Port Stephens"
                                         />
                                     </div>
                                 </li>
                                 <li className="features">
-                                    <a href="">FEATURES</a>
+                                    <a href="">
+                                        FEATURES
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <div className="features-hover">
                                         <ul>
                                             <li>
@@ -306,7 +362,10 @@ const Header = (props: Props) => {
                                     </div>
                                 </li>
                                 <li className="elements">
-                                    <a href="">ELEMENTS</a>
+                                    <a href="">
+                                        ELEMENTS
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <ul className="elements-sub-menu">
                                         <li>
                                             <a href="">Posts Block</a>
@@ -340,7 +399,10 @@ const Header = (props: Props) => {
                                     </ul>
                                 </li>
                                 <li className="pages">
-                                    <a href="">PAGES</a>
+                                    <a href="">
+                                        PAGES
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <ul className="pages-sub-menu">
                                         <li>
                                             <a href="">About Me</a>
@@ -363,7 +425,10 @@ const Header = (props: Props) => {
                                     </ul>
                                 </li>
                                 <li className="shop">
-                                    <a href="">SHOP</a>
+                                    <a href="">
+                                        SHOP
+                                        <div className="undeline hide"></div>
+                                    </a>
                                     <ul className="shop-sub-menu">
                                         <li>
                                             <a href="">Products 3 Columns</a>

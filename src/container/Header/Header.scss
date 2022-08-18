@@ -31,23 +31,17 @@
     .logo {
         width: 170px;
         height: 54px;
-        background-color: purple;
+        img{
+            width: 100%;
+        }
     }
     .header-menu{
         height: 100%;
         ul{
             height: 100%;
             li{
-                a:before {
-                    position: absolute;
-                    content: "";
-                    width: 100%;
-                    height: 1px;
-                    background-color: transparent;
-                    bottom: 30px;
-                    left: 0px;
-                }
                 a{
+                    position: relative;
                     text-decoration: none;
                     font-family: 'Heebo', sans-serif;
                     font-weight: bold;
@@ -60,9 +54,16 @@
                     height: 100%;
                     line-height: 100px;
                     transition: .5s all;
-                }
-                .active:before  {
-                    background-color: white;
+                    .undeline {
+                        position: absolute;
+                        bottom: 35px;
+                        left: 0px;
+                        height: 1px;
+                        width: 100%;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        background-color: white;
+                    }
                 }
                 &:hover > a {
                     opacity: 0.75;
@@ -109,11 +110,16 @@
                     @include subMenu(100px, 0px);
                     width: 100%;
                     color: white;
+                    padding-left: 15px;
+                    padding-right: 15px;
                     transition: .5s all;
+                    .destinations-tabs {
+                        justify-content: space-between;
+                    }
                     .tab-title-items {
                         border-right: 1px solid #393939;
                         width: 230px;
-                        padding: 10px 30px;
+                        padding: 10px 15px;
                         .tab-title-item{
                             cursor: pointer;
                             padding-left: 10px;
@@ -124,7 +130,10 @@
                     }
                     .tab-container{
                         .tab-content{
-                            justify-content: space-around
+                            justify-content: space-around;
+                            .tab-content-all{
+                                max-width: 315px;
+                            }
                         }
                     }
                 }
@@ -140,6 +149,8 @@
                     width: 100%;
                     color: white;
                     justify-content: space-around;
+                    padding-left: 15px;
+                    padding-right: 15px;
                 }
                 &:hover .guides-hover{
                     opacity: 1;
@@ -262,6 +273,13 @@
             display: none;
         }
     }
+}
+
+.show{
+    display: block;
+}
+.hide {
+    display: none;
 }
 
 @media(max-width: 1500px) {
