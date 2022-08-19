@@ -1,7 +1,6 @@
 import React from 'react'
 import ArticleHeader from 'components/ArticleHeader/ArticleHeader'
 import './Header.scss'
-import { render } from '@testing-library/react'
 
 type Props = {}
 
