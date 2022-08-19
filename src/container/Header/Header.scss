@@ -120,6 +120,9 @@
                         border-right: 1px solid #393939;
                         width: 230px;
                         padding: 10px 15px;
+                        .active-item{
+                            background-color: #393939;
+                        }
                         .tab-title-item{
                             cursor: pointer;
                             padding-left: 10px;
@@ -277,6 +280,9 @@
 
 .show{
     display: block;
+}
+.show-tab{
+    display: flex;
 }
 .hide {
     display: none;
