@@ -4,44 +4,6 @@ import './Header.scss'
 
 type Props = {}
 
-function tabs() {
-    let tabsItem = document.querySelectorAll('.tab-title-item')
-    let tabsContent = document.querySelectorAll('.tab-content')
-    let tabsWrap = document.querySelector('.tab-title-items')
-
-    function hideTabsContent() {
-        tabsContent.forEach((tab) => {
-            tab.classList.add('hide')
-            tab.classList.remove('show-tab')
-        })
-
-        tabsItem.forEach((item) => {
-            item.classList.remove('active-item')
-        })
-    }
-
-    function showTabsContent(i = 0) {
-        tabsContent[i].classList.add('show-tab')
-        tabsContent[i].classList.remove('hide')
-        tabsItem[i].classList.add('active-item')
-    }
-
-    hideTabsContent()
-    showTabsContent()
-
-    tabsWrap!.addEventListener('click', function (e) {
-        let target = e.target as Element
-        if (target && target.classList.contains('tab-title-item')) {
-            tabsItem.forEach((item, i) => {
-                if (target === item) {
-                    hideTabsContent()
-                    showTabsContent(i)
-                }
-            })
-        }
-    })
-}
-
 const Header = (props: Props) => {
     return (
         <>
@@ -500,7 +462,6 @@ const Header = (props: Props) => {
                     </div>
                 </div>
             </header>
-            {tabs()}
         </>
     )
 }
