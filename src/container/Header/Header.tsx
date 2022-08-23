@@ -22,14 +22,28 @@ const Header = (props: Props) => {
                                         <div className="undeline show"></div>
                                     </div>
                                     <ul className="home-sub-menu">
-                                        <li>Eaven Abroad 1</li>
-                                        <li>Eaven Abroad 2</li>
-                                        <li>Eaven Abroad 3</li>
-                                        <li>Our Voyage 1 (Map)</li>
-                                        <li>Our Voyage 2 (Dark)</li>
-                                        <li>Our Voyage 3</li>
+                                        <li className="home-sub-menu-item">
+                                            Eaven Abroad 1
+                                        </li>
+                                        <li className="home-sub-menu-item">
+                                            Eaven Abroad 2
+                                        </li>
+                                        <li className="home-sub-menu-item">
+                                            Eaven Abroad 3
+                                        </li>
+                                        <li className="home-sub-menu-item">
+                                            Our Voyage 1 (Map)
+                                        </li>
+                                        <li className="home-sub-menu-item">
+                                            Our Voyage 2 (Dark)
+                                        </li>
+                                        <li className="home-sub-menu-item">
+                                            Our Voyage 3
+                                        </li>
                                         <li className="sub-item-featured">
-                                            Home Featured Area
+                                            <div className="home-sub-menu-item">
+                                                Home Featured Area
+                                            </div>
                                             <ul className="sub-sub-menu-featured">
                                                 <li>Featured Slider Style 1</li>
                                                 <li>Featured Slider Style 2</li>

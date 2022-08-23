@@ -1,6 +1,4 @@
-.container{
-    background-color: rgb(72, 138, 150);
-}
+
 @mixin subMenu($top, $left) {
     opacity: 0;
     visibility: hidden;
@@ -18,6 +16,12 @@
 
 .header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 50;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
     .container{
         position: relative;
     }
@@ -51,7 +55,7 @@
                 display: block;
                 line-height: 100px;
                 cursor: pointer;
-                
+                z-index: 40;
                 .undeline {
                     position: absolute;
                     bottom: 35px;
@@ -79,7 +83,10 @@
                         line-height: normal;
                         padding: 10px 30px;
                         transition: .5s all;
-                        &:hover{
+                    }
+                    .home-sub-menu-item{
+                        transition: .5s all;
+                        &:hover {
                             opacity: 0.75;
                         }
                     }
@@ -94,6 +101,12 @@
                             @include subMenu(0px, 200px);
                             width: 220px;
                             background-color: #292929;
+                            li{
+                                transition: .5s all;
+                                &:hover{
+                                    opacity: 0.75;
+                                }
+                            }
                         }
                         &:hover .sub-sub-menu-featured{
                             opacity: 1;
