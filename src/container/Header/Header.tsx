@@ -11,63 +11,35 @@ const Header = (props: Props) => {
                 <div className="container">
                     <div className="header-content">
                         <div className="logo">
-                            <a href="">
-                                <img src="images/logo.png" alt="" />
-                            </a>
+                            <img src="images/logo.png" alt="" />
                         </div>
                         <div className="header-menu">
                             <ul className="row">
                                 <li className="home">
-                                    <a href="">
-                                        HOME
-                                        <div className="undeline show"></div>
-                                    </a>
+                                    <div className="home-content">HOME</div>
+                                    <div className="undeline show"></div>
                                     <ul className="home-sub-menu">
-                                        <li>
-                                            <a href="">Eaven Abroad 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Eaven Abroad 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Eaven Abroad 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Our Voyage 1 (Map)</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Our Voyage 2 (Dark)</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Our Voyage 3</a>
-                                        </li>
+                                        <li>Eaven Abroad 1</li>
+                                        <li>Eaven Abroad 2</li>
+                                        <li>Eaven Abroad 3</li>
+                                        <li>Our Voyage 1 (Map)</li>
+                                        <li>Our Voyage 2 (Dark)</li>
+                                        <li>Our Voyage 3</li>
                                         <li className="sub-item-featured">
-                                            <a href="">Home Featured Area</a>
+                                            Home Featured Area
                                             <ul className="sub-sub-menu-featured">
-                                                <li>
-                                                    <a href="">
-                                                        Featured Slider Style 1
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        Featured Slider Style 2
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        Featured Slider Style 3
-                                                    </a>
-                                                </li>
+                                                <li>Featured Slider Style 1</li>
+                                                <li>Featured Slider Style 2</li>
+                                                <li>Featured Slider Style 3</li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="destinations">
-                                    <a href="">
+                                    <div className="destinations-content">
                                         DESTINATIONS
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    </div>
+                                    <div className="undeline hide"></div>
                                     <div className="destinations-hover">
                                         <div className="destinations-tabs row">
                                             <div className="tab-title-items">
@@ -170,10 +142,8 @@ const Header = (props: Props) => {
                                     </div>
                                 </li>
                                 <li className="guides">
-                                    <a href="">
-                                        GUIDES
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    <div className="guides-content">GUIDES</div>
+                                    <div className="undeline hide"></div>
                                     <div className="guides-hover">
                                         <ArticleHeader
                                             img="images/australia-article-1.jpg"
@@ -194,257 +164,122 @@ const Header = (props: Props) => {
                                     </div>
                                 </li>
                                 <li className="features">
-                                    <a href="">
+                                    <div className="features-content">
                                         FEATURES
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    </div>
+                                    <div className="undeline hide"></div>
                                     <div className="features-hover">
                                         <ul>
                                             <li>
-                                                <a
-                                                    href=""
-                                                    className="features-logo"
-                                                >
+                                                <div className="features-logo">
                                                     POST LAYOUT
-                                                </a>
+                                                </div>
                                             </li>
-                                            <li>
-                                                <a href="">Standard</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Grid 2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Grid 3 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    First Block + Grid 2 Cols
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    First Block + Grid 3 Cols
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">Masonry 2 Columns</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Masonry 3 Columns</a>
-                                            </li>
+                                            <li>Standard</li>
+                                            <li>Grid 2 Columns</li>
+                                            <li>Grid 3 Columns</li>
+                                            <li>First Block + Grid 2 Cols</li>
+                                            <li>First Block + Grid 3 Cols</li>
+                                            <li>Masonry 2 Columns</li>
+                                            <li>Masonry 3 Columns</li>
                                         </ul>
                                         <ul>
                                             <li>
-                                                <a
-                                                    href=""
-                                                    className="features-logo"
-                                                >
+                                                <div className="features-logo">
                                                     POST LAYOUT
-                                                </a>
+                                                </div>
                                             </li>
                                             <li>
-                                                <a href="">
-                                                    First Block + Masonry 2 Cols
-                                                </a>
+                                                First Block + Masonry 2 Cols
                                             </li>
                                             <li>
-                                                <a href="">
-                                                    First Block + Masonry 3 Cols
-                                                </a>
+                                                First Block + Masonry 3 Cols
+                                            </li>
+                                            <li>Block 1 Column</li>
+                                            <li>Block 2 Columns</li>
+                                            <li>Block Column 3</li>
+                                            <li>Block Column 4</li>
+                                            <li>Drop</li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <div className="features-logo">
+                                                    SINGLE POST
+                                                </div>
                                             </li>
                                             <li>
-                                                <a href="">Block 1 Column</a>
+                                                Fullwidth Overlay Post Header
                                             </li>
+                                            <li>Image As Post Background</li>
                                             <li>
-                                                <a href="">Block 2 Columns </a>
+                                                Image Background + Left Sidebar
                                             </li>
+                                            <li>Fullwidth Post Header</li>
+                                            <li>Regular Template</li>
                                             <li>
-                                                <a href="">Block Column 3</a>
+                                                Regular Template + No Sidebar
                                             </li>
+                                            <li>Regular Overlay Post Header</li>
                                             <li>
-                                                <a href="">Block Column 4</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Drop</a>
+                                                Regular Overlay Header + No
+                                                Sidebar
                                             </li>
                                         </ul>
                                         <ul>
                                             <li>
-                                                <a
-                                                    href=""
-                                                    className="features-logo"
-                                                >
+                                                <div className="features-logo">
                                                     SINGLE POST
-                                                </a>
+                                                </div>
                                             </li>
-                                            <li>
-                                                <a href="">
-                                                    Fullwidth Overlay Post
-                                                    Header
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Image As Post Background
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Image Background + Left
-                                                    Sidebar
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Fullwidth Post Header
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">Regular Template</a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Regular Template + No
-                                                    Sidebar
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Regular Overlay Post Header
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Regular Overlay Header + No
-                                                    Sidebar
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <a
-                                                    href=""
-                                                    className="features-logo"
-                                                >
-                                                    SINGLE POST
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">Standard Post</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Gallery Post</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Video Post</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Audio Post</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Left Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="">No Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Content Navigation - Side
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Content Navigation - Top
-                                                </a>
-                                            </li>
+                                            <li>Standard Post</li>
+                                            <li>Gallery Post</li>
+                                            <li>Video Post</li>
+                                            <li>Audio Post</li>
+                                            <li>Left Sidebar</li>
+                                            <li>No Sidebar</li>
+                                            <li>Content Navigation - Side</li>
+                                            <li>Content Navigation - Top</li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li className="elements">
-                                    <a href="">
+                                    <div className="elements-content">
                                         ELEMENTS
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    </div>
+                                    <div className="undeline hide"></div>
                                     <ul className="elements-sub-menu">
-                                        <li>
-                                            <a href="">Posts Block</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Dropcaps</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Buttons & Dividers</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Rows & Columns</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Highlights</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Tabs & Accordions</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Tweet it</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Video Block</a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                Wide Image & Galleries
-                                            </a>
-                                        </li>
+                                        <li>Posts Block</li>
+                                        <li>Dropcaps</li>
+                                        <li>Buttons & Dividers</li>
+                                        <li>Rows & Columns</li>
+                                        <li>Highlights</li>
+                                        <li>Tabs & Accordions</li>
+                                        <li>Tweet it</li>
+                                        <li>Video Block</li>
+                                        <li>Wide Image & Galleries</li>
                                     </ul>
                                 </li>
                                 <li className="pages">
-                                    <a href="">
-                                        PAGES
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    <div className="pages-content">PAGES</div>
+                                    <div className="undeline hide"></div>
                                     <ul className="pages-sub-menu">
-                                        <li>
-                                            <a href="">About Me</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Contact</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Author Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Category Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Search results</a>
-                                        </li>
-                                        <li>
-                                            <a href="">404 Page</a>
-                                        </li>
+                                        <li>About Me</li>
+                                        <li>Contact</li>
+                                        <li>Author Page</li>
+                                        <li>Category Page</li>
+                                        <li>Search results</li>
+                                        <li>404 Page</li>
                                     </ul>
                                 </li>
                                 <li className="shop">
-                                    <a href="">
-                                        SHOP
-                                        <div className="undeline hide"></div>
-                                    </a>
+                                    <div className="shop-content">SHOP</div>
+                                    <div className="undeline hide"></div>
                                     <ul className="shop-sub-menu">
-                                        <li>
-                                            <a href="">Products 3 Columns</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Products 4 Columns</a>
-                                        </li>
-                                        <li>
-                                            <a href="">With Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Cart</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Checkout</a>
-                                        </li>
+                                        <li>Products 3 Columns</li>
+                                        <li>Products 4 Columns</li>
+                                        <li>With Left Sidebar</li>
+                                        <li>Cart</li>
+                                        <li>Checkout</li>
                                     </ul>
                                 </li>
                             </ul>

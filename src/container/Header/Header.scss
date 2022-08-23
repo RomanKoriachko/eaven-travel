@@ -40,32 +40,32 @@
         ul{
             height: 100%;
             li{
-                a{
-                    position: relative;
-                    text-decoration: none;
-                    font-family: 'Heebo', sans-serif;
-                    font-weight: bold;
-                    font-size: 0.8125rem;
-                    letter-spacing: 1px;
+                text-decoration: none;
+                font-family: 'Heebo', sans-serif;
+                font-weight: bold;
+                font-size: 0.8125rem;
+                letter-spacing: 1px;
+                padding-left: 15px;
+                padding-right: 15px;
+                color: white;
+                display: block;
+                line-height: 100px;
+                cursor: pointer;
+                
+                .undeline {
+                    position: absolute;
+                    bottom: 35px;
+                    left: 0px;
+                    height: 1px;
+                    width: 100%;
                     padding-left: 15px;
                     padding-right: 15px;
-                    color: white;
-                    display: block;
-                    height: 100%;
-                    line-height: 100px;
-                    transition: .5s all;
-                    .undeline {
-                        position: absolute;
-                        bottom: 35px;
-                        left: 0px;
-                        height: 1px;
-                        width: 100%;
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        background-color: white;
-                    }
+                    background-color: white;
                 }
-                &:hover > a {
+                >div{
+                    transition: .5s all;
+                }
+                >div:first-child:hover {
                     opacity: 0.75;
                 }
             }
@@ -78,10 +78,8 @@
                 .home-sub-menu {
                     @include subMenu(100px, -15px);
                     li{
-                        a{
-                            line-height: normal;
-                            padding: 10px 30px;
-                        }
+                        line-height: normal;
+                        padding: 10px 30px;
                     }
                     .sub-item-featured {
                         background-image: url(../../assets/arrow-right.png);
@@ -112,6 +110,7 @@
                     color: white;
                     padding-left: 15px;
                     padding-right: 15px;
+                    line-height: normal;
                     transition: .5s all;
                     .destinations-tabs {
                         justify-content: space-between;
@@ -126,6 +125,8 @@
                         .tab-title-item{
                             cursor: pointer;
                             padding-left: 10px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;
                             &:hover {
                                 background-color: #393939;
                             }
@@ -154,6 +155,7 @@
                     justify-content: space-around;
                     padding-left: 15px;
                     padding-right: 15px;
+                    line-height: normal;
                 }
                 &:hover .guides-hover{
                     opacity: 1;
@@ -165,14 +167,14 @@
                 .features-hover {
                     @include subMenu(100px, 0px);
                     width: 100%;
+                    li{
+                        line-height: 36px;
+                        font-weight: 400;
+                    }
                     .features-logo {
                         font-weight: 700;
                         font-size: 14px;
                         margin-bottom: 10px;
-                    }
-                    a{
-                        line-height: 36px;
-                        font-weight: 400;
                     }
                 }
                 &:hover .features-hover{
@@ -191,10 +193,8 @@
                 .elements-sub-menu {
                     @include subMenu(100px, -15px);
                     li{
-                        a{
-                            line-height: normal;
-                            padding: 10px 30px;
-                        }
+                        line-height: normal;
+                        padding: 10px 30px;
                     }
                 }
             }
@@ -207,10 +207,8 @@
                 .pages-sub-menu {
                     @include subMenu(100px, -15px);
                     li{
-                        a{
-                            line-height: normal;
-                            padding: 10px 30px;
-                        }
+                        line-height: normal;
+                        padding: 10px 30px;
                     }
                 }
             }
@@ -223,10 +221,8 @@
                 .shop-sub-menu {
                     @include subMenu(100px, -15px);
                     li{
-                        a{
-                            line-height: normal;
-                            padding: 10px 30px;
-                        }
+                        line-height: normal;
+                        padding: 10px 30px;
                     }
                 }
             }
