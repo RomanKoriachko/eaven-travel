@@ -37,9 +37,9 @@
     }
     .header-menu{
         height: 100%;
-        ul{
+        .header-menu-content{
             height: 100%;
-            li{
+            >li{
                 text-decoration: none;
                 font-family: 'Heebo', sans-serif;
                 font-weight: bold;
@@ -58,8 +58,6 @@
                     left: 0px;
                     height: 1px;
                     width: 100%;
-                    padding-left: 15px;
-                    padding-right: 15px;
                     background-color: white;
                 }
                 >div{
@@ -80,6 +78,10 @@
                     li{
                         line-height: normal;
                         padding: 10px 30px;
+                        transition: .5s all;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                     }
                     .sub-item-featured {
                         background-image: url(../../assets/arrow-right.png);
@@ -114,14 +116,14 @@
                     transition: .5s all;
                     .destinations-tabs {
                         justify-content: space-between;
+                        .react-tabs{
+                            display: flex;
+                        }
                     }
                     .tab-title-items {
                         border-right: 1px solid #393939;
                         width: 230px;
                         padding: 10px 15px;
-                        .active-item{
-                            background-color: #393939;
-                        }
                         .tab-title-item{
                             cursor: pointer;
                             padding-left: 10px;
@@ -130,6 +132,10 @@
                             &:hover {
                                 background-color: #393939;
                             }
+                        }
+                        .react-tabs__tab--selected {
+                            background-color: #393939;
+                            outline: none;
                         }
                     }
                     .tab-container{
@@ -170,6 +176,10 @@
                     li{
                         line-height: 36px;
                         font-weight: 400;
+                        transition: .5s all;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                     }
                     .features-logo {
                         font-weight: 700;
@@ -195,6 +205,10 @@
                     li{
                         line-height: normal;
                         padding: 10px 30px;
+                        transition: .5s all;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                     }
                 }
             }
@@ -209,6 +223,10 @@
                     li{
                         line-height: normal;
                         padding: 10px 30px;
+                        transition: .5s all;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                     }
                 }
             }
@@ -223,8 +241,15 @@
                     li{
                         line-height: normal;
                         padding: 10px 30px;
+                        transition: .5s all;
+                        &:hover{
+                            opacity: 0.75;
+                        }
                     }
                 }
+            }
+            .menu-item-name {
+                position: relative;
             }
         }
     }
