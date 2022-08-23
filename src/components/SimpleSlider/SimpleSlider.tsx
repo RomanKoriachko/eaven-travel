@@ -4,8 +4,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 import './SimpleSlider.scss'
 
-type Props = {}
-
 let windowHeight = window.innerHeight
 console.log(windowHeight)
 
