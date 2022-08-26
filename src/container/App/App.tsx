@@ -3,6 +3,8 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Header from 'container/Header/Header'
 import './App.scss'
 import SimpleSlider from 'components/SimpleSlider/SimpleSlider'
+import Main from 'container/Main/Main'
+import Footer from 'container/Footer/Footer'
 
 type Props = {}
 
@@ -12,6 +14,8 @@ const App = (props: Props) => {
             <CssBaseline />
             <Header />
             <SimpleSlider />
+            <Main />
+            <Footer />
         </>
     )
 }
