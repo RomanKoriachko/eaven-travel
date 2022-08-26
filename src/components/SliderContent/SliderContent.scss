@@ -1,6 +1,3 @@
-p{
-    color: white;
-}
 .topText {
     display: flex;
     justify-content: center;
@@ -10,25 +7,40 @@ p{
     text-transform: uppercase;
     font-family: 'Heebo', sans-serif;
     color: white;
+    opacity: 0;
+    transition: 3s all;
     p:first-child {
         margin-right: 5px;
         cursor: pointer;
+        transition: .3s all;
+        &:hover{
+            opacity: 0.75;
+        }
     }
     p:last-child{
         margin-left: 5px;
         cursor: pointer;
+        &:hover{
+            opacity: 0.75;
+        }
     }
 }
 
 .mainText {
+    color: white;
     font-size: 42px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
+    opacity: 0;
+    transition: 3s all;
 }
 .bottomText {
+    color: white;
     font-size: inherit;
+    opacity: 0;
+    transition: 3s all;
 }
 .sliderButton {
     height: 42px;
@@ -43,6 +55,7 @@ p{
     font-weight: 700;
     cursor: pointer;
     margin-top: 40px;
+    opacity: 0;
     transition: .5s all;
     &:hover{
         transform: translate(0px, 5px);

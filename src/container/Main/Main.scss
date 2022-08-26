@@ -1,0 +1,26 @@
+.container {
+    max-width: 1440px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media(max-width: 1500px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+// Laptop
+@media(max-width: 1200px) {
+
+}
+
+// Tablet
+@media(max-width: 992px) {
+
+}
+
+// mobile
+@media(max-width: 576px) {
+
+}

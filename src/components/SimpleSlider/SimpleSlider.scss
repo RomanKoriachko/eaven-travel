@@ -42,11 +42,31 @@
 .slick-active{
     .slider-content{
         z-index: 10;
+        transition: 1s all;
+        .topText{
+            opacity: 1;
+            transition-delay: 300ms;
+        }
+        .mainText{
+            opacity: 1;
+            transition-delay: 600ms;
+        }
+        .bottomText{
+            opacity: 1;
+            transition-delay: 900ms;
+        }
+        .sliderButton{
+            opacity: 1;
+        }
     }
 }
-.slick-active .slider .slider-bg{
-    transition: 5s ease-in-out;
-    transform: scale(1.2);
+.slick-active {
+    .slider {
+        .slider-bg{
+            transition: 5s ease-in-out;
+            transform: scale(1.2);
+        }
+    }
 }
 
 .first-slide {
