@@ -1,11 +1,11 @@
 import React from 'react'
-import './DestinationBlock.scss'
+import './DestinationItem.scss'
 
 type Props = {
     country: string
 }
 
-const DestinationBlock = ({ country }: Props) => {
+const DestinationItem = ({ country }: Props) => {
     return (
         <div
             className="destinations-item"
@@ -16,4 +16,4 @@ const DestinationBlock = ({ country }: Props) => {
     )
 }
 
-export default DestinationBlock
+export default DestinationItem

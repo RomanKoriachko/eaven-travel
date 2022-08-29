@@ -1,0 +1,44 @@
+.where-section {
+    background-color: #f7f7f7;
+    .where-wrapper {
+        padding: 80px 0;
+        .where-logo{
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .where-items{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 330px;
+            gap: 35px;
+        }
+    }
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .where-section {
+        .where-wrapper {
+            .where-items{
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 330px 330px;
+            }
+        }
+    }
+}
+
+// Mobile
+@media(max-width: 576px) {
+    .where-section {
+        .where-wrapper {
+            padding: 30px 0;
+            .where-items{
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(3, 330px);
+            }
+        }
+    }
+}
