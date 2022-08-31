@@ -1,0 +1,46 @@
+.stories {
+    background-image: url(../../assets/stories-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    .stories-content {
+        padding: 130px 0;
+        margin-right: 600px;
+        color: white;
+        .stories-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 60px;
+            font-weight: 600;
+        }
+        .stories-text {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 0 30px 0;
+        }
+    }
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .stories {
+        .stories-content {
+            margin-right: 0px;
+        }
+    }
+}
+
+// Mobile
+@media(max-width: 576px) {
+    .stories {
+        .stories-content {
+            padding: 50px 0;
+            .stories-logo{
+                font-size: 21px;
+            }
+            .stories-text {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import ColorButton from 'components/ColorButton/ColorButton'
 import React from 'react'
 import './IntroduceSection.scss'
 
@@ -24,7 +25,7 @@ const IntroduceSection = (props: Props) => {
                             useful tips to pursue your adventures. Let's find
                             some beautiful places to get lost!
                         </p>
-                        <button>FIND MORE ABOUT ME</button>
+                        <ColorButton buttonText="find more about me" />
                     </div>
                 </div>
             </div>
