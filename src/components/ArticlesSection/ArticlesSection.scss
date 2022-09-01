@@ -9,10 +9,11 @@
     }
     .articles-wrapper {
         padding: 40px 0px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        gap: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 2520px;
+        gap: 30px 60px;
     }
     .articles-btn {
         color: white;

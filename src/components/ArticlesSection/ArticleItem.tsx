@@ -21,7 +21,7 @@ const ArticleItem = ({
     text,
 }: ArticleProps) => {
     return (
-        <div className="article-item">
+        <>
             <div className="article-img">
                 <img src={image} alt="" />
                 <div className="article-date">
@@ -36,7 +36,7 @@ const ArticleItem = ({
             <div className="article-header">{header}</div>
             <div className="article-line"></div>
             <div className="article-text">{text}</div>
-        </div>
+        </>
     )
 }
 
