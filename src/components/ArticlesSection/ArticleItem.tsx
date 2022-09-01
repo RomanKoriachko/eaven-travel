@@ -1,13 +1,13 @@
 import React from 'react'
 import './ArticleItem.scss'
 
-type Props = {
+type ArticleProps = {
     image: string
     date: string
     country: string
     dash: string
     section: string
-    logo: string
+    header: string
     text: string
 }
 
@@ -17,9 +17,9 @@ const ArticleItem = ({
     country,
     dash,
     section,
-    logo,
+    header,
     text,
-}: Props) => {
+}: ArticleProps) => {
     return (
         <div className="article-item">
             <div className="article-img">
@@ -33,7 +33,7 @@ const ArticleItem = ({
                 <p>{dash}</p>
                 <p>{section}</p>
             </div>
-            <div className="article-header">{logo}</div>
+            <div className="article-header">{header}</div>
             <div className="article-line"></div>
             <div className="article-text">{text}</div>
         </div>
