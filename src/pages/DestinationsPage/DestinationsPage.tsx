@@ -22,7 +22,7 @@ const DestinationsPage = (props: Props) => {
             <PageHeader header="Destinations" />
             <div className="destinations-page-content">
                 <div className="container">
-                    <div className="destinations-page-wrapper">
+                    <div className="articles-page-wrapper">
                         {articlesArray.map(
                             ({
                                 image,
@@ -33,10 +33,7 @@ const DestinationsPage = (props: Props) => {
                                 header,
                                 id,
                             }: ArticleProps) => (
-                                <div
-                                    className="destinations-page-item"
-                                    key={id}
-                                >
+                                <div className="articles-page-item" key={id}>
                                     <PageArticleItem
                                         image={image}
                                         date={date}

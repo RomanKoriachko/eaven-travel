@@ -1,15 +1,15 @@
-.destinations-page-wrapper {
+.articles-page-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 60px 0px;
     gap: 40px;
     font-family: 'Heebo', sans-serif;
 }
-.destinations-page-item{
+.articles-page-item{
     box-shadow: 0 5px 32px -5px rgb(35 55 100 / 10%);
     border-radius: 5px;
     text-align: center;
 }
-.destinations-page-item:hover img{
+.articles-page-item:hover img{
     transform: scale(105%);
 }
