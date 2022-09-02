@@ -1,5 +1,6 @@
 import React from 'react'
 import './ArticleItem.scss'
+import { Link } from 'react-router-dom'
 
 type ArticleProps = {
     image: string
@@ -29,7 +30,9 @@ const ArticleItem = ({
                 </div>
             </div>
             <div className="article-links">
-                <p>{country}</p>
+                <p>
+                    <Link to={country}>{country}</Link>
+                </p>
                 <p>{dash}</p>
                 <p>{section}</p>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import './PageArticleItem.scss'
+import { Link } from 'react-router-dom'
 
 type Props = {
     image: string
@@ -28,7 +29,9 @@ const PageArticleItem = ({
                     <p className="page-article-date-content">{date}</p>
                 </div>
                 <div className="page-article-links">
-                    <p>{country}</p>
+                    <p>
+                        <Link to={country}>{country}</Link>
+                    </p>
                     <p>{dash}</p>
                     <p>{section}</p>
                 </div>

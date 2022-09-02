@@ -29,19 +29,19 @@
             grid-template-areas: 
             "a a b b c c"
             "d d d e e e";
-            .destinations-item:nth-child(1) {
+            >a:nth-child(1) {
                 grid-area: a;
             }
-            .destinations-item:nth-child(2) {
+            >a:nth-child(2) {
                 grid-area: b;
             }
-            .destinations-item:nth-child(3) {
+            >a:nth-child(3) {
                 grid-area: c;
             }
-            .destinations-item:nth-child(4) {
+            >a:nth-child(4) {
                 grid-area: d;
             }
-            .destinations-item:nth-child(5) {
+            >a:nth-child(5) {
                 grid-area: e;
             }
         }

@@ -12,6 +12,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        align-items: center;
         height: 3820px;
         gap: 30px 60px;
     }
@@ -35,14 +36,41 @@
     }
 }
 
+// Laptop
+@media(max-width: 1200px) {
+    .articles {
+        .articles-wrapper {
+            gap: 30px 30px;
+        }
+    }
+}
+
 // Tablet
 @media(max-width: 992px) {
-
+    .articles{
+        .articles-wrapper{
+            height: 5664px;
+            gap: 30px 15px;
+        }
+    }
 }
+
+@media(max-width: 635px) {
+    .articles{
+        .articles-wrapper{
+            height: 5400px;
+        }
+    }
+}  
+
 
 // Mobile
 @media(max-width: 576px) {
     .articles {
         padding: 30px 0;
+        .articles-wrapper{
+            height: auto;
+            flex-wrap: nowrap;
+        }
     }
 }

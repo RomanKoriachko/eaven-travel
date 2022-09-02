@@ -17,7 +17,7 @@ type ArticleProps = {
 
 const AustraliaPage = (props: Props) => {
     let filtredCountry = articlesArray.filter((element) =>
-        element.country.includes('Australia')
+        element.country.includes('australia')
     )
 
     return (

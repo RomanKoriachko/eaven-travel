@@ -49,6 +49,10 @@
             &:hover {
                 opacity: 0.6;
             }
+            >a{
+                text-decoration: none;
+                color: #886ac3;
+            }
         }
         >p:nth-child(2) {
             padding: 0 5px;
@@ -79,5 +83,25 @@
     }
     .article-text {
         font-size: 15px;
+    }
+}
+
+// Laptop
+@media(max-width: 1200px) {
+    .article-item {
+        width: 300px;
+    }
+}
+
+@media(max-width: 655px) {
+    .article-item{
+        width: 250px;
+    }
+}   
+
+// Mobile
+@media(max-width: 576px) {
+    .article-item{
+        width: 100%;
     }
 }
