@@ -8,7 +8,7 @@ type Props = {}
 
 const DestinationsSection = (props: Props) => {
     return (
-        <section className="destinations">
+        <section className="destinations-section">
             <div className="container">
                 <div className="destinations-wrapper">
                     <div className="destinations-logo">

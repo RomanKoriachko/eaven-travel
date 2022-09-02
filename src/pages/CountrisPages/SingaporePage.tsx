@@ -2,6 +2,7 @@ import React from 'react'
 import articlesArray from 'components/ArticlesSection/articlesArray'
 import CountryPage from 'components/CountryPage/CountryPage'
 import PageArticleItem from 'components/PageArticleItem/PageArticleItem'
+import './CountryPage.scss'
 
 type Props = {}
 
@@ -23,7 +24,7 @@ const SingaporePage = (props: Props) => {
     return (
         <div className="singapore-page">
             <CountryPage image="singapore-page-bg" text="Singapore" />
-            <div className="singapore-page-content">
+            <div className="country-page-content">
                 <div className="container">
                     <div className="articles-page-wrapper">
                         {filtredCountry.map(

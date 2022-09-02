@@ -1,0 +1,51 @@
+.footer-instagram {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    .footer-img {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        img{
+            width: 100%;
+            margin-bottom: -7px;
+            transition: .4s all;
+        }
+        .footer-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: .4s all;
+            img{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &:hover .footer-img-hover{
+            visibility: visible;
+            opacity: 1;
+        }
+        &:hover >img{
+            transform: scale(105%);
+        }
+    }
+}
+
+// Mobile
+@media(max-width: 576px) {
+    .footer-instagram {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        .last-footer-img {
+            display: none;
+    }
+    }
+}

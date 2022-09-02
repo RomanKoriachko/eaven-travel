@@ -1,0 +1,83 @@
+.footer-links{
+    background-color: #161616;
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    .footer-links-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 50px 0px;
+        font-size: 14px;
+        .links-content-header {
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            margin-bottom: 20px;
+        }
+        .links-content-text {
+            opacity: 0.75;
+            margin-bottom: 10px;
+            transition: .3s all;
+            cursor: pointer;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        .footer-contacts-data {
+            margin-bottom: 40px;
+        }
+        .footer-search {
+            position: relative;
+            width: 250px;
+            input{
+                background-color: #222222;
+                color: white;
+                border: 1px solid black;
+                height: 46px;
+                width: 250px;
+                outline: none;
+                padding-left: 10px;
+                padding-right: 50px;
+            }
+            button{
+                height: 46px;
+                width: 46px;
+                position: absolute;
+                right: 0px;
+                border: none;
+                background-color: transparent;
+                background-image: url(../../assets/search-img.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .footer-links{
+        .footer-links-content {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 30px 0;
+        }
+    }
+}
+
+// Mobile
+@media(max-width: 576px) {
+    .footer-links{
+        .footer-links-content {
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 20px 0;
+            .footer-search{
+                width: 100%;
+                input{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

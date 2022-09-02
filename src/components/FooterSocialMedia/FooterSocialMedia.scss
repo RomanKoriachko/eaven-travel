@@ -1,0 +1,85 @@
+.footer-social-media{
+    background-color: #1c1c1c;
+    color: white;
+    .social-media-wrapper {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+        align-items: center;
+        padding: 50px 0;
+        .social-media-copyright {
+            font-size: 14px;
+            justify-self: start;
+        }
+        .social-media-btns {
+            justify-self: center;
+            button{
+                width: 30px;
+                height: 30px;
+                border: none;
+                background-color: transparent;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 70%;
+                cursor: pointer;
+                margin: 0px 7px;
+            }
+            button:nth-child(1) {
+                background-image: url(../../assets/facebook-img.png);
+            }
+            button:nth-child(2) {
+                background-image: url(../../assets/twitter-img.png);
+            }
+            button:nth-child(3) {
+                background-image: url(../../assets/youtube-img.png);
+            }
+            button:nth-child(4) {
+                background-image: url(../../assets/pinterest-img.png);
+            }
+            button:nth-child(5) {
+                background-image: url(../../assets/vimeo-img.png);
+            }
+        }
+        .social-media-navigation {
+            justify-self: end;
+            display: flex;
+            button{
+                padding: 10px;
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-size: 12px;
+                opacity: 0.75;
+                cursor: pointer;
+                transition: .3s all;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .footer-social-media{
+        .social-media-wrapper {
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(3, 1fr);
+            .social-media-copyright{
+                justify-self: center;
+                text-align: center;
+            }
+            .social-media-btns {
+                justify-self: center;
+            }
+            .social-media-navigation{
+                justify-self: center;
+            }
+        }
+    }
+}
+
+// Mobile
+@media(max-width: 576px) {
+
+}
