@@ -1,0 +1,26 @@
+.coutry-page {
+    height: 370px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    >p{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        padding-top: 185px;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        font-size: 56px;
+        font-weight: 600;
+    }
+}
+.coutry-page-opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 370px;
+    background-color: rgba(1, 1, 1, 0.4);
+}
