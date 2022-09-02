@@ -1,5 +1,7 @@
 import DestinationItem from 'components/DestinationItem/DestinationItem'
+import AustraliaPage from 'pages/CountrisPages/AustraliaPage'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './DestinationsSection.scss'
 
 type Props = {}
@@ -13,11 +15,21 @@ const DestinationsSection = (props: Props) => {
                         Explore by Destination
                     </div>
                     <div className="destinations-items">
-                        <DestinationItem country="australia" />
-                        <DestinationItem country="france" />
-                        <DestinationItem country="italy" />
-                        <DestinationItem country="japan" />
-                        <DestinationItem country="singapore" />
+                        <Link to="/australia">
+                            <DestinationItem country="australia" />
+                        </Link>
+                        <Link to="/france">
+                            <DestinationItem country="france" />
+                        </Link>
+                        <Link to="/italy">
+                            <DestinationItem country="italy" />
+                        </Link>
+                        <Link to="/japan">
+                            <DestinationItem country="japan" />
+                        </Link>
+                        <Link to="/singapore">
+                            <DestinationItem country="singapore" />
+                        </Link>
                     </div>
                 </div>
             </div>

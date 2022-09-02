@@ -6,6 +6,7 @@ import articlesArray from './articlesArray'
 type Props = {}
 
 type ArticleProps = {
+    id: number
     image: string
     date: string
     country: string
@@ -15,7 +16,7 @@ type ArticleProps = {
     text: string
 }
 
-const ArticlesSection = ({}: Props) => {
+const ArticlesSection = (props: Props) => {
     return (
         <section className="articles">
             <div className="container">
@@ -30,8 +31,9 @@ const ArticlesSection = ({}: Props) => {
                             section,
                             header,
                             text,
+                            id,
                         }: ArticleProps) => (
-                            <div className="article-item">
+                            <div className="article-item" key={id}>
                                 <ArticleItem
                                     image={image}
                                     date={date}
