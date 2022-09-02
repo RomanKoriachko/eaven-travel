@@ -12,7 +12,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        height: 2520px;
+        height: 3820px;
         gap: 30px 60px;
     }
     .articles-btn {
@@ -37,19 +37,12 @@
 
 // Tablet
 @media(max-width: 992px) {
-    .articles {
-        .articles-wrapper {
-            
-        }
-    }
+
 }
 
 // Mobile
 @media(max-width: 576px) {
     .articles {
         padding: 30px 0;
-        .articles-wrapper {
-            
-        }
     }
 }
