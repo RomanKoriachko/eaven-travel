@@ -20,7 +20,7 @@ const DestinationsPage = (props: Props) => {
     return (
         <div className="destinations-page">
             <PageHeader header="Destinations" />
-            <div className="destinations-page-content">
+            <div className="page-content">
                 <div className="container">
                     <div className="articles-page-wrapper">
                         {articlesArray.map(

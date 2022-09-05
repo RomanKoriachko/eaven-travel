@@ -24,7 +24,7 @@ const SingaporePage = (props: Props) => {
     return (
         <div className="singapore-page">
             <CountryPage image="singapore-page-bg" text="Singapore" />
-            <div className="country-page-content">
+            <div className="page-content">
                 <div className="container">
                     <div className="articles-page-wrapper">
                         {filtredCountry.map(
