@@ -1,4 +1,3 @@
-import FooterMailingList from 'components/FooterMailingList/FooterMailingList'
 import React from 'react'
 import './FooterSocialMedia.scss'
 
@@ -27,7 +26,6 @@ const FooterSocialMedia = (props: Props) => {
                     </div>
                 </div>
             </div>
-            {/* <FooterMailingList /> */}
         </div>
     )
 }

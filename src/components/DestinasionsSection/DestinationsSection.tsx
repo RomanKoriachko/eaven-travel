@@ -1,5 +1,4 @@
 import DestinationItem from 'components/DestinationItem/DestinationItem'
-import AustraliaPage from 'pages/CountrisPages/AustraliaPage'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './DestinationsSection.scss'
