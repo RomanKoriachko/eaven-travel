@@ -34,7 +34,9 @@ const ArticleItem = ({
                     <Link to={country}>{country}</Link>
                 </p>
                 <p>{dash}</p>
-                <p>{section}</p>
+                <p>
+                    <Link to={section}>{section}</Link>
+                </p>
             </div>
             <div className="article-header">{header}</div>
             <div className="article-line"></div>

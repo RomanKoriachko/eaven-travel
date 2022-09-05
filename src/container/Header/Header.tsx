@@ -2,7 +2,7 @@ import React from 'react'
 import ArticleHeader from 'components/ArticleHeader/ArticleHeader'
 import './Header.scss'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 type Props = {}
 
@@ -13,7 +13,9 @@ const Header = (props: Props) => {
                 <div className="container">
                     <div className="header-content">
                         <div className="logo">
-                            <img src="images/logo.png" alt="" />
+                            <Link to="/">
+                                <img src="images/logo.png" alt="" />
+                            </Link>
                         </div>
                         <div className="header-menu">
                             <ul className="header-menu-content row">
