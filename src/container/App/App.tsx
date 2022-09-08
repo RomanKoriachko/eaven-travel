@@ -7,11 +7,11 @@ import Footer from 'container/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import DestinationsPage from 'pages/DestinationsPage/DestinationsPage'
 import GuidesPage from 'pages/GuidesPage/GuidesPage'
-import AustraliaPage from 'pages/CountrisPages/AustraliaPage'
-import FrancePage from 'pages/CountrisPages/FrancePage'
-import ItalyPage from 'pages/CountrisPages/ItalyPage'
-import JapanPage from 'pages/CountrisPages/JapanPage'
-import SingaporePage from 'pages/CountrisPages/SingaporePage'
+import AustraliaPage from 'pages/CountrysPages/AustraliaPage'
+import FrancePage from 'pages/CountrysPages/FrancePage'
+import ItalyPage from 'pages/CountrysPages/ItalyPage'
+import JapanPage from 'pages/CountrysPages/JapanPage'
+import SingaporePage from 'pages/CountrysPages/SingaporePage'
 
 type Props = {}
 

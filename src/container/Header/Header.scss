@@ -1,7 +1,6 @@
 
 @mixin subMenu($top, $left) {
-    opacity: 0;
-    visibility: hidden;
+    display: none;
     position: absolute;
     top: $top;
     left: $left;
@@ -81,7 +80,7 @@
                 position: relative;
                 &:hover .home-sub-menu {
                     opacity: 1;
-                    visibility: visible;
+                    display: block;
                 }
                 .home-sub-menu {
                     @include subMenu(100px, -15px);
@@ -115,8 +114,7 @@
                             }
                         }
                         &:hover .sub-sub-menu-featured{
-                            opacity: 1;
-                            visibility: visible;
+                            display: block;
                         }
                         &:hover {
                             background-image: url(../../assets/arrow-right-hover.png);
@@ -167,8 +165,6 @@
                     }
                 }
                 &:hover .destinations-hover{
-                    opacity: 1;
-                    visibility: visible;
                     display: block;
                 }
             }
@@ -183,8 +179,6 @@
                     line-height: normal;
                 }
                 &:hover .guides-hover{
-                    opacity: 1;
-                    visibility: visible;
                     display: flex;
                 }
             }
@@ -207,8 +201,6 @@
                     }
                 }
                 &:hover .features-hover{
-                    opacity: 1;
-                    visibility: visible;
                     display: flex;
                     justify-content: space-evenly;
                 }
@@ -216,8 +208,7 @@
             .elements{
                 position: relative;
                 &:hover .elements-sub-menu {
-                    opacity: 1;
-                    visibility: visible;
+                    display: block;
                 }
                 .elements-sub-menu {
                     @include subMenu(100px, -15px);
@@ -234,8 +225,7 @@
             .pages{
                 position: relative;
                 &:hover .pages-sub-menu {
-                    opacity: 1;
-                    visibility: visible;
+                    display: block;
                 }
                 .pages-sub-menu {
                     @include subMenu(100px, -15px);
@@ -252,8 +242,7 @@
             .shop{
                 position: relative;
                 &:hover .shop-sub-menu {
-                    opacity: 1;
-                    visibility: visible;
+                    display: block;
                 }
                 .shop-sub-menu {
                     @include subMenu(100px, -15px);
