@@ -2,7 +2,6 @@ import FooterInstagramLinks from 'components/FooterInstagramLinks/FooterInstagra
 import FooterLinks from 'components/FooterLinks/FooterLinks'
 import FooterMailingList from 'components/FooterMailingList/FooterMailingList'
 import FooterSocialMedia from 'components/FooterSocialMedia/FooterSocialMedia'
-import React from 'react'
 import './Footer.scss'
 
 type Props = {}

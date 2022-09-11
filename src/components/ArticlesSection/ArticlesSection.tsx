@@ -42,6 +42,7 @@ const ArticlesSection = (props: Props) => {
                                     section={section}
                                     header={header}
                                     text={text}
+                                    id={id}
                                 />
                             </div>
                         )

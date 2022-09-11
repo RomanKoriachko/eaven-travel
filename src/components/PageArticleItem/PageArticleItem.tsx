@@ -30,10 +30,12 @@ const PageArticleItem = ({
                 </div>
                 <div className="page-article-links">
                     <p>
-                        <Link to={country}>{country}</Link>
+                        <Link to={`/${country}`}>{country}</Link>
                     </p>
                     <p>{dash}</p>
-                    <p>{section}</p>
+                    <p>
+                        <Link to={`/${section}`}>{section}</Link>
+                    </p>
                 </div>
             </div>
             <div className="page-article-header">{header}</div>

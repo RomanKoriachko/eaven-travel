@@ -10,6 +10,7 @@ type ArticleProps = {
     section: string
     header: string
     text: string
+    id: number
 }
 
 const ArticleItem = ({
@@ -20,27 +21,30 @@ const ArticleItem = ({
     section,
     header,
     text,
+    id,
 }: ArticleProps) => {
     return (
         <>
-            <div className="article-img">
-                <img src={image} alt="" />
-                <div className="article-date">
-                    <p className="article-date-content">{date}</p>
+            <Link to={`/destinations/${id}`}>
+                <div className="article-img">
+                    <img src={image} alt="" />
+                    <div className="article-date">
+                        <p className="article-date-content">{date}</p>
+                    </div>
                 </div>
-            </div>
-            <div className="article-links">
-                <p>
-                    <Link to={country}>{country}</Link>
-                </p>
-                <p>{dash}</p>
-                <p>
-                    <Link to={section}>{section}</Link>
-                </p>
-            </div>
-            <div className="article-header">{header}</div>
-            <div className="article-line"></div>
-            <div className="article-text">{text}</div>
+                <div className="article-links">
+                    <p>
+                        <Link to={country}>{country}</Link>
+                    </p>
+                    <p>{dash}</p>
+                    <p>
+                        <Link to={section}>{section}</Link>
+                    </p>
+                </div>
+                <div className="article-header">{header}</div>
+                <div className="article-line"></div>
+                <div className="article-text">{text}</div>
+            </Link>
         </>
     )
 }
