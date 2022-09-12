@@ -25,6 +25,10 @@
             opacity: 0.75;
         }
     }
+    >a{
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .mainText {
@@ -59,6 +63,10 @@
     margin-top: 40px;
     opacity: 0;
     transition: .5s all;
+    >a{
+        text-decoration: none;
+        color: white;
+    }
     &:hover{
         transform: translate(0px, 5px);
     }

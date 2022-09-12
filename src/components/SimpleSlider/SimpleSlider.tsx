@@ -4,8 +4,20 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 import './SimpleSlider.scss'
 import SliderContent from 'components/SliderContent/SliderContent'
+import articlesArray from 'components/ArticlesSection/articlesArray'
 
 let windowHeight = window.innerHeight
+
+type Props = {}
+
+type ArticleProps = {
+    id: number
+    country: string
+    dash: string
+    section: string
+    header: string
+    text: string
+}
 
 export default function SimpleSlider() {
     var settings = {
@@ -31,13 +43,28 @@ export default function SimpleSlider() {
                     style={{ height: windowHeight }}
                 ></div>
                 <div className="slider-content">
-                    <SliderContent
-                        sliderTopCountry="France"
-                        sliderDash="-"
-                        sliderTopSection="Tips & Tricks"
-                        sliderMainText="Nice and Cozy House for Stay – Travel Guide"
-                        sliderBottomText="Things to do in Paris The most difficult thing is the decision to act, the rest is merely tenacity. Cras …"
-                    />
+                    {articlesArray
+                        .filter(({ id }: ArticleProps) => id === 1)
+                        .map(
+                            ({
+                                id,
+                                country,
+                                dash,
+                                section,
+                                header,
+                                text,
+                            }: ArticleProps) => (
+                                <SliderContent
+                                    id={id}
+                                    key={id}
+                                    country={country}
+                                    dash={dash}
+                                    section={section}
+                                    header={header}
+                                    text={text}
+                                />
+                            )
+                        )}
                 </div>
             </div>
             <div className="slider second-slide">
@@ -50,13 +77,28 @@ export default function SimpleSlider() {
                     style={{ height: windowHeight }}
                 ></div>
                 <div className="slider-content">
-                    <SliderContent
-                        sliderTopCountry="Japan"
-                        sliderDash="-"
-                        sliderTopSection="Solo Travel"
-                        sliderMainText="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
-                        sliderBottomText="Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus …"
-                    />
+                    {articlesArray
+                        .filter(({ id }: ArticleProps) => id === 2)
+                        .map(
+                            ({
+                                id,
+                                country,
+                                dash,
+                                section,
+                                header,
+                                text,
+                            }: ArticleProps) => (
+                                <SliderContent
+                                    id={id}
+                                    key={id}
+                                    country={country}
+                                    dash={dash}
+                                    section={section}
+                                    header={header}
+                                    text={text}
+                                />
+                            )
+                        )}
                 </div>
             </div>
             <div className="slider third-slide">
@@ -69,13 +111,28 @@ export default function SimpleSlider() {
                     style={{ height: windowHeight }}
                 ></div>
                 <div className="slider-content">
-                    <SliderContent
-                        sliderTopCountry="Europe"
-                        sliderDash=""
-                        sliderTopSection=""
-                        sliderMainText="Travel to Santa’s Village: Modern Santa comes with Public Transport"
-                        sliderBottomText="Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit …"
-                    />
+                    {articlesArray
+                        .filter(({ id }: ArticleProps) => id === 3)
+                        .map(
+                            ({
+                                id,
+                                country,
+                                dash,
+                                section,
+                                header,
+                                text,
+                            }: ArticleProps) => (
+                                <SliderContent
+                                    id={id}
+                                    key={id}
+                                    country={country}
+                                    dash={dash}
+                                    section={section}
+                                    header={header}
+                                    text={text}
+                                />
+                            )
+                        )}
                 </div>
             </div>
             <div className="slider fourth-slide">
@@ -88,13 +145,28 @@ export default function SimpleSlider() {
                     style={{ height: windowHeight }}
                 ></div>
                 <div className="slider-content">
-                    <SliderContent
-                        sliderTopCountry="Australia"
-                        sliderDash="-"
-                        sliderTopSection="Guides"
-                        sliderMainText="Penguin Parade Australia: Penguins Don’t Live Just in Antarctica"
-                        sliderBottomText="Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit …"
-                    />
+                    {articlesArray
+                        .filter(({ id }: ArticleProps) => id === 4)
+                        .map(
+                            ({
+                                id,
+                                country,
+                                dash,
+                                section,
+                                header,
+                                text,
+                            }: ArticleProps) => (
+                                <SliderContent
+                                    id={id}
+                                    key={id}
+                                    country={country}
+                                    dash={dash}
+                                    section={section}
+                                    header={header}
+                                    text={text}
+                                />
+                            )
+                        )}
                 </div>
             </div>
         </Slider>
