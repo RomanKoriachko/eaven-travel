@@ -8,8 +8,6 @@ import articlesArray from 'components/ArticlesSection/articlesArray'
 
 let windowHeight = window.innerHeight
 
-type Props = {}
-
 type ArticleProps = {
     id: number
     country: string
@@ -42,18 +40,18 @@ export default function SimpleSlider() {
                     className="slider-hover"
                     style={{ height: windowHeight }}
                 ></div>
-                <div className="slider-content">
-                    {articlesArray
-                        .filter(({ id }: ArticleProps) => id === 1)
-                        .map(
-                            ({
-                                id,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                text,
-                            }: ArticleProps) => (
+                {articlesArray
+                    .filter(({ id }: ArticleProps) => id === 1)
+                    .map(
+                        ({
+                            id,
+                            country,
+                            dash,
+                            section,
+                            header,
+                            text,
+                        }: ArticleProps) => (
+                            <div className="slider-content" key={id}>
                                 <SliderContent
                                     id={id}
                                     key={id}
@@ -63,9 +61,9 @@ export default function SimpleSlider() {
                                     header={header}
                                     text={text}
                                 />
-                            )
-                        )}
-                </div>
+                            </div>
+                        )
+                    )}
             </div>
             <div className="slider second-slide">
                 <div
@@ -76,30 +74,29 @@ export default function SimpleSlider() {
                     className="slider-hover"
                     style={{ height: windowHeight }}
                 ></div>
-                <div className="slider-content">
-                    {articlesArray
-                        .filter(({ id }: ArticleProps) => id === 2)
-                        .map(
-                            ({
-                                id,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                text,
-                            }: ArticleProps) => (
+                {articlesArray
+                    .filter(({ id }: ArticleProps) => id === 2)
+                    .map(
+                        ({
+                            id,
+                            country,
+                            dash,
+                            section,
+                            header,
+                            text,
+                        }: ArticleProps) => (
+                            <div className="slider-content" key={id}>
                                 <SliderContent
                                     id={id}
-                                    key={id}
                                     country={country}
                                     dash={dash}
                                     section={section}
                                     header={header}
                                     text={text}
                                 />
-                            )
-                        )}
-                </div>
+                            </div>
+                        )
+                    )}
             </div>
             <div className="slider third-slide">
                 <div
@@ -110,30 +107,30 @@ export default function SimpleSlider() {
                     className="slider-hover"
                     style={{ height: windowHeight }}
                 ></div>
-                <div className="slider-content">
-                    {articlesArray
-                        .filter(({ id }: ArticleProps) => id === 3)
-                        .map(
-                            ({
-                                id,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                text,
-                            }: ArticleProps) => (
+
+                {articlesArray
+                    .filter(({ id }: ArticleProps) => id === 3)
+                    .map(
+                        ({
+                            id,
+                            country,
+                            dash,
+                            section,
+                            header,
+                            text,
+                        }: ArticleProps) => (
+                            <div className="slider-content" key={id}>
                                 <SliderContent
                                     id={id}
-                                    key={id}
                                     country={country}
                                     dash={dash}
                                     section={section}
                                     header={header}
                                     text={text}
                                 />
-                            )
-                        )}
-                </div>
+                            </div>
+                        )
+                    )}
             </div>
             <div className="slider fourth-slide">
                 <div
@@ -144,30 +141,30 @@ export default function SimpleSlider() {
                     className="slider-hover"
                     style={{ height: windowHeight }}
                 ></div>
-                <div className="slider-content">
-                    {articlesArray
-                        .filter(({ id }: ArticleProps) => id === 4)
-                        .map(
-                            ({
-                                id,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                text,
-                            }: ArticleProps) => (
+
+                {articlesArray
+                    .filter(({ id }: ArticleProps) => id === 4)
+                    .map(
+                        ({
+                            id,
+                            country,
+                            dash,
+                            section,
+                            header,
+                            text,
+                        }: ArticleProps) => (
+                            <div className="slider-content" key={id}>
                                 <SliderContent
                                     id={id}
-                                    key={id}
                                     country={country}
                                     dash={dash}
                                     section={section}
                                     header={header}
                                     text={text}
                                 />
-                            )
-                        )}
-                </div>
+                            </div>
+                        )
+                    )}
             </div>
         </Slider>
     )

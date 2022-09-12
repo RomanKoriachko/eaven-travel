@@ -1,11 +1,8 @@
-import React from 'react'
 import ArticleHeader from 'components/ArticleHeader/ArticleHeader'
 import './Header.scss'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
 import { Link, NavLink } from 'react-router-dom'
-import articlesArray, {
-    Articles,
-} from 'components/ArticlesSection/articlesArray'
+import articlesArray from 'components/ArticlesSection/articlesArray'
 
 type Props = {}
 
@@ -127,27 +124,25 @@ const Header = (props: Props) => {
                                                                     header,
                                                                     country,
                                                                 }: ArticleProps) => (
-                                                                    <div className="tab-content-all">
-                                                                        <div className="article-preview">
-                                                                            <Link
-                                                                                to={`/destinations/${id}`}
-                                                                            >
-                                                                                <ArticleHeader
-                                                                                    key={
-                                                                                        id
-                                                                                    }
-                                                                                    image={
-                                                                                        image
-                                                                                    }
-                                                                                    header={
-                                                                                        header
-                                                                                    }
-                                                                                    country={
-                                                                                        country
-                                                                                    }
-                                                                                />
-                                                                            </Link>
-                                                                        </div>
+                                                                    <div
+                                                                        className="article-preview"
+                                                                        key={id}
+                                                                    >
+                                                                        <Link
+                                                                            to={`/destinations/${id}`}
+                                                                        >
+                                                                            <ArticleHeader
+                                                                                image={
+                                                                                    image
+                                                                                }
+                                                                                header={
+                                                                                    header
+                                                                                }
+                                                                                country={
+                                                                                    country
+                                                                                }
+                                                                            />
+                                                                        </Link>
                                                                     </div>
                                                                 )
                                                             )}
@@ -170,27 +165,25 @@ const Header = (props: Props) => {
                                                                     header,
                                                                     country,
                                                                 }: ArticleProps) => (
-                                                                    <div className="tab-content-all">
-                                                                        <div className="article-preview">
-                                                                            <Link
-                                                                                to={`/destinations/${id}`}
-                                                                            >
-                                                                                <ArticleHeader
-                                                                                    key={
-                                                                                        id
-                                                                                    }
-                                                                                    image={
-                                                                                        image
-                                                                                    }
-                                                                                    header={
-                                                                                        header
-                                                                                    }
-                                                                                    country={
-                                                                                        country
-                                                                                    }
-                                                                                />
-                                                                            </Link>
-                                                                        </div>
+                                                                    <div
+                                                                        className="article-preview"
+                                                                        key={id}
+                                                                    >
+                                                                        <Link
+                                                                            to={`/destinations/${id}`}
+                                                                        >
+                                                                            <ArticleHeader
+                                                                                image={
+                                                                                    image
+                                                                                }
+                                                                                header={
+                                                                                    header
+                                                                                }
+                                                                                country={
+                                                                                    country
+                                                                                }
+                                                                            />
+                                                                        </Link>
                                                                     </div>
                                                                 )
                                                             )}
@@ -213,27 +206,25 @@ const Header = (props: Props) => {
                                                                     header,
                                                                     country,
                                                                 }: ArticleProps) => (
-                                                                    <div className="tab-content-all">
-                                                                        <div className="article-preview">
-                                                                            <Link
-                                                                                to={`/destinations/${id}`}
-                                                                            >
-                                                                                <ArticleHeader
-                                                                                    key={
-                                                                                        id
-                                                                                    }
-                                                                                    image={
-                                                                                        image
-                                                                                    }
-                                                                                    header={
-                                                                                        header
-                                                                                    }
-                                                                                    country={
-                                                                                        country
-                                                                                    }
-                                                                                />
-                                                                            </Link>
-                                                                        </div>
+                                                                    <div
+                                                                        className="article-preview"
+                                                                        key={id}
+                                                                    >
+                                                                        <Link
+                                                                            to={`/destinations/${id}`}
+                                                                        >
+                                                                            <ArticleHeader
+                                                                                image={
+                                                                                    image
+                                                                                }
+                                                                                header={
+                                                                                    header
+                                                                                }
+                                                                                country={
+                                                                                    country
+                                                                                }
+                                                                            />
+                                                                        </Link>
                                                                     </div>
                                                                 )
                                                             )}
@@ -256,27 +247,25 @@ const Header = (props: Props) => {
                                                                     header,
                                                                     country,
                                                                 }: ArticleProps) => (
-                                                                    <div className="tab-content-all">
-                                                                        <div className="article-preview">
-                                                                            <Link
-                                                                                to={`/destinations/${id}`}
-                                                                            >
-                                                                                <ArticleHeader
-                                                                                    key={
-                                                                                        id
-                                                                                    }
-                                                                                    image={
-                                                                                        image
-                                                                                    }
-                                                                                    header={
-                                                                                        header
-                                                                                    }
-                                                                                    country={
-                                                                                        country
-                                                                                    }
-                                                                                />
-                                                                            </Link>
-                                                                        </div>
+                                                                    <div
+                                                                        className="article-preview"
+                                                                        key={id}
+                                                                    >
+                                                                        <Link
+                                                                            to={`/destinations/${id}`}
+                                                                        >
+                                                                            <ArticleHeader
+                                                                                image={
+                                                                                    image
+                                                                                }
+                                                                                header={
+                                                                                    header
+                                                                                }
+                                                                                country={
+                                                                                    country
+                                                                                }
+                                                                            />
+                                                                        </Link>
                                                                     </div>
                                                                 )
                                                             )}
@@ -308,21 +297,19 @@ const Header = (props: Props) => {
                                                 header,
                                                 country,
                                             }: ArticleProps) => (
-                                                <div className="tab-content-all">
-                                                    <div className="article-preview">
-                                                        <Link
-                                                            to={`/destinations/${id}`}
-                                                        >
-                                                            <ArticleHeader
-                                                                key={id}
-                                                                image={image}
-                                                                header={header}
-                                                                country={
-                                                                    country
-                                                                }
-                                                            />
-                                                        </Link>
-                                                    </div>
+                                                <div
+                                                    className="article-preview"
+                                                    key={id}
+                                                >
+                                                    <Link
+                                                        to={`/destinations/${id}`}
+                                                    >
+                                                        <ArticleHeader
+                                                            image={image}
+                                                            header={header}
+                                                            country={country}
+                                                        />
+                                                    </Link>
                                                 </div>
                                             )
                                         )}
