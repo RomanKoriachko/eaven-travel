@@ -11,8 +11,6 @@ const ArticlePage = (props: Props) => {
         (element) => element.id === Number(articleId)
     )
 
-    console.log(filtredId[0].image)
-
     return (
         <div className="article-page">
             <div className="article-header-dark"></div>

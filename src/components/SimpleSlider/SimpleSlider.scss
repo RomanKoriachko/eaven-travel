@@ -19,7 +19,6 @@
     overflow: hidden;
     .slider-bg{
         height: 100%;
-        transform: scale(1);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -68,10 +67,17 @@
 .slick-active {
     .slider {
         .slider-bg{
-            transition: 5s ease-in-out;
-            transition-delay: .5s;
-            transform: scale(1.2);
+            animation: 5s linear .5s 1 forwards scaling;
         }
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
     }
 }
 
