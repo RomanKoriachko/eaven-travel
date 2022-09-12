@@ -7,7 +7,7 @@ export type Articles = {
     section: string
     header: string
     text: string
-    articleText?: string
+    articleText: string
     firstArticleParagraph?: string
     secondArticleParagraph?: string
 }
@@ -15,7 +15,7 @@ export type Articles = {
 const articlesArray: Articles[] = [
     {
         id: 1,
-        image: "images/article-img-1.jpg",
+        image: "/images/article-img-1.jpg",
         date: "May 30, 2019",
         country: "france",
         dash: "-",
@@ -28,7 +28,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 2,
-        image: "images/article-img-2.jpg",
+        image: "/images/article-img-2.jpg",
         date: "May 29, 2019",
         country: "japan",
         dash: "-",
@@ -39,7 +39,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 3,
-        image: "images/article-img-3.jpg",
+        image: "/images/article-img-3.jpg",
         date: "May 28, 2019",
         country: "europe",
         dash: "",
@@ -50,7 +50,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 4,
-        image: "images/article-img-4.jpg",
+        image: "/images/article-img-4.jpg",
         date: "May 27, 2019",
         country: "australia",
         dash: "-",
@@ -61,7 +61,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 5,
-        image: "images/article-img-5.jpg",
+        image: "/images/article-img-5.jpg",
         date: "May 26, 2019",
         country: "singapore",
         dash: "-",
@@ -72,7 +72,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 6,
-        image: "images/article-img-6.jpg",
+        image: "/images/article-img-6.jpg",
         date: "May 25, 2019",
         country: "europe",
         dash: "-",
@@ -83,7 +83,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 7,
-        image: "images/article-img-7.jpg",
+        image: "/images/article-img-7.jpg",
         date: "May 24, 2019",
         country: "australia",
         dash: "-",
@@ -94,7 +94,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 8,
-        image: "images/article-img-8.jpg",
+        image: "/images/article-img-8.jpg",
         date: "May 24, 2019",
         country: "europe",
         dash: "-",
@@ -105,7 +105,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 9,
-        image: "images/article-img-9.jpg",
+        image: "/images/article-img-9.jpg",
         date: "May 23, 2019",
         country: "australia",
         dash: "-",
@@ -116,7 +116,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 10,
-        image: "images/article-img-10.jpg",
+        image: "/images/article-img-10.jpg",
         date: "May 23, 2019",
         country: "france",
         dash: "-",
@@ -129,7 +129,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 11,
-        image: "images/article-img-11.jpg",
+        image: "/images/article-img-11.jpg",
         date: "May 20, 2019",
         country: "france",
         dash: "-",
@@ -141,7 +141,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 12,
-        image: "images/article-img-12.jpg",
+        image: "/images/article-img-12.jpg",
         date: "May 22, 2019",
         country: "italy",
         dash: "-",
@@ -152,7 +152,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 13,
-        image: "images/article-img-13.jpg",
+        image: "/images/article-img-13.jpg",
         date: "May 21, 2019",
         country: "italy",
         dash: "-",
@@ -163,7 +163,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 14,
-        image: "images/article-img-14.jpg",
+        image: "/images/article-img-14.jpg",
         date: "May 21, 2019",
         country: "italy",
         dash: "-",
@@ -174,7 +174,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 15,
-        image: "images/article-img-15.jpg",
+        image: "/images/article-img-15.jpg",
         date: "May 21, 2019",
         country: "japan",
         dash: "",
@@ -185,7 +185,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 16,
-        image: "images/article-img-16.jpg",
+        image: "/images/article-img-16.jpg",
         date: "May 21, 2019",
         country: "japan",
         dash: "-",
@@ -198,7 +198,7 @@ const articlesArray: Articles[] = [
     },
     {
         id: 17,
-        image: "images/article-img-17.jpg",
+        image: "/images/article-img-17.jpg",
         date: "May 19, 2019",
         country: "singapore",
         dash: "",

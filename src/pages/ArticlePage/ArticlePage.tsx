@@ -18,7 +18,7 @@ const ArticlePage = (props: Props) => {
             <div
                 className="article-page-header"
                 style={{
-                    backgroundImage: `url(./${filtredId[0].image})`,
+                    backgroundImage: `url(${filtredId[0].image})`,
                 }}
             >
                 <div className="container">
@@ -27,7 +27,7 @@ const ArticlePage = (props: Props) => {
                         <div className="article-page-header-content-info">
                             <div className="header-content-info-autor">
                                 <div className="header-content-info-autor-avatar">
-                                    <img src="./images/kiko.png" alt="" />
+                                    <img src="/images/kiko.png" alt="" />
                                 </div>
                                 <div className="header-content-info-autor-name">
                                     Kiko Morris

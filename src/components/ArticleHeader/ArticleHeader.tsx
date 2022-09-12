@@ -1,19 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ArticleHeader.scss'
 
 type Props = {
-    img: string
-    desc: string
+    id?: number
+    image: string
+    header: string
+    country?: string
 }
 
-const ArticleHeader = ({ img, desc }: Props) => {
+const ArticleHeader = ({ image, header }: Props) => {
     return (
-        <div className="article-preview">
+        <>
             <div className="aricle-img">
-                <img src={img} alt="" />
+                <img src={image} alt="" />
             </div>
-            <div className="article-desc">{desc}</div>
-        </div>
+            <div className="article-desc">{header}</div>
+        </>
     )
 }
 

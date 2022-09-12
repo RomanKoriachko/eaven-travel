@@ -3,10 +3,26 @@ import ArticleHeader from 'components/ArticleHeader/ArticleHeader'
 import './Header.scss'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
 import { Link, NavLink } from 'react-router-dom'
+import articlesArray, {
+    Articles,
+} from 'components/ArticlesSection/articlesArray'
 
 type Props = {}
 
+export type ArticleProps = {
+    id: number
+    image: string
+    header: string
+    country: string
+    section?: string
+}
+
 const Header = (props: Props) => {
+    const filtredBySection = articlesArray.filter(
+        ({ section }: ArticleProps) => section === 'GUIDES'
+    )
+    let filtredSlise = filtredBySection.slice(0, 4)
+
     return (
         <>
             <header className="header">
@@ -97,90 +113,173 @@ const Header = (props: Props) => {
                                                 </TabList>
                                                 <TabPanel>
                                                     <div className="tab-content row">
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/europe-article-1.jpg"
-                                                                desc="Nice and Cozy House for Stay – Travel Guide"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/asia-article-1.jpg"
-                                                                desc="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/europe-article-2.jpg"
-                                                                desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
-                                                            />
-                                                        </div>
+                                                        {articlesArray
+                                                            .filter(
+                                                                ({
+                                                                    id,
+                                                                }: ArticleProps) =>
+                                                                    id <= 3
+                                                            )
+                                                            .map(
+                                                                ({
+                                                                    id,
+                                                                    image,
+                                                                    header,
+                                                                    country,
+                                                                }: ArticleProps) => (
+                                                                    <div className="tab-content-all">
+                                                                        <div className="article-preview">
+                                                                            <Link
+                                                                                to={`/destinations/${id}`}
+                                                                            >
+                                                                                <ArticleHeader
+                                                                                    key={
+                                                                                        id
+                                                                                    }
+                                                                                    image={
+                                                                                        image
+                                                                                    }
+                                                                                    header={
+                                                                                        header
+                                                                                    }
+                                                                                    country={
+                                                                                        country
+                                                                                    }
+                                                                                />
+                                                                            </Link>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )}
                                                     </div>
                                                 </TabPanel>
                                                 <TabPanel>
                                                     <div className="tab-content row">
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/asia-article-1.jpg"
-                                                                desc="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/asia-article-2.jpg"
-                                                                desc="The Complete Guide – Singapore’s Gardens by the Bay"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/asia-article-3.jpg"
-                                                                desc="Everything You Need to Know About Buddhism in Thailand"
-                                                            />
-                                                        </div>
+                                                        {articlesArray
+                                                            .filter(
+                                                                ({
+                                                                    country,
+                                                                }: ArticleProps) =>
+                                                                    country ===
+                                                                    'japan'
+                                                            )
+                                                            .map(
+                                                                ({
+                                                                    id,
+                                                                    image,
+                                                                    header,
+                                                                    country,
+                                                                }: ArticleProps) => (
+                                                                    <div className="tab-content-all">
+                                                                        <div className="article-preview">
+                                                                            <Link
+                                                                                to={`/destinations/${id}`}
+                                                                            >
+                                                                                <ArticleHeader
+                                                                                    key={
+                                                                                        id
+                                                                                    }
+                                                                                    image={
+                                                                                        image
+                                                                                    }
+                                                                                    header={
+                                                                                        header
+                                                                                    }
+                                                                                    country={
+                                                                                        country
+                                                                                    }
+                                                                                />
+                                                                            </Link>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )}
                                                     </div>
                                                 </TabPanel>
                                                 <TabPanel>
                                                     <div className="tab-content row">
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/australia-article-1.jpg"
-                                                                desc="Penguin Parade Australia: Penguins Don’t Live Just in Antarctica"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/australia-article-2.jpg"
-                                                                desc="What’s the Best Cruise Tour to see Emperor Penguins?"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/australia-article-3.jpg"
-                                                                desc="Just Cannot Miss! The Best Location for Whale Watching in Port Stephens"
-                                                            />
-                                                        </div>
+                                                        {articlesArray
+                                                            .filter(
+                                                                ({
+                                                                    country,
+                                                                }: ArticleProps) =>
+                                                                    country ===
+                                                                    'australia'
+                                                            )
+                                                            .map(
+                                                                ({
+                                                                    id,
+                                                                    image,
+                                                                    header,
+                                                                    country,
+                                                                }: ArticleProps) => (
+                                                                    <div className="tab-content-all">
+                                                                        <div className="article-preview">
+                                                                            <Link
+                                                                                to={`/destinations/${id}`}
+                                                                            >
+                                                                                <ArticleHeader
+                                                                                    key={
+                                                                                        id
+                                                                                    }
+                                                                                    image={
+                                                                                        image
+                                                                                    }
+                                                                                    header={
+                                                                                        header
+                                                                                    }
+                                                                                    country={
+                                                                                        country
+                                                                                    }
+                                                                                />
+                                                                            </Link>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )}
                                                     </div>
                                                 </TabPanel>
                                                 <TabPanel>
                                                     <div className="tab-content row">
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/europe-article-1.jpg"
-                                                                desc="Nice and Cozy House for Stay – Travel Guide"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/europe-article-2.jpg"
-                                                                desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
-                                                            />
-                                                        </div>
-                                                        <div className="tab-content-all">
-                                                            <ArticleHeader
-                                                                img="images/europe-article-3.jpg"
-                                                                desc="Travel to Santa’s Village: Modern Santa comes with Public Transport"
-                                                            />
-                                                        </div>
+                                                        {articlesArray
+                                                            .filter(
+                                                                ({
+                                                                    country,
+                                                                }: ArticleProps) =>
+                                                                    country ===
+                                                                    'europe'
+                                                            )
+                                                            .map(
+                                                                ({
+                                                                    id,
+                                                                    image,
+                                                                    header,
+                                                                    country,
+                                                                }: ArticleProps) => (
+                                                                    <div className="tab-content-all">
+                                                                        <div className="article-preview">
+                                                                            <Link
+                                                                                to={`/destinations/${id}`}
+                                                                            >
+                                                                                <ArticleHeader
+                                                                                    key={
+                                                                                        id
+                                                                                    }
+                                                                                    image={
+                                                                                        image
+                                                                                    }
+                                                                                    header={
+                                                                                        header
+                                                                                    }
+                                                                                    country={
+                                                                                        country
+                                                                                    }
+                                                                                />
+                                                                            </Link>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )}
                                                     </div>
                                                 </TabPanel>
                                             </Tabs>
@@ -202,22 +301,31 @@ const Header = (props: Props) => {
                                         </NavLink>
                                     </div>
                                     <div className="guides-hover">
-                                        <ArticleHeader
-                                            img="images/australia-article-1.jpg"
-                                            desc="Penguin Parade Australia: Penguins Don’t Live Just in Antarctica"
-                                        />
-                                        <ArticleHeader
-                                            img="images/europe-article-3.jpg"
-                                            desc="Seven Artisan Villages in Finland You Simply Must Visit"
-                                        />
-                                        <ArticleHeader
-                                            img="images/australia-article-2.jpg"
-                                            desc="What’s the Best Cruise Tour to see Emperor Penguins?"
-                                        />
-                                        <ArticleHeader
-                                            img="images/australia-article-3.jpg"
-                                            desc="Just Cannot Miss! The Best Location for Whale Watching in Port Stephens"
-                                        />
+                                        {filtredSlise.map(
+                                            ({
+                                                id,
+                                                image,
+                                                header,
+                                                country,
+                                            }: ArticleProps) => (
+                                                <div className="tab-content-all">
+                                                    <div className="article-preview">
+                                                        <Link
+                                                            to={`/destinations/${id}`}
+                                                        >
+                                                            <ArticleHeader
+                                                                key={id}
+                                                                image={image}
+                                                                header={header}
+                                                                country={
+                                                                    country
+                                                                }
+                                                            />
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            )
+                                        )}
                                     </div>
                                 </li>
                                 <li className="features">
