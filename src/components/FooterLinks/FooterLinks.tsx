@@ -1,4 +1,6 @@
+import DestinationsPage from 'pages/DestinationsPage/DestinationsPage'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './FooterLinks.scss'
 
 type Props = {}
@@ -19,12 +21,24 @@ const FooterLinks = (props: Props) => {
                     </ul>
                     <ul>
                         <li className="links-content-header">DESTINATIONS</li>
-                        <li className="links-content-text">Australia</li>
-                        <li className="links-content-text">Singapore</li>
-                        <li className="links-content-text">Japan</li>
-                        <li className="links-content-text">Thailand</li>
-                        <li className="links-content-text">France</li>
-                        <li className="links-content-text">Italy</li>
+                        <li className="links-content-text">
+                            <Link to="/australia">Australia</Link>
+                        </li>
+                        <li className="links-content-text">
+                            <Link to="/singapore">Singapore</Link>
+                        </li>
+                        <li className="links-content-text">
+                            <Link to="/japan">Japan</Link>
+                        </li>
+                        <li className="links-content-text">
+                            <Link to="/thailand">Thailand</Link>
+                        </li>
+                        <li className="links-content-text">
+                            <Link to="/france">France</Link>
+                        </li>
+                        <li className="links-content-text">
+                            <Link to="/italy">Italy</Link>
+                        </li>
                     </ul>
                     <ul>
                         <li className="links-content-header">HELP & FAQS</li>

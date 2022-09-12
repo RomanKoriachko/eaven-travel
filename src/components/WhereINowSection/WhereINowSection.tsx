@@ -1,8 +1,19 @@
+import articlesArray from 'components/ArticlesSection/articlesArray'
 import WhereINowItem from 'components/WhereINowItem/WhereINowItem'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './WhereINowSection.scss'
 
 type Props = {}
+
+type ArticleProps = {
+    id?: number
+    image: string
+    country: string
+    dash: string
+    section: string
+    header: string
+}
 
 const WhereINowSection = (props: Props) => {
     return (
@@ -11,24 +22,34 @@ const WhereINowSection = (props: Props) => {
                 <div className="where-wrapper">
                     <div className="where-logo">Where I Am Now – ASIA</div>
                     <div className="where-items">
-                        <WhereINowItem
-                            whereImg="asia-article-1"
-                            country="Japan"
-                            section="solo travel"
-                            content="Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations"
-                        />
-                        <WhereINowItem
-                            whereImg="asia-article-2"
-                            country="Singapore"
-                            section="Tips & Tricks"
-                            content="The Complete Guide – Singapore’s Gardens by the Bay"
-                        />
-                        <WhereINowItem
-                            whereImg="asia-article-3"
-                            country="Thailand"
-                            section="Guides"
-                            content="Everything You Need to Know About Buddhism in Thailand"
-                        />
+                        {articlesArray
+                            .filter(
+                                ({ country }: ArticleProps) =>
+                                    country === 'japan' ||
+                                    country === 'singapore'
+                            )
+                            .map(
+                                ({
+                                    id,
+                                    image,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                }: ArticleProps) => (
+                                    <div className="where-item" key={id}>
+                                        <Link to={`/destinations/${id}`}>
+                                            <WhereINowItem
+                                                image={image}
+                                                country={country}
+                                                dash={dash}
+                                                section={section}
+                                                header={header}
+                                            />
+                                        </Link>
+                                    </div>
+                                )
+                            )}
                     </div>
                 </div>
             </div>

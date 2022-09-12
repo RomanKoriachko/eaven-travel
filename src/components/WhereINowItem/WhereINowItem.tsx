@@ -2,30 +2,32 @@ import React from 'react'
 import './WhereINowItem.scss'
 
 type Props = {
-    whereImg: string
+    id?: number
+    image: string
     country: string
+    dash: string
     section: string
-    content: string
+    header: string
 }
 
-const WhereINowItem = ({ whereImg, country, section, content }: Props) => {
+const WhereINowItem = ({ image, country, dash, section, header }: Props) => {
     return (
-        <div className="where-item">
+        <>
             <div
                 className="where-img"
-                style={{ backgroundImage: `url(images/${whereImg}.jpg)` }}
+                style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="where-img-blackout"></div>
             </div>
             <div className="where-content">
                 <div className="where-link">
                     <p>{country}</p>
-                    <p>-</p>
+                    <p>{dash}</p>
                     <p>{section}</p>
                 </div>
-                <div className="where-text">{content}</div>
+                <div className="where-text">{header}</div>
             </div>
-        </div>
+        </>
     )
 }
 
