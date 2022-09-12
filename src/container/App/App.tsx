@@ -32,6 +32,7 @@ const App = (props: Props) => {
                     <Route path="italy" element={<ItalyPage />} />
                     <Route path="japan" element={<JapanPage />} />
                     <Route path="singapore" element={<SingaporePage />} />
+                    <Route path="*" element={<Main />} />
                 </Route>
             </Routes>
         </>
