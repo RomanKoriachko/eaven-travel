@@ -15,6 +15,7 @@ const ArticlePage = (props: Props) => {
 
     return (
         <div className="article-page">
+            <div className="article-header-dark"></div>
             <div
                 className="article-page-header"
                 style={{

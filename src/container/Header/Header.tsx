@@ -30,7 +30,7 @@ const Header = (props: Props) => {
                     <div className="header-content">
                         <div className="logo">
                             <Link to="/">
-                                <img src="images/logo.png" alt="" />
+                                <img src="/images/logo.png" alt="" />
                             </Link>
                         </div>
                         <div className="header-menu">
