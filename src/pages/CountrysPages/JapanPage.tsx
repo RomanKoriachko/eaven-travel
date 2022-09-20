@@ -1,9 +1,7 @@
-import React from 'react'
 import articlesArray from 'components/ArticlesSection/articlesArray'
 import CountryPage from 'components/CountryPage/CountryPage'
 import PageArticleItem from 'components/PageArticleItem/PageArticleItem'
 import './CountryPage.scss'
-import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -39,16 +37,15 @@ const JapanPage = (props: Props) => {
                                 id,
                             }: ArticleProps) => (
                                 <div className="articles-page-item" key={id}>
-                                    <Link to={`/destinations/${id}`}>
-                                        <PageArticleItem
-                                            image={image}
-                                            date={date}
-                                            country={country}
-                                            dash={dash}
-                                            section={section}
-                                            header={header}
-                                        />
-                                    </Link>
+                                    <PageArticleItem
+                                        image={image}
+                                        date={date}
+                                        country={country}
+                                        dash={dash}
+                                        section={section}
+                                        header={header}
+                                        id={id}
+                                    />
                                 </div>
                             )
                         )}

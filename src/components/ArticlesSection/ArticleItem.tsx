@@ -26,9 +26,6 @@ const ArticleItem = ({
 }: ArticleProps) => {
     const isLiked = useAppSelector((state) => state.articlesLikeState[id])
     const dispatch = useAppDispatch()
-    let likeImg = 'dislike'
-    console.log(isLiked)
-    console.log(likeImg)
 
     return (
         <>

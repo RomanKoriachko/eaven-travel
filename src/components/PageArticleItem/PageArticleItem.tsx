@@ -1,6 +1,8 @@
 import React from 'react'
 import './PageArticleItem.scss'
 import { Link } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addLike, removeLike } from 'redux/likeReducer'
 
 type Props = {
     image: string
@@ -9,6 +11,7 @@ type Props = {
     dash: string
     section: string
     header: string
+    id: number
 }
 
 const PageArticleItem = ({
@@ -18,12 +21,18 @@ const PageArticleItem = ({
     dash,
     section,
     header,
+    id,
 }: Props) => {
+    const isLiked = useAppSelector((state) => state.articlesLikeState[id])
+    const dispatch = useAppDispatch()
+
     return (
         <>
-            <div className="page-article-img">
-                <img src={image} alt="" />
-            </div>
+            <Link to={`/destinations/${id}`}>
+                <div className="page-article-img">
+                    <img src={image} alt="" />
+                </div>
+            </Link>
             <div className="page-article-main">
                 <div className="page-article-date">
                     <p className="page-article-date-content">{date}</p>
@@ -38,7 +47,25 @@ const PageArticleItem = ({
                     </p>
                 </div>
             </div>
-            <div className="page-article-header">{header}</div>
+            <Link to={`/destinations/${id}`}>
+                <div className="page-article-header">{header}</div>
+            </Link>
+            <div className="like-wrapper">
+                <button
+                    className="like"
+                    onClick={() =>
+                        isLiked
+                            ? dispatch(removeLike(id))
+                            : dispatch(addLike(id))
+                    }
+                >
+                    {isLiked ? (
+                        <img src="images/like.png" alt="" />
+                    ) : (
+                        <img src="images/dislike.png" alt="" />
+                    )}
+                </button>
+            </div>
         </>
     )
 }

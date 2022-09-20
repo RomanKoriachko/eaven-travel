@@ -1,8 +1,6 @@
 import articlesArray from 'components/ArticlesSection/articlesArray'
 import PageArticleItem from 'components/PageArticleItem/PageArticleItem'
 import PageHeader from 'components/PageHeader/PageHeader'
-import React from 'react'
-import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -38,16 +36,15 @@ const GuidesPage = (props: Props) => {
                                 id,
                             }: ArticleProps) => (
                                 <div className="articles-page-item" key={id}>
-                                    <Link to={`/destinations/${id}`}>
-                                        <PageArticleItem
-                                            image={image}
-                                            date={date}
-                                            country={country}
-                                            dash={dash}
-                                            section={section}
-                                            header={header}
-                                        />
-                                    </Link>
+                                    <PageArticleItem
+                                        image={image}
+                                        date={date}
+                                        country={country}
+                                        dash={dash}
+                                        section={section}
+                                        header={header}
+                                        id={id}
+                                    />
                                 </div>
                             )
                         )}
