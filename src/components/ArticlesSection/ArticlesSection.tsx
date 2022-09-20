@@ -1,5 +1,4 @@
 import ArticleItem from 'components/ArticlesSection/ArticleItem'
-import React from 'react'
 import './ArticlesSection.scss'
 import articlesArray from './articlesArray'
 

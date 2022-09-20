@@ -1,6 +1,7 @@
-import React from 'react'
 import './ArticleItem.scss'
 import { Link } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addLike, removeLike } from 'redux/likeReducer'
 
 type ArticleProps = {
     image: string
@@ -23,6 +24,12 @@ const ArticleItem = ({
     text,
     id,
 }: ArticleProps) => {
+    const isLiked = useAppSelector((state) => state.articlesLikeState[id])
+    const dispatch = useAppDispatch()
+    let likeImg = 'dislike'
+    console.log(isLiked)
+    console.log(likeImg)
+
     return (
         <>
             <Link to={`/destinations/${id}`}>
@@ -32,6 +39,8 @@ const ArticleItem = ({
                         <p className="article-date-content">{date}</p>
                     </div>
                 </div>
+            </Link>
+            <div className="article-links-and-like">
                 <div className="article-links">
                     <p>
                         <Link to={country}>{country}</Link>
@@ -41,6 +50,22 @@ const ArticleItem = ({
                         <Link to={section}>{section}</Link>
                     </p>
                 </div>
+                <button
+                    className="like"
+                    onClick={() =>
+                        isLiked
+                            ? dispatch(removeLike(id))
+                            : dispatch(addLike(id))
+                    }
+                >
+                    {isLiked ? (
+                        <img src="images/like.png" alt="" />
+                    ) : (
+                        <img src="images/dislike.png" alt="" />
+                    )}
+                </button>
+            </div>
+            <Link to={`/destinations/${id}`}>
                 <div className="article-header">{header}</div>
                 <div className="article-line"></div>
                 <div className="article-text">{text}</div>

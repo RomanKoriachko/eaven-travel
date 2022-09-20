@@ -396,20 +396,18 @@ const Header = (props: Props) => {
                                 </li>
                                 <li className="elements">
                                     <div className="menu-item-name">
-                                        ELEMENTS
-                                        <div className="underline hide"></div>
+                                        <NavLink
+                                            to="/liked"
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'active'
+                                                    : 'notActive'
+                                            }
+                                        >
+                                            LIKED
+                                            <div className="underline"></div>
+                                        </NavLink>
                                     </div>
-                                    <ul className="elements-sub-menu">
-                                        <li>Posts Block</li>
-                                        <li>Dropcaps</li>
-                                        <li>Buttons & Dividers</li>
-                                        <li>Rows & Columns</li>
-                                        <li>Highlights</li>
-                                        <li>Tabs & Accordions</li>
-                                        <li>Tweet it</li>
-                                        <li>Video Block</li>
-                                        <li>Wide Image & Galleries</li>
-                                    </ul>
                                 </li>
                                 <li className="pages">
                                     <div className="menu-item-name">
