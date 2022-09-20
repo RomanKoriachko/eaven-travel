@@ -10,6 +10,12 @@ export type Articles = {
     articleText: string
     firstArticleParagraph?: string
     secondArticleParagraph?: string
+    articleImg1?: string
+    articleImg2?: string
+    articleImg3?: string
+    articleImg4?: string
+    articleImg5?: string
+    articleImg6?: string
 }
 
 const articlesArray: Articles[] = [
@@ -25,6 +31,11 @@ const articlesArray: Articles[] = [
         articleText: "Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.",
         firstArticleParagraph: "1. All around the Eiffel Tower",
         secondArticleParagraph: "2. Visit the Artist Area Montmartre",
+        articleImg1: "/images/articlePageImg-1.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 2,
@@ -35,7 +46,12 @@ const articlesArray: Articles[] = [
         section: "SOLO TRAVEL",
         header: "Fly to Tokyo for My Christmas 2019! And My Trip Plan Inspirations",
         text: "Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing …",
-        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`
+        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`,
+        articleImg1: "/images/articlePageImg-2.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 3,
@@ -46,7 +62,12 @@ const articlesArray: Articles[] = [
         section: "",
         header: "Travel to Santa’s Village: Modern Santa comes with Public Transport",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. When to visit …",
-        articleText: "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        articleText: "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        articleImg1: "/images/articlePageImg-3.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 4,
@@ -57,7 +78,12 @@ const articlesArray: Articles[] = [
         section: "GUIDES",
         header: "Penguin Parade Australia: Penguins Don’t Live Just in Antarctica",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: "There are 18 species of Penguin, each slightly different, and all live in the Southern hemisphere. Many live at the South Pole on Antarctica, which also has the most penguins of any region in the world, but it’s not the only place where you’ll find the cute Tuxedoed Birds. The most difficult thing is the decision to act, the rest is merely tenacity. Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer sit amet ante sollicitudin, luctus ipsum non, lobortis nibh. Sed felis ipsum, ornare ac varius vel, mattis sed sapien. Mauris nec tortor diam. Sed in ipsum finibus, sollicitudin nisl at, malesuada nibh."
+        articleText: "There are 18 species of Penguin, each slightly different, and all live in the Southern hemisphere. Many live at the South Pole on Antarctica, which also has the most penguins of any region in the world, but it’s not the only place where you’ll find the cute Tuxedoed Birds. The most difficult thing is the decision to act, the rest is merely tenacity. Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer sit amet ante sollicitudin, luctus ipsum non, lobortis nibh. Sed felis ipsum, ornare ac varius vel, mattis sed sapien. Mauris nec tortor diam. Sed in ipsum finibus, sollicitudin nisl at, malesuada nibh.",
+        articleImg1: "/images/articlePageImg-4.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 5,
@@ -68,7 +94,11 @@ const articlesArray: Articles[] = [
         section: "TIPS & TRICKS",
         header: "The Complete Guide – Singapore’s Gardens by the Bay",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: "If you’re twenty-two, physically fit, hungry to learn and be better, I urge you to travel – as far and as widely as possible. Sleep on floors if you have to. Find out how other people live and eat and cook. Learn from them – wherever you go.Fusce porttitor metus eget lectus consequat, sit amet feugiat magna vulputate. Phasellus iaculis tellus augue, at ultrices lacus efficitur."
+        articleText: "If you’re twenty-two, physically fit, hungry to learn and be better, I urge you to travel – as far and as widely as possible. Sleep on floors if you have to. Find out how other people live and eat and cook. Learn from them – wherever you go.Fusce porttitor metus eget lectus consequat, sit amet feugiat magna vulputate. Phasellus iaculis tellus augue, at ultrices lacus efficitur.",
+        articleImg1: "/images/articlePageImg-9.jpg",
+        articleImg3: "/images/articlePageImg-10.jpg",
+        articleImg4: "/images/articlePageImg-5.jpg",
+        articleImg5: "/images/articlePageImg-6.jpg",
     },
     {
         id: 6,
@@ -79,7 +109,12 @@ const articlesArray: Articles[] = [
         section: "GUIDES",
         header: "Seven Artisan Villages in Finland You Simply Must Visit",
         text: "The most difficult thing is the decision to act, the rest is merely tenacity. Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer sit amet ante sollicitudin, luctus …",
-        articleText: "Alittle bad taste is like a nice splash of paprika. We all need a splash of bad taste—it’s hearty, it’s healthy, it’s physical. I think we could use more of it. No taste is what I’m against. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things."
+        articleText: "Alittle bad taste is like a nice splash of paprika. We all need a splash of bad taste—it’s hearty, it’s healthy, it’s physical. I think we could use more of it. No taste is what I’m against. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.",
+        articleImg1: "/images/articlePageImg-12.jpg",
+        articleImg2: "/images/articlePageImg-8.jpg",
+        articleImg3: "/images/articlePageImg-7.jpg",
+        articleImg4: "/images/articlePageImg-10.jpg",
+        articleImg5: "/images/articlePageImg-9.jpg",
     },
     {
         id: 7,
@@ -91,6 +126,11 @@ const articlesArray: Articles[] = [
         header: "What’s the Best Cruise Tour to see Emperor Penguins?",
         text: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce porttitor metus eget lectus consequat, sit amet feugiat magna vulputate. Phasellus iaculis tellus augue, at ultrices …",
         articleText: "Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.",
+        articleImg1: "/images/articlePageImg-11.jpg",
+        articleImg2: "/images/articlePageImg-6.jpg",
+        articleImg3: "/images/articlePageImg-5.jpg",
+        articleImg4: "/images/articlePageImg-10.jpg",
+        articleImg5: "/images/articlePageImg-12.jpg",
     },
     {
         id: 8,
@@ -101,7 +141,12 @@ const articlesArray: Articles[] = [
         section: "SOLO TRAVEL",
         header: "Unique Short Breaks in the Mountains of Switzerland",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. What to do …",
-        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`
+        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`,
+        articleImg1: "/images/articlePageImg-3.jpg",
+        articleImg2: "/images/articlePageImg-4.jpg",
+        articleImg3: "/images/articlePageImg-5.jpg",
+        articleImg4: "/images/articlePageImg-6.jpg",
+        articleImg5: "/images/articlePageImg-7.jpg",
     },
     {
         id: 9,
@@ -113,6 +158,11 @@ const articlesArray: Articles[] = [
         header: "Just Cannot Miss! The Best Location for Whale Watching in Port Stephens",
         text: "Things to do in Australia The most difficult thing is the decision to act, the rest is merely tenacity. Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer …",
         articleText: "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        articleImg1: "/images/articlePageImg-4.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 10,
@@ -126,6 +176,10 @@ const articlesArray: Articles[] = [
         articleText: "Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.",
         firstArticleParagraph: "1. All around the Eiffel Tower",
         secondArticleParagraph: "2. Visit the Artist Area Montmartre",
+        articleImg1: "/images/articlePageImg-7.jpg",
+        articleImg2: "/images/articlePageImg-2.jpg",
+        articleImg3: "/images/articlePageImg-1.jpg",
+        articleImg5: "/images/articlePageImg-4.jpg",
     },
     {
         id: 11,
@@ -136,8 +190,12 @@ const articlesArray: Articles[] = [
         section: "GUIDES",
         header: "Plan Your Next Destination: The Charming Village in the French Alps",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`
-        
+        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`,
+        articleImg1: "/images/articlePageImg-2.jpg",
+        articleImg2: "/images/articlePageImg-8.jpg",
+        articleImg3: "/images/articlePageImg-7.jpg",
+        articleImg4: "/images/articlePageImg-10.jpg",
+        articleImg5: "/images/articlePageImg-11.jpg",
     },
     {
         id: 12,
@@ -149,6 +207,11 @@ const articlesArray: Articles[] = [
         header: "The Best Coastal City for People Who Want to Escape the Crowds",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. Things to do …",
         articleText: "Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.",
+        articleImg1: "/images/articlePageImg-6.jpg",
+        articleImg2: "/images/articlePageImg-7.jpg",
+        articleImg3: "/images/articlePageImg-8.jpg",
+        articleImg4: "/images/articlePageImg-10.jpg",
+        articleImg5: "/images/articlePageImg-11.jpg",
     },
     {
         id: 13,
@@ -159,7 +222,11 @@ const articlesArray: Articles[] = [
         section: "TIPS & TRICKS",
         header: "The Beginner’s Guide to Hiking in the Majestic Mountains",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. Things to do …",
-        articleText: "Alittle bad taste is like a nice splash of paprika. We all need a splash of bad taste—it’s hearty, it’s healthy, it’s physical. I think we could use more of it. No taste is what I’m against. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things."
+        articleText: "Alittle bad taste is like a nice splash of paprika. We all need a splash of bad taste—it’s hearty, it’s healthy, it’s physical. I think we could use more of it. No taste is what I’m against. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.",
+        articleImg1: "/images/articlePageImg-10.jpg",
+        articleImg2: "/images/articlePageImg-11.jpg",
+        articleImg3: "/images/articlePageImg-12.jpg",
+        articleImg4: "/images/articlePageImg-1.jpg",
     },
     {
         id: 14,
@@ -170,7 +237,11 @@ const articlesArray: Articles[] = [
         section: "GUIDES",
         header: "20 Best Things to Do in Florence and Where to Eat & Stay",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: "Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer sit amet ante sollicitudin, luctus ipsum non, lobortis nibh. Sed felis ipsum, ornare ac varius vel, mattis sed sapien. Mauris nec tortor diam. Sed in ipsum finibus, sollicitudin nisl at, malesuada nibh."
+        articleText: "Cras purus turpis, laoreet eget hendrerit id, ornare commodo augue. Integer sit amet ante sollicitudin, luctus ipsum non, lobortis nibh. Sed felis ipsum, ornare ac varius vel, mattis sed sapien. Mauris nec tortor diam. Sed in ipsum finibus, sollicitudin nisl at, malesuada nibh.",
+        articleImg1: "/images/articlePageImg-1.jpg",
+        articleImg3: "/images/articlePageImg-2.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 15,
@@ -181,7 +252,12 @@ const articlesArray: Articles[] = [
         section: "",
         header: "Kyoto Travel Guide – Have the Best Experience At Fushimi Inari Shrine",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`
+        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`,
+        articleImg1: "/images/articlePageImg-10.jpg",
+        articleImg2: "/images/articlePageImg-6.jpg",
+        articleImg3: "/images/articlePageImg-5.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
     {
         id: 16,
@@ -195,6 +271,10 @@ const articlesArray: Articles[] = [
         articleText: "Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.",
         firstArticleParagraph: "1. All around the Eiffel Tower",
         secondArticleParagraph: "2. Visit the Artist Area Montmartre",
+        articleImg1: "/images/articlePageImg-1.jpg",
+        articleImg2: "/images/articlePageImg-2.jpg",
+        articleImg3: "/images/articlePageImg-3.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
     },
     {
         id: 17,
@@ -205,7 +285,12 @@ const articlesArray: Articles[] = [
         section: "",
         header: "A Gorgeous Day Out at Singapore Botanic Gardens",
         text: "Etiam sed enim vitae magna pretium tincidunt eget vel massa. Maecenas porttitor at risus sit amet facilisis. Cras et elit id velit semper bibendum et vel purus. The most difficult …",
-        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`
+        articleText: `Better to see something once than to hear about it a thousand times. Because in the end, you won’t remember the time you spent working in the office or mowing your lawn. Climb that goddamn mountain. Vel aliquet diam. Suspendisse quis sodales risus. Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.`,
+        articleImg1: "/images/articlePageImg-8.jpg",
+        articleImg2: "/images/articlePageImg-5.jpg",
+        articleImg3: "/images/articlePageImg-6.jpg",
+        articleImg4: "/images/articlePageImg-7.jpg",
+        articleImg5: "/images/articlePageImg-8.jpg",
     },
 ]
 

@@ -1,5 +1,5 @@
 import articlesArray from 'components/ArticlesSection/articlesArray'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './ArticlePage.scss'
 
 type Props = {}
@@ -22,6 +22,18 @@ const ArticlePage = (props: Props) => {
             >
                 <div className="container">
                     <div className="article-page-header-content">
+                        <div className="article-page-header-content-buttons">
+                            <button>
+                                <Link to={`/${filtredId[0].country}`}>
+                                    {filtredId[0].country}
+                                </Link>
+                            </button>
+                            <button>
+                                <Link to={`/${filtredId[0].section}`}>
+                                    {filtredId[0].section}
+                                </Link>
+                            </button>
+                        </div>
                         <p>{filtredId[0].header}</p>
                         <div className="article-page-header-content-info">
                             <div className="header-content-info-autor">
@@ -44,7 +56,11 @@ const ArticlePage = (props: Props) => {
                 <div className="article-page-main">
                     <div className="article-page-main-center">
                         <p>{filtredId[0].articleText}</p>
-                        <img src="" alt="" />
+                        <img
+                            className="article-page-main-img"
+                            src={filtredId[0].articleImg1}
+                            alt=""
+                        />
                         <p className="article-page-main-header">
                             Things to do in <span>{filtredId[0].country}</span>
                         </p>
@@ -128,9 +144,21 @@ const ArticlePage = (props: Props) => {
                                 purus.
                             </li>
                         </ul>
-                        <div>
-                            <img src="" alt="" />
-                            <img src="" alt="" />
+                        <div className="article-page-main-img-wrapper">
+                            <div className="article-page-main-img-wrapper-item">
+                                <img
+                                    className="article-page-main-img"
+                                    src={filtredId[0].articleImg2}
+                                    alt=""
+                                />
+                            </div>
+                            <div className="article-page-main-img-wrapper-item">
+                                <img
+                                    className="article-page-main-img"
+                                    src={filtredId[0].articleImg3}
+                                    alt=""
+                                />
+                            </div>
                         </div>
                         <p className="article-page-main-header">
                             Comfortable Hotels
@@ -147,7 +175,11 @@ const ArticlePage = (props: Props) => {
                             enim ligula.
                         </p>
                         <div>
-                            <img src="" alt="" />
+                            <img
+                                className="article-page-main-img"
+                                src={filtredId[0].articleImg4}
+                                alt=""
+                            />
                         </div>
                         <ol>
                             <li>
@@ -179,7 +211,11 @@ const ArticlePage = (props: Props) => {
                             elementum libero ut nisl gravida faucibus.
                         </p>
                         <div>
-                            <img src="" alt="" />
+                            <img
+                                className="article-page-main-img"
+                                src={filtredId[0].articleImg5}
+                                alt=""
+                            />
                         </div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing

@@ -67,7 +67,7 @@
 .slick-active {
     .slider {
         .slider-bg{
-            animation: 5s linear .5s 1 forwards scaling;
+            animation: 5s ease-in-out .5s 1 forwards scaling;
         }
     }
 }

@@ -16,6 +16,28 @@ font-family: 'Heebo', sans-serif;
             left: 50%;
             transform: translate(-50%, 0);
             max-width: 750px;
+            .article-page-header-content-buttons {
+                button{
+                    text-transform: capitalize;
+                    border: none;
+                    border-radius: 50px;
+                    padding: 3px 10px;
+                    margin-right: 5px;
+                    cursor: pointer;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: .5s all;
+                    >a{
+                        text-decoration: none;
+                        color: black;
+                    }
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                }
+                
+            }
             >p{
                 font-family: 'Poppins', sans-serif;
                 font-size: 40px;
@@ -72,6 +94,19 @@ font-family: 'Heebo', sans-serif;
         grid-template-rows: 100%;
         gap: 0px 40px;
         .article-page-main-center {
+            .article-page-main-img {
+                width: 100%;
+                margin-top: 30px;
+            }
+            .article-page-main-img-wrapper {
+                display: flex;
+                gap: 0 10px;
+                .article-page-main-img-wrapper-item {
+                    img{
+                        height: 100%;
+                    }
+                }
+            }
             .article-page-main-header {
                 font-family: 'Poppins', sans-serif;
                 font-size: 28px;
