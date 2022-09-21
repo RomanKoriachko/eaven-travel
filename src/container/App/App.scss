@@ -4,6 +4,10 @@
 body{
     font-family: 'Heebo', sans-serif;
 }
+::selection{
+    color: white;
+    background: #886ac3;
+}
 
 @import 'reset';
 

@@ -12,6 +12,7 @@ import SingaporePage from 'pages/CountrysPages/SingaporePage'
 import LayoutComponent from 'components/LayoutComponent/LayoutComponent'
 import ArticlePage from 'pages/ArticlePage/ArticlePage'
 import LikedArticles from 'pages/LikedArticles/LikedArticles'
+import NotExistPage from 'pages/NotExistPage/NotExistPage'
 
 type Props = {}
 
@@ -34,7 +35,7 @@ const App = (props: Props) => {
                     <Route path="italy" element={<ItalyPage />} />
                     <Route path="japan" element={<JapanPage />} />
                     <Route path="singapore" element={<SingaporePage />} />
-                    <Route path="*" element={<Main />} />
+                    <Route path="*" element={<NotExistPage />} />
                 </Route>
             </Routes>
         </>
