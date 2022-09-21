@@ -11,7 +11,6 @@ import JapanPage from 'pages/CountrysPages/JapanPage'
 import SingaporePage from 'pages/CountrysPages/SingaporePage'
 import LayoutComponent from 'components/LayoutComponent/LayoutComponent'
 import ArticlePage from 'pages/ArticlePage/ArticlePage'
-import { useState } from 'react'
 import LikedArticles from 'pages/LikedArticles/LikedArticles'
 
 type Props = {}

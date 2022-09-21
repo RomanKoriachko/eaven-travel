@@ -1,8 +1,9 @@
-import React from 'react'
 import './PageArticleItem.scss'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addLike, removeLike } from 'redux/likeReducer'
+import { addToLikedPage, removeFromLikePage } from 'redux/likePageReducer'
+import articlesArray from 'components/ArticlesSection/articlesArray'
 
 type Props = {
     image: string
@@ -25,6 +26,25 @@ const PageArticleItem = ({
 }: Props) => {
     const isLiked = useAppSelector((state) => state.articlesLikeState[id])
     const dispatch = useAppDispatch()
+
+    const liked = () => {
+        dispatch(
+            addToLikedPage({
+                image: articlesArray[id - 1].image,
+                date: articlesArray[id - 1].date,
+                country: articlesArray[id - 1].country,
+                dash: articlesArray[id - 1].dash,
+                section: articlesArray[id - 1].section,
+                header: articlesArray[id - 1].header,
+                id: articlesArray[id - 1].id,
+            })
+        )
+        dispatch(addLike(id))
+    }
+    const disliked = () => {
+        dispatch(removeFromLikePage({ id: id - 1 }))
+        dispatch(removeLike(id))
+    }
 
     return (
         <>
@@ -53,11 +73,7 @@ const PageArticleItem = ({
             <div className="like-wrapper">
                 <button
                     className="like"
-                    onClick={() =>
-                        isLiked
-                            ? dispatch(removeLike(id))
-                            : dispatch(addLike(id))
-                    }
+                    onClick={() => (isLiked ? disliked() : liked())}
                 >
                     {isLiked ? (
                         <img src="images/like.png" alt="" />
