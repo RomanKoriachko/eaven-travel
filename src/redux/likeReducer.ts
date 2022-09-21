@@ -17,10 +17,15 @@ export const likeSlice = createSlice({
         removeLike: (state, action) => ({
             ...state,
             [action.payload]: false
-        })
+        }),
+        removeFromLikePage: (state, action) => {
+            let newObj = {...state}
+            delete newObj[action.payload]
+            return newObj
+        }
     }
 })
 
-export const {addLike,removeLike} = likeSlice.actions
+export const {addLike,removeLike, removeFromLikePage} = likeSlice.actions
 
 export default likeSlice.reducer

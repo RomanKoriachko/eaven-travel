@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import likePageReducer from "./likePageReducer";
 import likeReducer from "./likeReducer";
 
 
 export const store = configureStore({
     reducer: {
         articlesLikeState: likeReducer,
-        articlesArr: likePageReducer
     }
 })
 

@@ -1,7 +1,7 @@
 import './PageArticleItem.scss'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
-import { addLike, removeLike } from 'redux/likeReducer'
+import { addLike, removeFromLikePage, removeLike } from 'redux/likeReducer'
 
 type Props = {
     image: string
@@ -24,6 +24,10 @@ const PageArticleItem = ({
 }: Props) => {
     const isLiked = useAppSelector((state) => state.articlesLikeState[id])
     const dispatch = useAppDispatch()
+    const removeAndDeliteLike = () => {
+        dispatch(removeLike(id))
+        dispatch(removeFromLikePage(id))
+    }
 
     return (
         <>
@@ -53,9 +57,7 @@ const PageArticleItem = ({
                 <button
                     className="like"
                     onClick={() =>
-                        isLiked
-                            ? dispatch(removeLike(id))
-                            : dispatch(addLike(id))
+                        isLiked ? removeAndDeliteLike() : dispatch(addLike(id))
                     }
                 >
                     {isLiked ? (
