@@ -295,3 +295,10 @@ const articlesArray: Articles[] = [
 ]
 
 export default articlesArray
+
+export const getArticlesObject = (array:Articles[]) => {
+    return array.reduce((object, product) => ({
+        ...object,
+        [product.id]:product
+    }),{})
+} 

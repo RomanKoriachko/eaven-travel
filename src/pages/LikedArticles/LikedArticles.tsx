@@ -1,27 +1,20 @@
-import PageArticleItem from 'components/PageArticleItem/PageArticleItem'
+import articlesArray, {
+    Articles,
+    getArticlesObject,
+} from 'components/ArticlesSection/articlesArray'
 import PageHeader from 'components/PageHeader/PageHeader'
 import { useAppSelector } from 'redux/hooks'
+import LikedArticlesItem from './LikedArticlesItem'
 
 type Props = {}
 
-type ArticleProps = {
-    image: string
-    date: string
-    country: string
-    dash: string
-    section: string
-    header: string
-    id: number
+type ArticleObject = {
+    [key: number]: Articles
 }
 
 const LikedArticles = (props: Props) => {
-    const likedArr = useAppSelector((state) => state.articlesArr)
-    const delitetEmptyObject = likedArr.filter((element) => element.id !== 0)
-    const filtredLikedArr = delitetEmptyObject.sort(function (a, b) {
-        return a.id - b.id
-    })
-
-    console.log(filtredLikedArr)
+    const articlesLikeState = useAppSelector((state) => state.articlesLikeState)
+    const articlesObject: ArticleObject = getArticlesObject(articlesArray)
 
     return (
         <div>
@@ -29,29 +22,12 @@ const LikedArticles = (props: Props) => {
             <div className="page-content">
                 <div className="container">
                     <div className="articles-page-wrapper">
-                        {filtredLikedArr.map(
-                            ({
-                                image,
-                                date,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                id,
-                            }: ArticleProps) => (
-                                <div className="articles-page-item" key={id}>
-                                    <PageArticleItem
-                                        image={image}
-                                        date={date}
-                                        country={country}
-                                        dash={dash}
-                                        section={section}
-                                        header={header}
-                                        id={id}
-                                    />
-                                </div>
-                            )
-                        )}
+                        {Object.keys(articlesLikeState).map((articleId) => (
+                            <LikedArticlesItem
+                                key={articleId}
+                                article={articlesObject[parseInt(articleId)]}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
