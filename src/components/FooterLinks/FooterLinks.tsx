@@ -1,5 +1,3 @@
-import DestinationsPage from 'pages/DestinationsPage/DestinationsPage'
-import React from 'react'
 import { Link } from 'react-router-dom'
 import './FooterLinks.scss'
 
