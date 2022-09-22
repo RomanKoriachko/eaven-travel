@@ -23,8 +23,6 @@ const LikedArticles = (props: Props) => {
         />
     ))
 
-    console.log(articlesLikeState)
-
     return (
         <div>
             <PageHeader header="Liked Articles" />

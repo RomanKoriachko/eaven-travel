@@ -317,8 +317,17 @@ const Header = (props: Props) => {
                                 </li>
                                 <li className="features">
                                     <div className="menu-item-name">
-                                        FEATURES
-                                        <div className="underline hide"></div>
+                                        <NavLink
+                                            to="/features"
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'active'
+                                                    : 'notActive'
+                                            }
+                                        >
+                                            FEATURES
+                                            <div className="underline hide"></div>
+                                        </NavLink>
                                     </div>
                                     <div className="features-hover">
                                         <ul>
@@ -411,8 +420,17 @@ const Header = (props: Props) => {
                                 </li>
                                 <li className="pages">
                                     <div className="menu-item-name">
-                                        PAGES
-                                        <div className="underline hide"></div>
+                                        <NavLink
+                                            to="/pages"
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'active'
+                                                    : 'notActive'
+                                            }
+                                        >
+                                            PAGES
+                                            <div className="underline hide"></div>
+                                        </NavLink>
                                     </div>
                                     <ul className="pages-sub-menu">
                                         <li>About Me</li>
@@ -425,8 +443,17 @@ const Header = (props: Props) => {
                                 </li>
                                 <li className="shop">
                                     <div className="menu-item-name">
-                                        SHOP
-                                        <div className="underline hide"></div>
+                                        <NavLink
+                                            to="/shop"
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'active'
+                                                    : 'notActive'
+                                            }
+                                        >
+                                            SHOP
+                                            <div className="underline hide"></div>
+                                        </NavLink>
                                     </div>
                                     <ul className="shop-sub-menu">
                                         <li>Products 3 Columns</li>

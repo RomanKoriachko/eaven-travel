@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import likeReducer from "./likeReducer";
+import loadMoreReducer from "./loadMoreReducer";
 
 
 export const store = configureStore({
     reducer: {
         articlesLikeState: likeReducer,
+        elementsCountState: loadMoreReducer,
     }
 })
 
