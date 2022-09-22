@@ -21,11 +21,8 @@ const ArticlesSection = (props: Props) => {
     const elementCount = useAppSelector(
         (state) => state.elementsCountState.count
     )
-    const test = useAppSelector((state) => state.elementsCountState)
     let wrapperHeit = useAppSelector((state) => state.elementsCountState.height)
     const dispatch = useAppDispatch()
-
-    console.log(wrapperHeit)
 
     return (
         <section className="articles">
