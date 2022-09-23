@@ -16,11 +16,18 @@ const Comments = ({ id, commentsId }: Props) => {
     const [comments, setComments] = useState<CommentsProp[]>(commentsArr)
     const [replays, setReplays] = useState<ReplyProp[]>(replyArr)
 
-    console.log(comments)
+    let lastLetter: string
+    if (comments.length + replays.length === 1) {
+        lastLetter = ''
+    } else {
+        lastLetter = 's'
+    }
 
     return (
         <>
-            <div className="comments-logo">4 comments</div>
+            <div className="comments-logo">
+                {comments.length + replays.length} comment{lastLetter}
+            </div>
             <div className="comments-content">
                 {comments.map((comment: CommentsProp, i: number) => (
                     <div className="comment-and-reply" key={i}>
@@ -33,6 +40,11 @@ const Comments = ({ id, commentsId }: Props) => {
                                     <div className="comment-text-name">
                                         {comment.name}
                                     </div>
+                                    {comment.isAdmin ? (
+                                        <div className="comment-autor-state">
+                                            Author
+                                        </div>
+                                    ) : undefined}
                                     <div className="comment-text-date">
                                         {comment.date}
                                     </div>
@@ -40,7 +52,7 @@ const Comments = ({ id, commentsId }: Props) => {
                                 <div className="comment-text-content">
                                     {comment.text}
                                 </div>
-                                <button>reply</button>
+                                <button>Reply</button>
                             </div>
                         </div>
                         <div>
@@ -55,6 +67,11 @@ const Comments = ({ id, commentsId }: Props) => {
                                                 <div className="comment-text-name">
                                                     {reply.name}
                                                 </div>
+                                                {reply.isAdmin ? (
+                                                    <div className="comment-autor-state">
+                                                        Author
+                                                    </div>
+                                                ) : undefined}
                                                 <div className="comment-text-date">
                                                     {reply.date}
                                                 </div>

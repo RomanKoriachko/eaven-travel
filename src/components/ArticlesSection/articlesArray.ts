@@ -82,7 +82,7 @@ const articlesArray: Articles[] = [
             },
             {
                 avatar: "/images/user3-img.jpeg",
-                name: "Adam Dawsonsays",
+                name: "Adam Dawson",
                 isAdmin: false,
                 date: "October 13, 2019 1:47 pm",
                 text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
@@ -105,7 +105,40 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user3-img.jpeg",
+                name: "Nina Young",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.",
+                reply: [
+                    {
+                        avatar: "/images/admin-img.png",
+                        name: "Kiko Morris",
+                        isAdmin: true,
+                        date: "October 13, 2019 1:51 pm",
+                        text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                    },
+                ],
+            },
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [],
+            },
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Adam Dawson",
+                isAdmin: false,
+                date: "October 13, 2019 1:47 pm",
+                text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 3,
@@ -122,7 +155,16 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/admin-img.png",
+                name: "Kiko Morris",
+                isAdmin: true,
+                date: "October 13, 2019 1:51 pm",
+                text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                reply:[],
+            },
+        ],
     },
     {
         id: 4,
@@ -139,7 +181,32 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user2-img.jpeg",
+                name: "Nina Young",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [
+                    {
+                        avatar: "/images/admin-img.png",
+                        name: "Kiko Morris",
+                        isAdmin: true,
+                        date: "October 13, 2019 1:51 pm",
+                        text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                    },
+                ],
+            },
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 5,
@@ -155,7 +222,16 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-10.jpg",
         articleImg4: "/images/articlePageImg-5.jpg",
         articleImg5: "/images/articlePageImg-6.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user3-img.jpeg",
+                name: "Adam Dawson",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 6,
@@ -172,7 +248,16 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-7.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-9.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/admin-img.png",
+                name: "Kiko Morris",
+                isAdmin: true,
+                date: "October 13, 2019 1:51 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply:[],
+            },
+        ],
     },
     {
         id: 7,
@@ -223,7 +308,24 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user2-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:47 pm",
+                text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
+                reply: [
+                    {
+                        avatar: "/images/user3-img.jpeg",
+                        name: "Adam Dawson",
+                        isAdmin: false,
+                        date: "October 13, 2019 1:47 pm",
+                        text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
+                    },
+                ],
+            },
+        ],
     },
     {
         id: 10,
@@ -241,7 +343,16 @@ const articlesArray: Articles[] = [
         articleImg2: "/images/articlePageImg-2.jpg",
         articleImg3: "/images/articlePageImg-1.jpg",
         articleImg5: "/images/articlePageImg-4.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user3-img.jpeg",
+                name: "Adam Dawson",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 11,
@@ -258,7 +369,24 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-7.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-11.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Nina Young",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.",
+                reply: [],
+            },
+            {
+                avatar: "/images/user2-img.jpeg",
+                name: "Adam Dawson",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 12,
@@ -275,7 +403,24 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-8.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-11.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user4-img.jpg",
+                name: "John Marston",
+                isAdmin: false,
+                date: "October 21, 1899 2:35 pm",
+                text: "If You Find Yourself In A Hole, The First Thing To Do Is Stop Diggin",
+                reply: [],
+            },
+            {
+                avatar: "/images/user3-img.jpeg",
+                name: "Adam Dawson",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 13,
@@ -307,7 +452,16 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-2.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user5-img.jpg",
+                name: "Arthur Morgan",
+                isAdmin: false,
+                date: "June 6, 1899 3:21 pm",
+                text: "You know, all that ever mattered to me was loyalty? It was all I knew. It was all I ever believed in",
+                reply: [],
+            },
+        ],
     },
     {
         id: 15,
@@ -324,7 +478,24 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-5.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [
+                    {
+                        avatar: "/images/user1-img.jpeg",
+                        name: "Roxie Spencer",
+                        isAdmin: false,
+                        date: "October 13, 2019 1:46 pm",
+                        text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                    },
+                ],
+            },
+        ],
     },
     {
         id: 16,
@@ -342,7 +513,16 @@ const articlesArray: Articles[] = [
         articleImg2: "/images/articlePageImg-2.jpg",
         articleImg3: "/images/articlePageImg-3.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 17,
@@ -359,7 +539,32 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
-        comments: [],
+        comments: [
+            {
+                avatar: "/images/user2-img.jpeg",
+                name: "Nina Young",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
+                reply: [],
+            },
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [
+                    {
+                        avatar: "/images/user6-img.jpg",
+                        name: "Dutch Van Der Linde",
+                        isAdmin: false,
+                        date: "September 26, 1890 6:23 pm",
+                        text: "We can’t fight nature. Can’t fight change. Can’t fight gravity.",
+                    },
+                ],
+            },
+        ],
     },
 ]
 
