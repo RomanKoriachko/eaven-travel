@@ -1,3 +1,21 @@
+
+export type CommentsProp = {
+    avatar: string
+    name: string
+    isAdmin: boolean
+    date: string
+    text: string
+    reply: ReplyProp[]
+}
+
+export type ReplyProp = {
+    avatar: string
+    name: string
+    isAdmin: boolean
+    date: string
+    text: string
+}
+
 export type Articles = {
     id: number
     image: string
@@ -16,6 +34,7 @@ export type Articles = {
     articleImg4?: string
     articleImg5?: string
     articleImg6?: string
+    comments: CommentsProp[]
 }
 
 const articlesArray: Articles[] = [
@@ -36,6 +55,40 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [
+            {
+                avatar: "/images/user1-img.jpeg",
+                name: "Nina Young",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.",
+                reply: [],
+            },
+            {
+                avatar: "/images/user2-img.jpeg",
+                name: "Roxie Spencer",
+                isAdmin: false,
+                date: "October 13, 2019 1:46 pm",
+                text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                reply: [
+                    {
+                        avatar: "/images/admin-img.png",
+                        name: "Kiko Morris",
+                        isAdmin: true,
+                        date: "October 13, 2019 1:51 pm",
+                        text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                    },
+                ],
+            },
+            {
+                avatar: "/images/user3-img.jpeg",
+                name: "Adam Dawsonsays",
+                isAdmin: false,
+                date: "October 13, 2019 1:47 pm",
+                text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
+                reply: [],
+            },
+        ],
     },
     {
         id: 2,
@@ -52,6 +105,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 3,
@@ -68,6 +122,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 4,
@@ -84,6 +139,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 5,
@@ -99,6 +155,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-10.jpg",
         articleImg4: "/images/articlePageImg-5.jpg",
         articleImg5: "/images/articlePageImg-6.jpg",
+        comments: [],
     },
     {
         id: 6,
@@ -115,6 +172,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-7.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-9.jpg",
+        comments: [],
     },
     {
         id: 7,
@@ -131,6 +189,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-5.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-12.jpg",
+        comments: [],
     },
     {
         id: 8,
@@ -147,6 +206,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-5.jpg",
         articleImg4: "/images/articlePageImg-6.jpg",
         articleImg5: "/images/articlePageImg-7.jpg",
+        comments: [],
     },
     {
         id: 9,
@@ -163,6 +223,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 10,
@@ -180,6 +241,7 @@ const articlesArray: Articles[] = [
         articleImg2: "/images/articlePageImg-2.jpg",
         articleImg3: "/images/articlePageImg-1.jpg",
         articleImg5: "/images/articlePageImg-4.jpg",
+        comments: [],
     },
     {
         id: 11,
@@ -196,6 +258,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-7.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-11.jpg",
+        comments: [],
     },
     {
         id: 12,
@@ -212,6 +275,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-8.jpg",
         articleImg4: "/images/articlePageImg-10.jpg",
         articleImg5: "/images/articlePageImg-11.jpg",
+        comments: [],
     },
     {
         id: 13,
@@ -227,6 +291,7 @@ const articlesArray: Articles[] = [
         articleImg2: "/images/articlePageImg-11.jpg",
         articleImg3: "/images/articlePageImg-12.jpg",
         articleImg4: "/images/articlePageImg-1.jpg",
+        comments: [],
     },
     {
         id: 14,
@@ -242,6 +307,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-2.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 15,
@@ -258,6 +324,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-5.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
     {
         id: 16,
@@ -275,6 +342,7 @@ const articlesArray: Articles[] = [
         articleImg2: "/images/articlePageImg-2.jpg",
         articleImg3: "/images/articlePageImg-3.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
+        comments: [],
     },
     {
         id: 17,
@@ -291,6 +359,7 @@ const articlesArray: Articles[] = [
         articleImg3: "/images/articlePageImg-6.jpg",
         articleImg4: "/images/articlePageImg-7.jpg",
         articleImg5: "/images/articlePageImg-8.jpg",
+        comments: [],
     },
 ]
 

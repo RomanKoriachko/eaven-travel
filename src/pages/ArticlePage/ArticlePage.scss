@@ -196,6 +196,7 @@ font-family: 'Heebo', sans-serif;
                 height: 5px;
                 width: 100%;
                 background-color: black;
+                margin: 50px 0px;
             }
             .article-page-main-author {
                 background-color: #f3f5f6;
@@ -264,6 +265,9 @@ font-family: 'Heebo', sans-serif;
             background-color: rgb(133, 133, 133);
         }
     }
+}
+.bold-text {
+    font-weight: 800;
 }
 
 // Tablet

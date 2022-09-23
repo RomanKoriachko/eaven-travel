@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addLike, removeLike } from 'redux/likeReducer'
 import './ArticlePage.scss'
+import Comments from './Comments'
 
 type Props = {}
 
@@ -12,6 +13,13 @@ const ArticlePage = (props: Props) => {
     let filtredId = articlesArray.filter(
         (element) => element.id === Number(articleId)
     )
+
+    let commentsId: number = 0
+    for (let i = 0; i < filtredId[0].comments.length; i++) {
+        if (filtredId[0].comments[i].reply.length > 0) {
+            commentsId = i
+        }
+    }
 
     const isLiked = useAppSelector(
         (state) => state.articlesLikeState[filtredId[0].id]
@@ -75,28 +83,31 @@ const ArticlePage = (props: Props) => {
                             </p>
                             <p>
                                 The most difficult thing is the decision to act,
-                                the rest is merely tenacity. Cras purus turpis,
-                                laoreet eget hendrerit id, ornare commodo augue.
-                                Integer sit amet ante sollicitudin, luctus ipsum
-                                non, lobortis nibh. Sed felis ipsum, ornare ac
-                                varius vel, mattis sed sapien. Mauris nec tortor
-                                diam. Sed in ipsum finibus, sollicitudin nisl
-                                at, malesuada nibh.
+                                the rest is merely tenacity.{' '}
+                                <span className="bold-text">Cras</span> purus
+                                turpis, laoreet eget hendrerit id, ornare
+                                commodo augue. Integer sit amet ante
+                                sollicitudin, luctus ipsum non, lobortis nibh.
+                                Sed felis ipsum, ornare ac varius vel, mattis
+                                sed sapien. Mauris nec tortor diam. Sed in ipsum
+                                finibus, sollicitudin nisl at, malesuada nibh.
                             </p>
                             <p className="article-page-main-medium-header">
                                 {filtredId[0].firstArticleParagraph}
                             </p>
                             <p>
                                 Vestibulum ante ipsum primis in faucibus orci
-                                luctus et ultrices posuere cubilia Curae; Fusce
-                                porttitor metus eget lectus consequat, sit amet
-                                feugiat magna vulputate. Phasellus iaculis
-                                tellus augue, at ultrices lacus efficitur a.
-                                Mauris a nibh erat. In sed massa sed erat
-                                consectetur convallis vel vitae felis. Vivamus
-                                in tempus erat. Cras porta nisi sit amet leo
-                                dictum, non suscipit neque tincidunt. Ut et enim
-                                ligula.
+                                luctus et ultrices posuere cubilia Curae;{' '}
+                                <span className="bold-text">
+                                    Fusce porttitor metus
+                                </span>{' '}
+                                eget lectus consequat, sit amet feugiat magna
+                                vulputate. Phasellus iaculis tellus augue, at
+                                ultrices lacus efficitur a. Mauris a nibh erat.
+                                In sed massa sed erat consectetur convallis vel
+                                vitae felis. Vivamus in tempus erat. Cras porta
+                                nisi sit amet leo dictum, non suscipit neque
+                                tincidunt. Ut et enim ligula.
                             </p>
                             <p>
                                 Etiam sed enim vitae magna pretium tincidunt
@@ -182,13 +193,14 @@ const ArticlePage = (props: Props) => {
                                 Vestibulum ante ipsum primis in faucibus orci
                                 luctus et ultrices posuere cubilia Curae; Fusce
                                 porttitor metus eget lectus consequat, sit amet
-                                feugiat magna vulputate. Phasellus iaculis
-                                tellus augue, at ultrices lacus efficitur a.
-                                Mauris a nibh erat. In sed massa sed erat
-                                consectetur convallis vel vitae felis. Vivamus
-                                in tempus erat. Cras porta nisi sit amet leo
-                                dictum, non suscipit neque tincidunt. Ut et enim
-                                ligula.
+                                feugiat magna{' '}
+                                <span className="bold-text">vulputate.</span>{' '}
+                                Phasellus iaculis tellus augue, at ultrices
+                                lacus efficitur a. Mauris a nibh erat. In sed
+                                massa sed erat consectetur convallis vel vitae
+                                felis. Vivamus in tempus erat. Cras porta nisi
+                                sit amet leo dictum, non suscipit neque
+                                tincidunt. Ut et enim ligula.
                             </p>
                             <div>
                                 <img
@@ -215,18 +227,21 @@ const ArticlePage = (props: Props) => {
                                 How to get around
                             </p>
                             <p>
-                                Proin in est tincidunt, venenatis ligula et,
-                                ultrices eros. Proin eget nisl ut augue viverra
-                                scelerisque. Donec eget est non elit egestas
-                                viverra sed eu justo. Pellentesque ultrices
-                                volutpat tincidunt. Morbi mattis nibh auctor ex
-                                faucibus fermentum. Sed quis metus vulputate,
-                                congue ex ac, feugiat nulla. Maecenas auctor,
-                                elit nec iaculis ullamcorper, dolor felis
-                                euismod est, ut efficitur enim ipsum ac est. Sed
-                                quam purus, euismod vitae molestie id, ultrices
-                                eu erat. Pellentesque elementum libero ut nisl
-                                gravida faucibus.
+                                <span className="bold-text">
+                                    Proin in est tincidunt, venenatis ligula et,
+                                    ultrices eros.
+                                </span>{' '}
+                                Proin eget nisl ut augue viverra scelerisque.
+                                Donec eget est non elit egestas viverra sed eu
+                                justo. Pellentesque ultrices volutpat tincidunt.
+                                Morbi mattis nibh auctor ex faucibus fermentum.
+                                Sed quis metus vulputate, congue ex ac, feugiat
+                                nulla. Maecenas auctor, elit nec iaculis
+                                ullamcorper, dolor felis euismod est, ut
+                                efficitur enim ipsum ac est. Sed quam purus,
+                                euismod vitae molestie id, ultrices eu erat.
+                                Pellentesque elementum libero ut nisl gravida
+                                faucibus.
                             </p>
                             <div>
                                 <img
@@ -251,16 +266,17 @@ const ArticlePage = (props: Props) => {
                             </p>
                             <ul className="article-page-main-list">
                                 <li>
-                                    By foot – Morbi mattis nibh auctor ex
-                                    faucibus fermentum. Sed quis metus
-                                    vulputate.
+                                    <span className="bold-text">By foot</span> –
+                                    Morbi mattis nibh auctor ex faucibus
+                                    fermentum. Sed quis metus vulputate.
                                 </li>
                                 <li>
-                                    Bike – Sed quam purus, euismod vitae
-                                    molestie id.
+                                    <span className="bold-text">Bike</span> –
+                                    Sed quam purus, euismod vitae molestie id.
                                 </li>
                                 <li>
-                                    Taxi – Maecenas porttitor at risus sit amet
+                                    <span className="bold-text">Taxi</span> –
+                                    Maecenas porttitor at risus sit amet
                                     facilisis. Cras et elit id velit semper
                                     bibendum et vel purus.
                                 </li>
@@ -309,6 +325,12 @@ const ArticlePage = (props: Props) => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="article-page-main-comments">
+                            <Comments
+                                id={filtredId[0].id}
+                                commentsId={commentsId}
+                            />
                         </div>
                     </div>
                     <div className="article-page-main-sidebar"></div>
