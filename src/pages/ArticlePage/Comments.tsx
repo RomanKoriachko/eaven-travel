@@ -3,7 +3,7 @@ import articlesArray, {
     ReplyProp,
 } from 'components/ArticlesSection/articlesArray'
 import ColorButton from 'components/ColorButton/ColorButton'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './Comments.scss'
 
 type Props = {
@@ -28,6 +28,7 @@ const Comments = ({ id, commentsId }: Props) => {
     } else {
         replyArr = []
     }
+
     const [comments, setComments] = useState<CommentsProp[]>(commentsArr)
     const [newComment, setNewComment] = useState<CommentsProp>({
         avatar: '/images/unregistered-user.png',
@@ -38,8 +39,17 @@ const Comments = ({ id, commentsId }: Props) => {
         reply: [],
         email: '',
     })
-    const [replays, setReplays] = useState<ReplyProp[]>(replyArr)
+    const [replies, setReplies] = useState<ReplyProp[]>(replyArr)
+    const [newReply, setNewReply] = useState<ReplyProp>({
+        avatar: '/images/unregistered-user.png',
+        name: '',
+        isAdmin: false,
+        date: timeNow.toString(),
+        text: '',
+        email: '',
+    })
 
+    // Comments
     const handleChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setNewComment((prevState: CommentsProp) => ({
             ...prevState,
@@ -61,7 +71,7 @@ const Comments = ({ id, commentsId }: Props) => {
         }))
     }
 
-    const onSand = (e: React.FormEvent<HTMLFormElement>) => {
+    const onSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (
             newComment.name === '' ||
@@ -85,17 +95,90 @@ const Comments = ({ id, commentsId }: Props) => {
         }
     }
 
+    // Replies
+
+    const onReplyClick = (i: number) => {
+        let reply = document.querySelectorAll('.reply-form')
+        if (reply[i].classList.contains('hide')) {
+            reply[i].classList.add('show')
+            reply[i].classList.remove('hide')
+        } else {
+            reply[i].classList.add('hide')
+            reply[i].classList.remove('show')
+        }
+    }
+
+    const handleChangeTextInReply = (
+        e: React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
+        setNewReply((prevState: ReplyProp) => ({
+            ...prevState,
+            text: e.target.value,
+        }))
+    }
+
+    const handleChangeNameInReply = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setNewReply((prevState: ReplyProp) => ({
+            ...prevState,
+            name: e.target.value,
+        }))
+    }
+
+    const handleChangeEmailInReply = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setNewReply((prevState: ReplyProp) => ({
+            ...prevState,
+            email: e.target.value,
+        }))
+    }
+    const hideReplyForm = () => {
+        let reply = document.querySelectorAll('.reply-form')
+        for (let i = 0; i <= reply.length; i++) {
+            reply[i].classList.add('hide')
+            reply[i].classList.remove('show')
+        }
+    }
+    const onSendReply = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        if (
+            newReply.name === '' ||
+            newReply.text === '' ||
+            newReply.email === ''
+        ) {
+            alert('All fields are required')
+        } else {
+            setReplies((prevState: ReplyProp[]) => {
+                return [...prevState, newReply]
+            })
+            setNewReply({
+                avatar: '/images/unregistered-user.png',
+                name: '',
+                isAdmin: false,
+                date: timeNow,
+                text: '',
+                email: '',
+            })
+            hideReplyForm()
+        }
+    }
+
     let lastLetter: string
-    if (comments.length + replays.length === 1) {
+    if (comments.length + replies.length === 1) {
         lastLetter = ''
     } else {
         lastLetter = 's'
     }
 
+    console.log(comments)
+    console.log(replies)
+
     return (
         <>
             <div className="comments-logo">
-                {comments.length + replays.length} comment{lastLetter}
+                {comments.length + replies.length} comment{lastLetter}
             </div>
             <div className="comments-content">
                 {comments.map((comment: CommentsProp, i: number) => (
@@ -121,11 +204,56 @@ const Comments = ({ id, commentsId }: Props) => {
                                 <div className="comment-text-content">
                                     {comment.text}
                                 </div>
-                                <button>Reply</button>
+                                <button onClick={() => onReplyClick(i)}>
+                                    Reply
+                                </button>
                             </div>
                         </div>
                         <div>
-                            {comment.reply.map(
+                            <form
+                                className="reply-form hide"
+                                onSubmit={onSendReply}
+                            >
+                                <div className="form-header">
+                                    Reply to {comment.name}
+                                </div>
+                                <div className="form-text">
+                                    Your email address will not be published.
+                                    All fields are requared
+                                </div>
+                                <div className="form-comment">
+                                    <p className="form-field-name">Comment</p>
+                                    <textarea
+                                        name=""
+                                        id=""
+                                        value={newReply.text}
+                                        onChange={handleChangeTextInReply}
+                                    ></textarea>
+                                </div>
+                                <div className="form-name-and-email">
+                                    <div className="form-name">
+                                        <p className="form-field-name">Name</p>
+                                        <input
+                                            type="text"
+                                            value={newReply.name}
+                                            onChange={handleChangeNameInReply}
+                                        />
+                                    </div>
+                                    <div className="form-email">
+                                        <p className="form-field-name">Email</p>
+                                        <input
+                                            type="email"
+                                            value={newReply.email}
+                                            onChange={handleChangeEmailInReply}
+                                        />
+                                    </div>
+                                </div>
+                                <ColorButton
+                                    buttonText="Post Reply"
+                                    type="submit"
+                                />
+                            </form>
+                            {comments[i].reply.map(
                                 (reply: ReplyProp, i: number) => (
                                     <div key={i} className="comment reply">
                                         <div className="comment-user-avatar">
@@ -156,7 +284,7 @@ const Comments = ({ id, commentsId }: Props) => {
                     </div>
                 ))}
                 <div>
-                    <form className="reply-form" onSubmit={onSand}>
+                    <form className="comment-form show" onSubmit={onSend}>
                         <div className="form-header">Leave a Reply</div>
                         <div className="form-text">
                             Your email address will not be published. All fields
