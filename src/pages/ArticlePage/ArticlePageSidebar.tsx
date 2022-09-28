@@ -32,7 +32,9 @@ const ArticlePageSidebar = ({ currentId }: Props) => {
 
     randomArr.map((arrayItem: ArticleProps, i: number) => {
         if (i < 3) {
-            newArr.splice(0, 0, arrayItem)
+            return newArr.splice(0, 0, arrayItem)
+        } else {
+            return undefined
         }
     })
 
