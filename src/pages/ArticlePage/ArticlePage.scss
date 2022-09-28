@@ -340,8 +340,14 @@ font-family: 'Heebo', sans-serif;
                 ol{
                     margin-left: 13px;
                 }
+                .article-page-main-author {
+                    padding: 20px;
+                    .article-page-main-author-wrapper {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
             }
-
         }
     }
 }

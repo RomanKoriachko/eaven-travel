@@ -1,0 +1,29 @@
+.recomendations {
+    text-align: center;
+    .recomendations-line {
+        width: 25px;
+        height: 2px;
+        background-color: #886ac3;
+        margin: 20px auto;
+    }
+    .recomendations-header {
+        font-size: 21px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .recomendations-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 40px;
+    }
+}
+
+@media(max-width: 576px) {
+    .recomendations{
+        .recomendations-wrapper {
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(4, 1fr);
+        }
+    }
+}

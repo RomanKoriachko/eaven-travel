@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addLike, removeLike } from 'redux/likeReducer'
 import './ArticlePage.scss'
 import Comments from './Comments'
+import Recomendations from './Recomendations'
 
 type Props = {}
 
@@ -332,6 +333,7 @@ const ArticlePage = (props: Props) => {
                                 commentsId={commentsId}
                             />
                         </div>
+                        <Recomendations currentId={filtredId[0].id} />
                     </div>
                     <div className="article-page-main-sidebar"></div>
                 </div>
