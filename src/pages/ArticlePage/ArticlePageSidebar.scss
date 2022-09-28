@@ -1,0 +1,142 @@
+.sidebar {
+    width: 280px;
+    // text-align: center;
+    .sidebar-logo {
+        width: 280px;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+    .sidebar-description {
+        text-align: center;
+        margin-bottom: 10px;
+        p:nth-child(1) {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        p:nth-child(2) {
+            font-size: 14px;
+        }
+        
+    }
+    .sidebar-signature {
+        margin: 0px 60px;
+        img{
+            width: 100%;
+        }
+    }
+    .sidebar-section-name{
+        display: flex;
+        align-items: center;
+        margin: 30px 0px;
+        >div:nth-child(1) {
+            width: 5px;
+            height: 16px;
+            background-color: #886ac3;
+            margin-right: 10px;
+        }
+        >div:nth-child(2) {
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+    .sidebar-social-buttons {
+        margin-bottom: 50px;
+        button{
+            background-color: black;
+            margin-right: 10px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            cursor: pointer;
+            transition: .3s all;
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+        button:nth-child(1) {
+            background-image: url(../../assets/facebook-img.png);
+        }
+        button:nth-child(2) {
+            background-image: url(../../assets/twitter-img.png);
+        }
+        button:nth-child(3) {
+            background-image: url(../../assets/youtube-img.png);
+        }
+        button:nth-child(4) {
+            background-image: url(../../assets/pinterest-img.png);
+        }
+        button:nth-child(5) {
+            background-image: url(../../assets/vimeo-img.png);
+        }
+    }
+    .sidebar-popular-articles {
+        margin-bottom: 50px;
+    }
+    .sidebar-destinations {
+        .destinations-item {
+            height: 120px;
+            margin-bottom: 40px;
+        }
+    }
+    .sidebar-newsletter {
+        p{
+            font-size: 14px;
+        }
+        .sidebar-newsletter-input {
+            position: relative;
+            margin-top: 20px;
+            input{
+                height: 46px;
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 40px;
+                outline: none;
+                border: 2px solid #f1f2f4;
+            }
+            button{
+                height: 100%;
+                width: 50px;
+                position: absolute;
+                right: 0px;
+                background: transparent;
+                background-image: url(../../assets/letter-img.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 40%;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    .sidebar{
+        .sidebar-signature {
+            width: 300px;
+            margin: 0px auto;
+        }
+        .sidebar-destinations {
+            .destinations-item {
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .sidebar{
+        .sidebar-logo{
+            width: 200px;
+        }
+        .sidebar-signature {
+            width: 200px;
+        }
+    }
+}

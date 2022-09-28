@@ -9,7 +9,7 @@ const DestinationItem = ({ country }: Props) => {
     return (
         <div
             className="destinations-item"
-            style={{ backgroundImage: `url(images/${country}.jpg)` }}
+            style={{ backgroundImage: `url(/images/${country}.jpg)` }}
         >
             <button className="white-btn">{country}</button>
         </div>

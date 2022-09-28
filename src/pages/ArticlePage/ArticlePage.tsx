@@ -1,8 +1,10 @@
 import articlesArray from 'components/ArticlesSection/articlesArray'
 import { Link, useParams } from 'react-router-dom'
+import StickyBox from 'react-sticky-box'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addLike, removeLike } from 'redux/likeReducer'
 import './ArticlePage.scss'
+import ArticlePageSidebar from './ArticlePageSidebar'
 import Comments from './Comments'
 import Recomendations from './Recomendations'
 
@@ -27,6 +29,8 @@ const ArticlePage = (props: Props) => {
     )
     const dispatch = useAppDispatch()
 
+    // console.log(filtredId[0].section)
+
     return (
         <div className="article-page">
             <div className="article-header-dark"></div>
@@ -44,11 +48,13 @@ const ArticlePage = (props: Props) => {
                                     {filtredId[0].country}
                                 </Link>
                             </button>
-                            <button>
-                                <Link to={`/${filtredId[0].section}`}>
-                                    {filtredId[0].section}
-                                </Link>
-                            </button>
+                            {filtredId[0].section.length > 0 ? (
+                                <button>
+                                    <Link to={`/${filtredId[0].section}`}>
+                                        {filtredId[0].section}
+                                    </Link>
+                                </button>
+                            ) : undefined}
                         </div>
                         <p>{filtredId[0].header}</p>
                         <div className="article-page-header-content-info">
@@ -335,7 +341,16 @@ const ArticlePage = (props: Props) => {
                         </div>
                         <Recomendations currentId={filtredId[0].id} />
                     </div>
-                    <div className="article-page-main-sidebar"></div>
+                    <StickyBox
+                        offsetTop={20}
+                        offsetBottom={20}
+                        className="sidebar-desktop"
+                    >
+                        <ArticlePageSidebar currentId={filtredId[0].id} />
+                    </StickyBox>
+                    <div className="sidebar-tablet">
+                        <ArticlePageSidebar currentId={filtredId[0].id} />
+                    </div>
                 </div>
             </div>
         </div>
