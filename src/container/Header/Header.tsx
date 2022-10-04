@@ -3,7 +3,7 @@ import './Header.scss'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
 import { Link, NavLink } from 'react-router-dom'
 import articlesArray from 'components/ArticlesSection/articlesArray'
-import { Menu, SubMenu, Item } from 'burger-menu'
+import { Menu, Item } from 'burger-menu'
 import 'burger-menu/lib/index.css'
 import { useState } from 'react'
 
