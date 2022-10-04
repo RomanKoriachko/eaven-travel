@@ -28,7 +28,13 @@ const LikedArticles = (props: Props) => {
             <PageHeader header="Liked Articles" />
             <div className="page-content">
                 <div className="container">
-                    <div className="articles-page-wrapper">
+                    <div
+                        className="articles-page-wrapper"
+                        style={{
+                            display: 'block',
+                            textAlign: 'center',
+                        }}
+                    >
                         {Object.keys(articlesLikeState).length === 0 ? (
                             <NoLikedArticles />
                         ) : (

@@ -10,3 +10,12 @@
         font-weight: 600;
     }
 }
+
+// Mobile
+@media(max-width: 576px) {
+    .page-header{
+        >p{
+            font-size: 40px;
+        }
+    }
+}
