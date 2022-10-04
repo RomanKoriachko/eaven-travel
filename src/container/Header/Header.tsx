@@ -5,7 +5,8 @@ import { Link, NavLink } from 'react-router-dom'
 import articlesArray from 'components/ArticlesSection/articlesArray'
 import { Menu, Item } from 'burger-menu'
 import 'burger-menu/lib/index.css'
-import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { setClose, toggleState } from 'redux/burgerMenuReducer'
 
 type Props = {}
 
@@ -23,7 +24,8 @@ const Header = (props: Props) => {
     )
     let filtredSlise = filtredBySection.slice(0, 4)
 
-    const [isOpen, setIsOpen] = useState(false)
+    const isOpen = useAppSelector((state) => state.isOpenState)
+    const dispatch = useAppDispatch()
 
     return (
         <>
@@ -475,7 +477,7 @@ const Header = (props: Props) => {
                             <div className="search"></div>
                             <div
                                 className="burger-menu"
-                                onClick={() => setIsOpen(!isOpen)}
+                                onClick={() => dispatch(toggleState())}
                             >
                                 <span></span>
                                 <span></span>
@@ -489,56 +491,56 @@ const Header = (props: Props) => {
                 className="burger-menu"
                 isOpen={isOpen}
                 selectedKey={'entry'}
-                onClose={() => setIsOpen(false)}
+                onClose={() => dispatch(setClose())}
                 width={'100%'}
             >
                 <Link to="/">
                     <Item
                         itemKey={'home'}
                         text={'Home'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/destinations">
                     <Item
                         itemKey={'destinations'}
                         text={'Destinations'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/guides">
                     <Item
                         itemKey={'guides'}
                         text={'Guides'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/features">
                     <Item
                         itemKey={'features'}
                         text={'Features'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/liked">
                     <Item
                         itemKey={'liked'}
                         text={'Liked'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/pages">
                     <Item
                         itemKey={'pages'}
                         text={'Pages'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
                 <Link to="/shop">
                     <Item
                         itemKey={'shop'}
                         text={'Shop'}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => dispatch(setClose())}
                     ></Item>
                 </Link>
             </Menu>

@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import burgerMenuReducer from "./burgerMenuReducer";
 import likeReducer from "./likeReducer";
 import loadMoreReducer from "./loadMoreReducer";
 
@@ -7,6 +8,7 @@ export const store = configureStore({
     reducer: {
         articlesLikeState: likeReducer,
         elementsCountState: loadMoreReducer,
+        isOpenState: burgerMenuReducer,
     }
 })
 
