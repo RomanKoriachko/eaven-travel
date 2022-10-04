@@ -27,6 +27,12 @@ const Header = (props: Props) => {
     const isOpen = useAppSelector((state) => state.isOpenState)
     const dispatch = useAppDispatch()
 
+    if (isOpen) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = 'visible'
+    }
+
     return (
         <>
             <header className="header">
