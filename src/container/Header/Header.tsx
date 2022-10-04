@@ -3,6 +3,9 @@ import './Header.scss'
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs'
 import { Link, NavLink } from 'react-router-dom'
 import articlesArray from 'components/ArticlesSection/articlesArray'
+import { Menu, SubMenu, Item } from 'burger-menu'
+import 'burger-menu/lib/index.css'
+import { useState } from 'react'
 
 type Props = {}
 
@@ -19,6 +22,8 @@ const Header = (props: Props) => {
         ({ section }: ArticleProps) => section === 'GUIDES'
     )
     let filtredSlise = filtredBySection.slice(0, 4)
+
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <>
@@ -468,8 +473,10 @@ const Header = (props: Props) => {
                         <div className="header-buttons row">
                             <div className="cart"></div>
                             <div className="search"></div>
-                            <div className="menu"></div>
-                            <div className="burger-menu">
+                            <div
+                                className="burger-menu"
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -478,6 +485,63 @@ const Header = (props: Props) => {
                     </div>
                 </div>
             </header>
+            <Menu
+                className="burger-menu"
+                isOpen={isOpen}
+                selectedKey={'entry'}
+                onClose={() => setIsOpen(false)}
+                width={'100%'}
+            >
+                <Link to="/">
+                    <Item
+                        itemKey={'home'}
+                        text={'Home'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/destinations">
+                    <Item
+                        itemKey={'destinations'}
+                        text={'Destinations'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/guides">
+                    <Item
+                        itemKey={'guides'}
+                        text={'Guides'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/features">
+                    <Item
+                        itemKey={'features'}
+                        text={'Features'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/liked">
+                    <Item
+                        itemKey={'liked'}
+                        text={'Liked'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/pages">
+                    <Item
+                        itemKey={'pages'}
+                        text={'Pages'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+                <Link to="/shop">
+                    <Item
+                        itemKey={'shop'}
+                        text={'Shop'}
+                        onClick={() => setIsOpen(false)}
+                    ></Item>
+                </Link>
+            </Menu>
         </>
     )
 }

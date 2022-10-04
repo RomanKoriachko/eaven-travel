@@ -334,6 +334,20 @@
     }
 }
 
+.menu-wrap {
+    .head{
+        padding: 30px;
+        background-image: url(../../assets/logo-black.png);
+        background-position: 4%;
+        background-repeat: no-repeat;
+        background-size: 20%;
+    }
+    .menu{
+        font-family: 'Heebo', sans-serif;
+        font-size: 21px;
+    }
+}
+
 
 .show-tab{
     display: flex;
@@ -362,13 +376,6 @@
         .header-menu{
             display: none;
         }
-    }
-}
-
-// mobile
-@media(max-width: 576px) {
-    .header-content{
-        grid-template-columns: 1fr 50px;
         .header-buttons{
             justify-content: flex-end;
             .cart{
@@ -408,5 +415,12 @@
                 }
             }
         }
+    }
+}
+
+// mobile
+@media(max-width: 576px) {
+    .header-content{
+        grid-template-columns: 1fr 50px;
     }
 }
