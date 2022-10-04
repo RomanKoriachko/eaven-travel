@@ -1,6 +1,7 @@
 .article-item {
     text-align: left;
     width: 350px;
+    margin-bottom: 20px;
     &:hover .article-img img{
         transform: scale(103%);
     }
@@ -112,7 +113,14 @@
 // Laptop
 @media(max-width: 1200px) {
     .article-item {
-        width: 300px;
+        width: 350px;
+    }
+}
+
+// Tablet
+@media(max-width: 992px) {
+    .article-item{
+        width: 290px;
     }
 }
 

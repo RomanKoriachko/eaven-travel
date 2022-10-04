@@ -18,11 +18,20 @@ type ArticleProps = {
 }
 
 const ArticlesSection = (props: Props) => {
-    const elementCount = useAppSelector(
-        (state) => state.elementsCountState.count
+    const firstColumn = useAppSelector(
+        (state) => state.elementsCountState.firstColumn
     )
-    let wrapperHeight = useAppSelector(
-        (state) => state.elementsCountState.height
+    const secondColumn = useAppSelector(
+        (state) => state.elementsCountState.secondColumn
+    )
+    const thirdColumn = useAppSelector(
+        (state) => state.elementsCountState.thirdColumn
+    )
+    const firstTabletColumn = useAppSelector(
+        (state) => state.elementsCountState.firstTabletColumn
+    )
+    const secondTabletColumn = useAppSelector(
+        (state) => state.elementsCountState.secondTabletColumn
     )
     const dispatch = useAppDispatch()
 
@@ -30,85 +39,176 @@ const ArticlesSection = (props: Props) => {
         <section className="articles">
             <div className="container">
                 <div className="articles-header">Latest Articles</div>
-                <div
-                    className="articles-wrapper"
-                    style={{
-                        height: `${wrapperHeight}px`,
-                    }}
-                >
-                    {articlesArray
-                        .filter((element) => element.id <= elementCount)
-                        .map(
-                            ({
-                                image,
-                                date,
-                                country,
-                                dash,
-                                section,
-                                header,
-                                text,
-                                id,
-                            }: ArticleProps) => (
-                                <div className="article-item" key={id}>
-                                    <ArticleItem
-                                        image={image}
-                                        date={date}
-                                        country={country}
-                                        dash={dash}
-                                        section={section}
-                                        header={header}
-                                        text={text}
-                                        id={id}
-                                    />
-                                </div>
+                <div className="articles-wrapper">
+                    <div className="articles-desktop-wrapper">
+                        {articlesArray
+                            .filter((element) => element.id <= firstColumn)
+                            .map(
+                                ({
+                                    image,
+                                    date,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                    text,
+                                    id,
+                                }: ArticleProps) => (
+                                    <div className="article-item" key={id}>
+                                        <ArticleItem
+                                            image={image}
+                                            date={date}
+                                            country={country}
+                                            dash={dash}
+                                            section={section}
+                                            header={header}
+                                            text={text}
+                                            id={id}
+                                        />
+                                    </div>
+                                )
+                            )}
+                    </div>
+                    <div className="articles-desktop-wrapper">
+                        {articlesArray
+                            .filter(
+                                (element) =>
+                                    element.id > firstColumn &&
+                                    element.id <= secondColumn
                             )
-                        )}
+                            .map(
+                                ({
+                                    image,
+                                    date,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                    text,
+                                    id,
+                                }: ArticleProps) => (
+                                    <div className="article-item" key={id}>
+                                        <ArticleItem
+                                            image={image}
+                                            date={date}
+                                            country={country}
+                                            dash={dash}
+                                            section={section}
+                                            header={header}
+                                            text={text}
+                                            id={id}
+                                        />
+                                    </div>
+                                )
+                            )}
+                    </div>
+                    <div className="articles-desktop-wrapper">
+                        {articlesArray
+                            .filter(
+                                (element) =>
+                                    element.id > secondColumn &&
+                                    element.id <= thirdColumn
+                            )
+                            .map(
+                                ({
+                                    image,
+                                    date,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                    text,
+                                    id,
+                                }: ArticleProps) => (
+                                    <div className="article-item" key={id}>
+                                        <ArticleItem
+                                            image={image}
+                                            date={date}
+                                            country={country}
+                                            dash={dash}
+                                            section={section}
+                                            header={header}
+                                            text={text}
+                                            id={id}
+                                        />
+                                    </div>
+                                )
+                            )}
+                    </div>
+                    <div className="articles-tablet-wrapper">
+                        {articlesArray
+                            .filter(
+                                (element) => element.id <= firstTabletColumn
+                            )
+                            .map(
+                                ({
+                                    image,
+                                    date,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                    text,
+                                    id,
+                                }: ArticleProps) => (
+                                    <div className="article-item" key={id}>
+                                        <ArticleItem
+                                            image={image}
+                                            date={date}
+                                            country={country}
+                                            dash={dash}
+                                            section={section}
+                                            header={header}
+                                            text={text}
+                                            id={id}
+                                        />
+                                    </div>
+                                )
+                            )}
+                    </div>
+                    <div className="articles-tablet-wrapper">
+                        {articlesArray
+                            .filter(
+                                (element) =>
+                                    element.id > firstTabletColumn &&
+                                    element.id <= secondTabletColumn
+                            )
+                            .map(
+                                ({
+                                    image,
+                                    date,
+                                    country,
+                                    dash,
+                                    section,
+                                    header,
+                                    text,
+                                    id,
+                                }: ArticleProps) => (
+                                    <div className="article-item" key={id}>
+                                        <ArticleItem
+                                            image={image}
+                                            date={date}
+                                            country={country}
+                                            dash={dash}
+                                            section={section}
+                                            header={header}
+                                            text={text}
+                                            id={id}
+                                        />
+                                    </div>
+                                )
+                            )}
+                    </div>
                 </div>
-                {document.documentElement.clientWidth <= 992 ? (
-                    <button
-                        className="articles-btn"
-                        onClick={() =>
-                            dispatch(
-                                onLoadMoreClick({
-                                    newCount: 10,
-                                    newHeight: 2750,
-                                })
-                            )
-                        }
-                        disabled={elementCount > 15}
-                    >
-                        Load more
-                    </button>
-                ) : (
-                    <button
-                        className="articles-btn"
-                        onClick={() =>
-                            dispatch(
-                                onLoadMoreClick({
-                                    newCount: 10,
-                                    newHeight: 1300,
-                                })
-                            )
-                        }
-                        disabled={elementCount > 15}
-                    >
-                        Load more
-                    </button>
-                )}
-                {/* <button
-                    className="articles-btn"
-                    onClick={() =>
-                        dispatch(
-                            onLoadMoreClick({
-                                newCount: 10,
-                                newHeight: 1300,
-                            })
-                        )
-                    }
-                    disabled={elementCount > 15}
+                <button
+                    className={`articles-btn ${
+                        firstColumn > 3 ? 'active-btn' : ''
+                    }`}
+                    onClick={() => dispatch(onLoadMoreClick())}
+                    disabled={firstColumn > 3}
                 >
                     Load more
-                </button> */}
+                </button>
             </div>
         </section>
     )
