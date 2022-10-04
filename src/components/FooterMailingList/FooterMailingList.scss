@@ -5,13 +5,13 @@
     background-size: cover;
     color: white;
     position: fixed;
-    height: 280px;
+    height: 500px;
     width: 100%;
     bottom: 0;
     z-index: -1;
     .mailing-wrapper {
         text-align: center;
-        padding: 30px 0;
+        padding: 133px 0;
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1.5fr 1fr 1fr;
@@ -56,7 +56,7 @@
     }
 }
 .footer-mailing-list-bg {
-        margin-bottom: 280px;
+        margin-bottom: 500px;
         z-index: -10;
 }
 
@@ -83,6 +83,7 @@
         .mailing-wrapper {
             grid-template-rows: 1fr 1.5fr 1.5fr 1fr;
             justify-items: normal;
+            padding: 17px 0;
             .mailing-header{
                 font-size: 24px;
             }

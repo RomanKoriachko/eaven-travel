@@ -10,11 +10,11 @@
     }
     .articles-wrapper {
         padding: 40px 0px;
+        height: 2510px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
-        // height: 3820px;
         gap: 30px 60px;
         a{
             text-decoration: none;
@@ -54,7 +54,7 @@
 @media(max-width: 992px) {
     .articles{
         .articles-wrapper{
-            height: 5664px;
+            height: 3200px;
             gap: 30px 15px;
         }
     }
@@ -63,7 +63,7 @@
 @media(max-width: 635px) {
     .articles{
         .articles-wrapper{
-            height: 5400px;
+            height: 3045px;
         }
     }
 }  

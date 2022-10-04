@@ -21,7 +21,9 @@ const ArticlesSection = (props: Props) => {
     const elementCount = useAppSelector(
         (state) => state.elementsCountState.count
     )
-    let wrapperHeit = useAppSelector((state) => state.elementsCountState.height)
+    let wrapperHeight = useAppSelector(
+        (state) => state.elementsCountState.height
+    )
     const dispatch = useAppDispatch()
 
     return (
@@ -31,7 +33,7 @@ const ArticlesSection = (props: Props) => {
                 <div
                     className="articles-wrapper"
                     style={{
-                        height: `${wrapperHeit}px`,
+                        height: `${wrapperHeight}px`,
                     }}
                 >
                     {articlesArray
@@ -62,17 +64,51 @@ const ArticlesSection = (props: Props) => {
                             )
                         )}
                 </div>
-                <button
+                {document.documentElement.clientWidth <= 992 ? (
+                    <button
+                        className="articles-btn"
+                        onClick={() =>
+                            dispatch(
+                                onLoadMoreClick({
+                                    newCount: 10,
+                                    newHeight: 2750,
+                                })
+                            )
+                        }
+                        disabled={elementCount > 15}
+                    >
+                        Load more
+                    </button>
+                ) : (
+                    <button
+                        className="articles-btn"
+                        onClick={() =>
+                            dispatch(
+                                onLoadMoreClick({
+                                    newCount: 10,
+                                    newHeight: 1300,
+                                })
+                            )
+                        }
+                        disabled={elementCount > 15}
+                    >
+                        Load more
+                    </button>
+                )}
+                {/* <button
                     className="articles-btn"
                     onClick={() =>
                         dispatch(
-                            onLoadMoreClick({ newCount: 10, newHeight: 1300 })
+                            onLoadMoreClick({
+                                newCount: 10,
+                                newHeight: 1300,
+                            })
                         )
                     }
                     disabled={elementCount > 15}
                 >
                     Load more
-                </button>
+                </button> */}
             </div>
         </section>
     )
