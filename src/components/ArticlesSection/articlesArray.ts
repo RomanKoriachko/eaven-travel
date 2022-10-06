@@ -5,8 +5,8 @@ export type CommentsProp = {
     isAdmin: boolean
     date: string
     text: string
-    reply: ReplyProp[]
-    email?: string
+    reply: CommentsProp[]
+    email: string
 }
 
 export type ReplyProp = {
@@ -15,7 +15,8 @@ export type ReplyProp = {
     isAdmin: boolean
     date: string
     text: string
-    email?: string
+    reply: CommentsProp[]
+    email: string
 }
 
 export type Articles = {
@@ -65,6 +66,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.",
                 reply: [],
+                email:"",
                 
             },
             {
@@ -80,8 +82,11 @@ const articlesArray: Articles[] = [
                         isAdmin: true,
                         date: "October 13, 2019 at 1:51 pm",
                         text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
             {
                 avatar: "/images/user3-img.jpeg",
@@ -90,7 +95,9 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:47 pm",
                 text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
                 reply: [],
+                email:"",
             },
+            
         ],
     },
     {
@@ -122,8 +129,11 @@ const articlesArray: Articles[] = [
                         isAdmin: true,
                         date: "October 13, 2019 at 1:51 pm",
                         text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
             {
                 avatar: "/images/user1-img.jpeg",
@@ -132,6 +142,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
                 reply: [],
+                email:"",
             },
             {
                 avatar: "/images/user1-img.jpeg",
@@ -140,6 +151,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:47 pm",
                 text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -166,6 +178,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:51 pm",
                 text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
                 reply:[],
+                email:"",
             },
         ],
     },
@@ -198,8 +211,11 @@ const articlesArray: Articles[] = [
                         isAdmin: true,
                         date: "October 13, 2019 at 1:51 pm",
                         text: "Thank you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero faucibus, finibus justo vitae, ultrices lectus.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
             {
                 avatar: "/images/user1-img.jpeg",
@@ -208,6 +224,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -233,6 +250,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -259,6 +277,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:51 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply:[],
+                email:"",
             },
         ],
     },
@@ -325,8 +344,11 @@ const articlesArray: Articles[] = [
                         isAdmin: false,
                         date: "October 13, 2019 at 1:47 pm",
                         text: "Maecenas auctor, elit nec iaculis ullamcorper, dolor felis euismod est, ut efficitur enim ipsum ac est. Sed quam purus, euismod vitae molestie id, ultrices eu erat. Pellentesque elementum libero ut nisl gravida faucibus.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
         ],
     },
@@ -354,6 +376,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -380,6 +403,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Quisque pharetra, lacus quis venenatis molestie, nibh tortor aliquam dui, id venenatis lectus metus id ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed enim vitae magna pretium tincidunt eget vel massa.",
                 reply: [],
+                email:"",
             },
             {
                 avatar: "/images/user2-img.jpeg",
@@ -388,6 +412,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -414,6 +439,7 @@ const articlesArray: Articles[] = [
                 date: "October 21, 1899 at 2:35 pm",
                 text: "If You Find Yourself In A Hole, The First Thing To Do Is Stop Diggin",
                 reply: [],
+                email:"",
             },
             {
                 avatar: "/images/user3-img.jpeg",
@@ -422,6 +448,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -463,6 +490,7 @@ const articlesArray: Articles[] = [
                 date: "June 6, 1899 at 3:21 pm",
                 text: "You know, all that ever mattered to me was loyalty? It was all I knew. It was all I ever believed in",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -495,8 +523,11 @@ const articlesArray: Articles[] = [
                         isAdmin: false,
                         date: "October 13, 2019 at 1:46 pm",
                         text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
         ],
     },
@@ -524,6 +555,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Aenean in fringilla dui, nec ullamcorper leo. Curabitur lacus nulla, ultricies sit amet efficitur quis, congue lobortis magna. Proin hendrerit dolor sit amet erat convallis lobortis. Phasellus rhoncus eros nec ultricies luctus. Morbi suscipit pretium mi, eu faucibus odio fermentum sit amet.",
                 reply: [],
+                email:"",
             },
         ],
     },
@@ -550,6 +582,7 @@ const articlesArray: Articles[] = [
                 date: "October 13, 2019 at 1:46 pm",
                 text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dolorum quisquam possimus itaque eligendi nam, distinctio nisi? Consequatur corrupti assumenda, recusandae ab voluptatum unde enim ut quos est magnam debitis.",
                 reply: [],
+                email:"",
             },
             {
                 avatar: "/images/user1-img.jpeg",
@@ -564,8 +597,11 @@ const articlesArray: Articles[] = [
                         isAdmin: false,
                         date: "September 26, 1890 at 6:23 pm",
                         text: "We can’t fight nature. Can’t fight change. Can’t fight gravity.",
+                        reply:[],
+                        email:"",
                     },
                 ],
+                email:"",
             },
         ],
     },

@@ -21,13 +21,7 @@ const Comments = ({ id, commentsId }: Props) => {
         minute: 'numeric',
     })
 
-    let replyArr: ReplyProp[] = []
     const commentsArr = articlesArray[id - 1].comments
-    if (commentsArr.length > 0) {
-        replyArr = articlesArray[id - 1].comments[commentsId].reply
-    } else {
-        replyArr = []
-    }
 
     const [comments, setComments] = useState<CommentsProp[]>(commentsArr)
     const [newComment, setNewComment] = useState<CommentsProp>({
@@ -37,15 +31,6 @@ const Comments = ({ id, commentsId }: Props) => {
         date: timeNow.toString(),
         text: '',
         reply: [],
-        email: '',
-    })
-    const [replies, setReplies] = useState<ReplyProp[]>(replyArr)
-    const [newReply, setNewReply] = useState<ReplyProp>({
-        avatar: '/images/unregistered-user.png',
-        name: '',
-        isAdmin: false,
-        date: timeNow.toString(),
-        text: '',
         email: '',
     })
 
@@ -97,11 +82,26 @@ const Comments = ({ id, commentsId }: Props) => {
 
     // Replies
 
+    const [replies, setReplies] = useState<CommentsProp[]>(comments)
+    const [newReply, setNewReply] = useState<CommentsProp>({
+        avatar: '/images/unregistered-user.png',
+        name: '',
+        isAdmin: false,
+        date: timeNow.toString(),
+        text: '',
+        email: '',
+        reply: [],
+    })
+    const [replyId, setReplyId] = useState<number>(0)
+
     const onReplyClick = (i: number) => {
         let reply = document.querySelectorAll('.reply-form')
         if (reply[i].classList.contains('hide')) {
             reply[i].classList.add('show')
             reply[i].classList.remove('hide')
+            setReplyId(() => {
+                return i
+            })
         } else {
             reply[i].classList.add('hide')
             reply[i].classList.remove('show')
@@ -111,7 +111,7 @@ const Comments = ({ id, commentsId }: Props) => {
     const handleChangeTextInReply = (
         e: React.ChangeEvent<HTMLTextAreaElement>
     ) => {
-        setNewReply((prevState: ReplyProp) => ({
+        setNewReply((prevState: CommentsProp) => ({
             ...prevState,
             text: e.target.value,
         }))
@@ -120,7 +120,7 @@ const Comments = ({ id, commentsId }: Props) => {
     const handleChangeNameInReply = (
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setNewReply((prevState: ReplyProp) => ({
+        setNewReply((prevState: CommentsProp) => ({
             ...prevState,
             name: e.target.value,
         }))
@@ -129,7 +129,7 @@ const Comments = ({ id, commentsId }: Props) => {
     const handleChangeEmailInReply = (
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setNewReply((prevState: ReplyProp) => ({
+        setNewReply((prevState: CommentsProp) => ({
             ...prevState,
             email: e.target.value,
         }))
@@ -137,8 +137,10 @@ const Comments = ({ id, commentsId }: Props) => {
     const hideReplyForm = () => {
         let reply = document.querySelectorAll('.reply-form')
         for (let i = 0; i <= reply.length; i++) {
-            reply[i].classList.add('hide')
-            reply[i].classList.remove('show')
+            if (reply[i]) {
+                reply[i].classList.add('hide')
+                reply[i].classList.remove('show')
+            }
         }
     }
     const onSendReply = (e: React.FormEvent<HTMLFormElement>) => {
@@ -149,9 +151,18 @@ const Comments = ({ id, commentsId }: Props) => {
             newReply.email === ''
         ) {
             alert('All fields are required')
+            console.log(replies)
         } else {
-            setReplies((prevState: ReplyProp[]) => {
-                return [...prevState, newReply]
+            setReplies((prevState: CommentsProp[]) => {
+                let lenth = comments.length
+                let reply = comments[replyId].reply
+                reply.splice(0, 0, newReply)
+                prevState.splice(0, 0, reply[0])
+                if (comments.length > lenth) {
+                    return prevState.splice(0, 1)
+                } else {
+                    return prevState
+                }
             })
             setNewReply({
                 avatar: '/images/unregistered-user.png',
@@ -160,13 +171,21 @@ const Comments = ({ id, commentsId }: Props) => {
                 date: timeNow,
                 text: '',
                 email: '',
+                reply: [],
             })
             hideReplyForm()
         }
     }
 
+    // Set comments length
+
+    let commentsLength = comments.length
+    for (let i = 0; i < comments.length; i++) {
+        commentsLength += comments[i].reply.length
+    }
+
     let lastLetter: string
-    if (comments.length + replies.length === 1) {
+    if (commentsLength === 1) {
         lastLetter = ''
     } else {
         lastLetter = 's'
@@ -175,7 +194,7 @@ const Comments = ({ id, commentsId }: Props) => {
     return (
         <>
             <div className="comments-logo">
-                {comments.length + replies.length} comment{lastLetter}
+                {commentsLength} comment{lastLetter}
             </div>
             <div className="comments-content">
                 {comments.map((comment: CommentsProp, i: number) => (
@@ -210,6 +229,7 @@ const Comments = ({ id, commentsId }: Props) => {
                             <form
                                 className="reply-form hide"
                                 onSubmit={onSendReply}
+                                key={i}
                             >
                                 <div className="form-header">
                                     Reply to {comment.name}
@@ -266,7 +286,6 @@ const Comments = ({ id, commentsId }: Props) => {
                                                         </div>
                                                     ) : undefined}
                                                 </div>
-
                                                 <div className="comment-text-date">
                                                     {reply.date}
                                                 </div>
