@@ -191,6 +191,8 @@ const Comments = ({ id, commentsId }: Props) => {
         lastLetter = 's'
     }
 
+    console.log(comments)
+
     return (
         <>
             <div className="comments-logo">
