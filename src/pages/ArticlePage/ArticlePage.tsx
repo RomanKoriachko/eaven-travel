@@ -7,6 +7,7 @@ import './ArticlePage.scss'
 import ArticlePageSidebar from './ArticlePageSidebar'
 import Comments from './Comments'
 import Recomendations from './Recomendations'
+import * as Scroll from 'react-scroll'
 
 type Props = {}
 
@@ -28,6 +29,11 @@ const ArticlePage = (props: Props) => {
         (state) => state.articlesLikeState[filtredId[0].id]
     )
     const dispatch = useAppDispatch()
+
+    //
+
+    let NavLink = Scroll.Link
+    let Element = Scroll.Element
 
     return (
         <div className="article-page">
@@ -77,30 +83,46 @@ const ArticlePage = (props: Props) => {
                     <div className="article-page-main-center">
                         <div className="article-page-main-center-text">
                             <div className="nav-buttons">
-                                <div className="nav-button-item">
-                                    <button className="nav-button-like"></button>
-                                    <div className="nav-like-button-description">
-                                        Things to do
+                                <NavLink to="like" smooth={true} offset={-100}>
+                                    <div className="nav-button-item nav-item-1">
+                                        <button className="nav-button-like"></button>
+                                        <div className="nav-like-button-description">
+                                            Things to do
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="nav-button-item">
-                                    <button className="nav-button-food"></button>
-                                    <div className="nav-food-button-description">
-                                        Where to eat
+                                </NavLink>
+                                <NavLink to="food" smooth={true} offset={-100}>
+                                    <div className="nav-button-item nav-item-2">
+                                        <button className="nav-button-food"></button>
+                                        <div className="nav-food-button-description">
+                                            Where to eat
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="nav-button-item">
-                                    <button className="nav-button-hotels"></button>
-                                    <div className="nav-hotels-button-description">
-                                        Comfortable Hotels
+                                </NavLink>
+                                <NavLink
+                                    to="hotels"
+                                    smooth={true}
+                                    offset={-100}
+                                >
+                                    <div className="nav-button-item nav-item-3">
+                                        <button className="nav-button-hotels"></button>
+                                        <div className="nav-hotels-button-description">
+                                            Comfortable Hotels
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="nav-button-item">
-                                    <button className="nav-button-transportation"></button>
-                                    <div className="nav-transportation-button-description">
-                                        Transportation
+                                </NavLink>
+                                <NavLink
+                                    to="transportation"
+                                    smooth={true}
+                                    offset={-100}
+                                >
+                                    <div className="nav-button-item nav-item-4">
+                                        <button className="nav-button-transportation"></button>
+                                        <div className="nav-transportation-button-description">
+                                            Transportation
+                                        </div>
                                     </div>
-                                </div>
+                                </NavLink>
                             </div>
                             <div className="margin-top">
                                 <p>{filtredId[0].articleText}</p>
@@ -109,10 +131,12 @@ const ArticlePage = (props: Props) => {
                                     src={filtredId[0].articleImg1}
                                     alt=""
                                 />
-                                <p className="article-page-main-header">
-                                    Things to do in{' '}
-                                    <span>{filtredId[0].country}</span>
-                                </p>
+                                <Element name="like">
+                                    <p className="article-page-main-header">
+                                        Things to do in{' '}
+                                        <span>{filtredId[0].country}</span>
+                                    </p>
+                                </Element>
                                 <p>
                                     The most difficult thing is the decision to
                                     act, the rest is merely tenacity.{' '}
@@ -183,9 +207,11 @@ const ArticlePage = (props: Props) => {
                                         <p>Paulo Coelho</p>
                                     </div>
                                 </div>
-                                <p className="article-page-main-header">
-                                    Where to eat
-                                </p>
+                                <Element name="food">
+                                    <p className="article-page-main-header">
+                                        Where to eat
+                                    </p>
+                                </Element>
                                 <p>
                                     Vel aliquet diam. Suspendisse quis sodales
                                     risus. Quisque pharetra, lacus quis
@@ -224,9 +250,11 @@ const ArticlePage = (props: Props) => {
                                         />
                                     </div>
                                 </div>
-                                <p className="article-page-main-header">
-                                    Comfortable Hotels
-                                </p>
+                                <Element name="hotels">
+                                    <p className="article-page-main-header">
+                                        Comfortable Hotels
+                                    </p>
+                                </Element>
                                 <p>
                                     Vestibulum ante ipsum primis in faucibus
                                     orci luctus et ultrices posuere cubilia
@@ -263,9 +291,11 @@ const ArticlePage = (props: Props) => {
                                         vel purus.
                                     </li>
                                 </ol>
-                                <p className="article-page-main-header">
-                                    How to get around
-                                </p>
+                                <Element name="transportation">
+                                    <p className="article-page-main-header">
+                                        How to get around
+                                    </p>
+                                </Element>
                                 <p>
                                     <span className="bold-text">
                                         Proin in est tincidunt, venenatis ligula
@@ -327,7 +357,9 @@ const ArticlePage = (props: Props) => {
                                     </li>
                                 </ul>
                             </div>
-                            <button className="article-page-main-comment-btn"></button>
+                            <NavLink to="comments" smooth={true} offset={-50}>
+                                <button className="article-page-main-comment-btn"></button>
+                            </NavLink>
                             <button
                                 className="like"
                                 onClick={() =>
@@ -372,12 +404,14 @@ const ArticlePage = (props: Props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="article-page-main-comments">
-                            <Comments
-                                id={filtredId[0].id}
-                                commentsId={commentsId}
-                            />
-                        </div>
+                        <Element name="comments">
+                            <div className="article-page-main-comments">
+                                <Comments
+                                    id={filtredId[0].id}
+                                    commentsId={commentsId}
+                                />
+                            </div>
+                        </Element>
                         <Recomendations currentId={filtredId[0].id} />
                     </div>
                     <StickyBox

@@ -19,18 +19,13 @@ type ArticleProps = {
 }
 
 const ArticlePageSidebar = ({ currentId }: Props) => {
-    let randomArr: ArticleProps[] = []
     let articlesArrayCopy: ArticleProps[] = []
     let newArr: ArticleProps[] = []
 
     articlesArrayCopy = [...articlesArray]
     articlesArrayCopy.splice(currentId - 1, 1)
 
-    randomArr = articlesArrayCopy.sort(function () {
-        return 0.5 - Math.random()
-    })
-
-    randomArr.map((arrayItem: ArticleProps, i: number) => {
+    articlesArrayCopy.map((arrayItem: ArticleProps, i: number) => {
         if (i < 3) {
             return newArr.splice(0, 0, arrayItem)
         } else {
