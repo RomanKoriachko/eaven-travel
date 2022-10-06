@@ -99,6 +99,95 @@ margin-top: -101px;
         .article-page-main-center {
             .article-page-main-center-text {
                 position: relative;
+                .nav-buttons {
+                    position: sticky;
+                    top: 400px;
+                    left: 0px;
+                    display: grid;
+                    grid-template-columns: 45px;
+                    grid-template-rows: repeat(4, 1fr);
+                    margin-left: -95px;
+                    .nav-button-item{
+                        background-color: black;
+                        color: white;
+                        height: 45px;
+                        
+                        button{
+                            height: 45px;
+                            width: 45px;
+                            background-color: black;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 50%;
+                            cursor: pointer;
+                        }
+                        .nav-button-like{
+                            background-image: url(../../assets/like-nav.png);
+                        }
+                        .nav-button-food{
+                            background-image: url(../../assets/food-nav.png);
+                            &:hover .nav-food-button-description{
+                                display: block;
+                            }
+                        }
+                        .nav-button-hotels{
+                            background-image: url(../../assets/bed-nav.png);
+                            &:hover .nav-hotels-button-description{
+                                display: block;
+                            }
+                        }
+                        .nav-button-transportation{
+                            background-image: url(../../assets/car-nav.png);
+                            &:hover .nav-transportation-button-description{
+                                display: block;
+                            }
+                        }
+                        >div{
+                            display: none;
+                            position: absolute;
+                            background-color: black;
+                            left: 45px;
+                            height: 45px;
+                            line-height: 45px;
+                            padding: 0 10px;
+                        }
+                        .nav-like-button-description {
+                            top: 0px;
+                        }
+                        .nav-food-button-description {
+                            top:45px;
+                        }
+                        .nav-hotels-button-description {
+                            top:90px;
+                        }
+                        .nav-transportation-button-description {
+                            top: 135px;
+                        }
+                    }
+                    .nav-button-item:nth-child(1) {
+                        &:hover .nav-like-button-description{
+                            display: block;
+                        }
+                    }
+                    .nav-button-item:nth-child(2) {
+                        &:hover .nav-food-button-description{
+                            display: block;
+                        }
+                    }
+                    .nav-button-item:nth-child(3) {
+                        &:hover .nav-hotels-button-description{
+                            display: block;
+                        }
+                    }
+                    .nav-button-item:nth-child(4) {
+                        &:hover .nav-transportation-button-description{
+                            display: block;
+                        }
+                    }
+                }
+                .margin-top {
+                    margin-top: -180px;
+                }
             }
             .article-page-main-img {
                 width: 100%;
