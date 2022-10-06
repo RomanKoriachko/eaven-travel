@@ -7,6 +7,7 @@ import { Menu, Item } from 'burger-menu'
 import 'burger-menu/lib/index.css'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { setClose, toggleState } from 'redux/burgerMenuReducer'
+import { useEffect, useState } from 'react'
 
 type Props = {}
 
@@ -33,9 +34,53 @@ const Header = (props: Props) => {
         document.body.style.overflow = 'visible'
     }
 
+    // hidden header
+
+    function useScrollDirection() {
+        const [scrollDirection, setScrollDirection] = useState<string>('null')
+
+        useEffect(() => {
+            let lastScrollY = window.pageYOffset
+
+            const updateScrollDirection = () => {
+                const scrollY = window.pageYOffset
+                const direction = scrollY > lastScrollY ? 'down' : 'up'
+                if (
+                    direction !== scrollDirection &&
+                    (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+                ) {
+                    setScrollDirection(() => {
+                        return direction
+                    })
+                }
+                lastScrollY = scrollY > 0 ? scrollY : 0
+            }
+            window.addEventListener('scroll', updateScrollDirection)
+            return () => {
+                window.removeEventListener('scroll', updateScrollDirection)
+            }
+        }, [scrollDirection])
+
+        return scrollDirection
+    }
+
+    const scrollDirection = useScrollDirection()
+
+    const [scroll, setScroll] = useState<number>(0)
+
+    window.addEventListener('scroll', function () {
+        setScroll(() => {
+            return window.pageYOffset
+        })
+    })
+
     return (
         <>
-            <header className="header">
+            <header
+                className={`header ${
+                    scrollDirection === 'down' ? 'top-hide' : 'top-show'
+                } ${scroll > 200 ? 'color' : 'transparent'}`}
+            >
                 <div className="container">
                     <div className="header-content">
                         <div className="logo">

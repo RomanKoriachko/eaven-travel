@@ -16,11 +16,9 @@
 .header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 50;
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 0px;
-    left: 50%;
-    transform: translate(-50%, 0);
     .container{
         position: relative;
     }
@@ -346,6 +344,18 @@
         font-family: 'Heebo', sans-serif;
         font-size: 21px;
     }
+}
+
+.top-hide {
+    transform: translateY(-100%);
+    transition: .3s all;
+}
+.top-show{
+    transform: translateY(0);
+    transition: .3s all;
+}
+.color{
+    background-color: #886ac3;
 }
 
 

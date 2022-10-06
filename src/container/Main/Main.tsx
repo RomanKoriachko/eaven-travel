@@ -5,6 +5,7 @@ import WhereINowSection from 'components/WhereINowSection/WhereINowSection'
 import StoriesSection from 'components/StoriesSection/StoriesSection'
 import ArticlesSection from 'components/ArticlesSection/ArticlesSection'
 import SimpleSlider from 'components/SimpleSlider/SimpleSlider'
+import Header from 'container/Header/Header'
 
 type Props = {}
 
