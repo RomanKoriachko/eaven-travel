@@ -8,10 +8,9 @@ import './Comments.scss'
 
 type Props = {
     id: number
-    commentsId: number
 }
 
-const Comments = ({ id, commentsId }: Props) => {
+const Comments = ({ id }: Props) => {
     let time = new Date()
     let timeNow = time.toLocaleString('en-US', {
         month: 'long',
@@ -191,7 +190,8 @@ const Comments = ({ id, commentsId }: Props) => {
         lastLetter = 's'
     }
 
-    console.log(comments)
+    // console.log(id)
+    // console.log(comments)
 
     return (
         <>

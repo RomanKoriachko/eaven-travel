@@ -142,6 +142,12 @@ margin-top: -101px;
                                 display: block;
                             }
                         }
+                        .nav-button-comments{
+                            background-image: url(../../assets/comments-nav.png);
+                            &:hover .nav-transportation-button-description{
+                                display: block;
+                            }
+                        }
                         >div{
                             display: none;
                             position: absolute;
@@ -162,6 +168,9 @@ margin-top: -101px;
                         }
                         .nav-transportation-button-description {
                             top: 135px;
+                        }
+                        .nav-comments-button-description {
+                            top: 180px;
                         }
                     }
                     .nav-item-1 {
@@ -184,9 +193,14 @@ margin-top: -101px;
                             display: block;
                         }
                     }
+                    .nav-item-5 {
+                        &:hover .nav-comments-button-description{
+                            display: block;
+                        }
+                    }
                 }
                 .margin-top {
-                    margin-top: -180px;
+                    margin-top: -225px;
                 }
             }
             .article-page-main-img {

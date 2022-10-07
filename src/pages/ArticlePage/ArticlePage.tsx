@@ -18,13 +18,6 @@ const ArticlePage = (props: Props) => {
         (element) => element.id === Number(articleId)
     )
 
-    let commentsId: number = 0
-    for (let i = 0; i < filtredId[0].comments.length; i++) {
-        if (filtredId[0].comments[i].reply.length > 0) {
-            commentsId = i
-        }
-    }
-
     const isLiked = useAppSelector(
         (state) => state.articlesLikeState[filtredId[0].id]
     )
@@ -120,6 +113,18 @@ const ArticlePage = (props: Props) => {
                                         <button className="nav-button-transportation"></button>
                                         <div className="nav-transportation-button-description">
                                             Transportation
+                                        </div>
+                                    </div>
+                                </NavLink>
+                                <NavLink
+                                    to="comments"
+                                    smooth={true}
+                                    offset={-100}
+                                >
+                                    <div className="nav-button-item nav-item-5">
+                                        <button className="nav-button-comments"></button>
+                                        <div className="nav-comments-button-description">
+                                            Comments
                                         </div>
                                     </div>
                                 </NavLink>
@@ -406,10 +411,7 @@ const ArticlePage = (props: Props) => {
                         </div>
                         <Element name="comments">
                             <div className="article-page-main-comments">
-                                <Comments
-                                    id={filtredId[0].id}
-                                    commentsId={commentsId}
-                                />
+                                <Comments id={filtredId[0].id} />
                             </div>
                         </Element>
                         <Recomendations currentId={filtredId[0].id} />
