@@ -69,6 +69,7 @@ const Comments = ({ id }: Props) => {
     }
 
     // Comments
+
     const handleChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setNewComment((prevState: CommentsProp) => ({
             ...prevState,
@@ -116,7 +117,6 @@ const Comments = ({ id }: Props) => {
 
     // Replies
 
-    const [replies, setReplies] = useState<CommentsProp[]>(comments)
     const [newReply, setNewReply] = useState<CommentsProp>({
         avatar: '/images/unregistered-user.png',
         name: '',
@@ -186,12 +186,11 @@ const Comments = ({ id }: Props) => {
         ) {
             alert('All fields are required')
         } else {
-            setReplies((prevState: CommentsProp[]) => {
-                let lenth = comments.length
+            setComments((prevState: CommentsProp[]) => {
+                let length = comments.length
                 let reply = comments[replyId].reply
                 reply.splice(0, 0, newReply)
-                prevState.splice(0, 0, reply[0])
-                if (comments.length > lenth) {
+                if (comments.length > length) {
                     return prevState.splice(0, 1)
                 } else {
                     return prevState
