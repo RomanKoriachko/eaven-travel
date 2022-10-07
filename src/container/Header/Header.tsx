@@ -34,7 +34,7 @@ const Header = (props: Props) => {
         document.body.style.overflow = 'visible'
     }
 
-    // hidden header
+    // hiding header
 
     function useScrollDirection() {
         const [scrollDirection, setScrollDirection] = useState<string>('null')
@@ -73,6 +73,20 @@ const Header = (props: Props) => {
             return window.pageYOffset
         })
     })
+
+    const [searchClass, setSearchClassClass] = useState<string>('hide-search')
+    const [wrapperClass, setWrapperClass] = useState<string>('hide-wrapper')
+
+    const openSearchInput = () => {
+        setSearchClassClass((prevState: string) => {
+            return prevState === 'hide-search' ? 'show-search' : 'hide-search'
+        })
+        setWrapperClass((prevState: string) => {
+            return prevState === 'hide-wrapper'
+                ? 'show-wrapper'
+                : 'hide-wrapper'
+        })
+    }
 
     return (
         <>
@@ -523,9 +537,18 @@ const Header = (props: Props) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="header-buttons row">
-                            <div className="cart"></div>
-                            <div className="search"></div>
+                        <div className={`header-buttons row ${wrapperClass}`}>
+                            <Link to="/cart">
+                                <div className="cart"></div>
+                            </Link>
+                            <div
+                                className="search"
+                                onClick={openSearchInput}
+                            ></div>
+                            <input
+                                type="text"
+                                className={`search-input ${searchClass}`}
+                            />
                             <div
                                 className="burger-menu"
                                 onClick={() => dispatch(toggleState())}

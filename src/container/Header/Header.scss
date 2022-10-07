@@ -26,7 +26,7 @@
 .header-content {
     height: 100px;
     display: grid;
-    grid-template-columns: 1.5fr 3fr 120px;
+    grid-template-columns: 1.5fr 3fr 280px;
     grid-template-rows: 100%;
     align-items: center;
     .logo {
@@ -260,6 +260,7 @@
         }
     }
     .header-buttons {
+        align-items: center;
         .cart {
             width: 40px;
             height: 40px;
@@ -285,6 +286,16 @@
             &:hover {
                 background-image: url(../../assets/search-hover.png);
             }
+        }
+        .search-input {
+            height: 30px;
+            width: 200px;
+            outline: none;
+            padding: 0px 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+        
         }
         .menu {
             width: 40px;
@@ -362,6 +373,9 @@
 .show-tab{
     display: flex;
 }
+.show {
+    display: block;
+}
 .hide {
     display: none;
 }
@@ -374,9 +388,46 @@
     color: white;
 }
 
+.hide-search{
+    transform: translateY(-500%);
+    transition: 0.5s all;
+}
+.show-search{
+    transform: translateY(0%);
+    transition: 0.5s all;
+}
+
+
+
 // Laptop
 @media(max-width: 1200px) {
-
+    .header-content{
+        grid-template-columns: 1.5fr 3fr 200px;
+        .hide-wrapper{
+            transform: translateY(12px);
+            transition: 0.5s all;
+        }
+        .show-wrapper{
+            transform: translateY(0px);
+            transition: 0.5s all;
+        }
+        .header-buttons{
+            display: grid;
+            grid-template-areas: 
+            "a b . ."
+            "c c c c";
+            // transform: none;
+            >a{
+                grid-area: a;
+            }
+            .search{
+                grid-area:b;
+            }
+            .search-input{
+                grid-area: c;
+            }
+        }
+    } 
 }
 
 // Tablet
@@ -388,6 +439,7 @@
         }
         .header-buttons{
             justify-content: flex-end;
+            margin-bottom: 0px;
             .cart{
                 display: none;
             }
@@ -395,6 +447,9 @@
                 display: none;
             }
             .menu{
+                display: none;
+            }
+            .search-input{
                 display: none;
             }
             .burger-menu {
