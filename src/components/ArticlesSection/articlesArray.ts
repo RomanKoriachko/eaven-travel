@@ -7,6 +7,7 @@ export type CommentsProp = {
     text: string
     reply: CommentsProp[]
     email: string
+    id?: number
 }
 
 export type ReplyProp = {
@@ -40,7 +41,7 @@ export type Articles = {
     comments: CommentsProp[]
 }
 
-const articlesArray: Articles[] = [
+let articlesArray: Articles[] = [
     {
         id: 1,
         image: "/images/article-img-1.jpg",

@@ -33,6 +33,41 @@ const Comments = ({ id }: Props) => {
         email: '',
     })
 
+    const [articleId, setArticleId] = useState<number>(id)
+
+    if (articleId !== id) {
+        setComments(() => {
+            return [...articlesArray[id - 1].comments]
+        })
+        setArticleId(() => {
+            return id
+        })
+    } else {
+        if (
+            comments[comments.length - 1] &&
+            comments[comments.length - 1].avatar ===
+                '/images/unregistered-user.png'
+        ) {
+            articlesArray[id - 1].comments.push(comments[comments.length - 1])
+            if (
+                articlesArray[id - 1].comments[
+                    articlesArray[id - 1].comments.length - 1
+                ].email ===
+                    articlesArray[id - 1].comments[
+                        articlesArray[id - 1].comments.length - 2
+                    ].email &&
+                articlesArray[id - 1].comments[
+                    articlesArray[id - 1].comments.length - 1
+                ].date ===
+                    articlesArray[id - 1].comments[
+                        articlesArray[id - 1].comments.length - 2
+                    ].date
+            ) {
+                articlesArray[id - 1].comments.pop()
+            }
+        }
+    }
+
     // Comments
     const handleChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setNewComment((prevState: CommentsProp) => ({
@@ -150,7 +185,6 @@ const Comments = ({ id }: Props) => {
             newReply.email === ''
         ) {
             alert('All fields are required')
-            console.log(replies)
         } else {
             setReplies((prevState: CommentsProp[]) => {
                 let lenth = comments.length
@@ -189,9 +223,6 @@ const Comments = ({ id }: Props) => {
     } else {
         lastLetter = 's'
     }
-
-    // console.log(id)
-    // console.log(comments)
 
     return (
         <>
