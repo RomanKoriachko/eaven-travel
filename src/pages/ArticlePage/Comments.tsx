@@ -100,18 +100,36 @@ const Comments = ({ id }: Props) => {
         ) {
             alert('All fields are required')
         } else {
-            setComments((prevState: CommentsProp[]) => {
-                return [...prevState, newComment]
-            })
-            setNewComment({
-                avatar: '/images/unregistered-user.png',
-                name: '',
-                isAdmin: false,
-                date: timeNow,
-                text: '',
-                reply: [],
-                email: '',
-            })
+            if (newComment.text.includes(' ')) {
+                setComments((prevState: CommentsProp[]) => {
+                    return [...prevState, newComment]
+                })
+                setNewComment({
+                    avatar: '/images/unregistered-user.png',
+                    name: '',
+                    isAdmin: false,
+                    date: timeNow,
+                    text: '',
+                    reply: [],
+                    email: '',
+                })
+            } else {
+                for (let i = 0; i < newComment.text.length; i++) {
+                    if (i >= 20 && newComment.text[i] !== ' ') {
+                        setNewComment({
+                            avatar: '/images/unregistered-user.png',
+                            name: '',
+                            isAdmin: false,
+                            date: timeNow,
+                            text: '',
+                            reply: [],
+                            email: '',
+                        })
+                        alert('use some spaces, bro')
+                        break
+                    }
+                }
+            }
         }
     }
 
@@ -186,26 +204,44 @@ const Comments = ({ id }: Props) => {
         ) {
             alert('All fields are required')
         } else {
-            setComments((prevState: CommentsProp[]) => {
-                let length = comments.length
-                let reply = comments[replyId].reply
-                reply.splice(0, 0, newReply)
-                if (comments.length > length) {
-                    return prevState.splice(0, 1)
-                } else {
-                    return prevState
+            if (newReply.text.includes(' ')) {
+                setComments((prevState: CommentsProp[]) => {
+                    let length = comments.length
+                    let reply = comments[replyId].reply
+                    reply.splice(0, 0, newReply)
+                    if (comments.length > length) {
+                        return prevState.splice(0, 1)
+                    } else {
+                        return prevState
+                    }
+                })
+                setNewReply({
+                    avatar: '/images/unregistered-user.png',
+                    name: '',
+                    isAdmin: false,
+                    date: timeNow,
+                    text: '',
+                    email: '',
+                    reply: [],
+                })
+                hideReplyForm()
+            } else {
+                for (let i = 0; i < newReply.text.length; i++) {
+                    if (i >= 20 && newReply.text[i] !== ' ') {
+                        setNewReply({
+                            avatar: '/images/unregistered-user.png',
+                            name: '',
+                            isAdmin: false,
+                            date: timeNow,
+                            text: '',
+                            reply: [],
+                            email: '',
+                        })
+                        alert('use some spaces, bro')
+                        break
+                    }
                 }
-            })
-            setNewReply({
-                avatar: '/images/unregistered-user.png',
-                name: '',
-                isAdmin: false,
-                date: timeNow,
-                text: '',
-                email: '',
-                reply: [],
-            })
-            hideReplyForm()
+            }
         }
     }
 
@@ -222,6 +258,15 @@ const Comments = ({ id }: Props) => {
     } else {
         lastLetter = 's'
     }
+
+    // console.log(comments)
+    console.log(newComment.text)
+    console.log(newReply)
+    // for (let i = 0; i < comments[3].text.length; i++) {
+    //     if (i >= 50 && comments[3].text[i] !== ' ') {
+    //         alert('error!')
+    //     }
+    // }
 
     return (
         <>
@@ -277,6 +322,7 @@ const Comments = ({ id }: Props) => {
                                         id=""
                                         value={newReply.text}
                                         onChange={handleChangeTextInReply}
+                                        maxLength={200}
                                     ></textarea>
                                 </div>
                                 <div className="form-name-and-email">
@@ -286,6 +332,7 @@ const Comments = ({ id }: Props) => {
                                             type="text"
                                             value={newReply.name}
                                             onChange={handleChangeNameInReply}
+                                            maxLength={20}
                                         />
                                     </div>
                                     <div className="form-email">
@@ -346,6 +393,7 @@ const Comments = ({ id }: Props) => {
                                 id=""
                                 value={newComment.text}
                                 onChange={handleChangeText}
+                                maxLength={200}
                             ></textarea>
                         </div>
                         <div className="form-name-and-email">
@@ -355,6 +403,7 @@ const Comments = ({ id }: Props) => {
                                     type="text"
                                     value={newComment.name}
                                     onChange={handleChangeName}
+                                    maxLength={20}
                                 />
                             </div>
                             <div className="form-email">
