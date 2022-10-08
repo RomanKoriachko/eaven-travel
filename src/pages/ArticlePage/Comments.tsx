@@ -259,15 +259,6 @@ const Comments = ({ id }: Props) => {
         lastLetter = 's'
     }
 
-    // console.log(comments)
-    console.log(newComment.text)
-    console.log(newReply)
-    // for (let i = 0; i < comments[3].text.length; i++) {
-    //     if (i >= 50 && comments[3].text[i] !== ' ') {
-    //         alert('error!')
-    //     }
-    // }
-
     return (
         <>
             <div className="comments-logo">
