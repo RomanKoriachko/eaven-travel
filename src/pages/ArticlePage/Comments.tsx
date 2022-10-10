@@ -113,9 +113,9 @@ const Comments = ({ id }: Props) => {
                     reply: [],
                     email: '',
                 })
-            } else {
+            } else if (newComment.text.length >= 10) {
                 for (let i = 0; i < newComment.text.length; i++) {
-                    if (i >= 20 && newComment.text[i] !== ' ') {
+                    if (i >= 15 && newComment.text[i] !== ' ') {
                         setNewComment({
                             avatar: '/images/unregistered-user.png',
                             name: '',
@@ -129,6 +129,19 @@ const Comments = ({ id }: Props) => {
                         break
                     }
                 }
+            } else {
+                setComments((prevState: CommentsProp[]) => {
+                    return [...prevState, newComment]
+                })
+                setNewComment({
+                    avatar: '/images/unregistered-user.png',
+                    name: '',
+                    isAdmin: false,
+                    date: timeNow,
+                    text: '',
+                    reply: [],
+                    email: '',
+                })
             }
         }
     }
@@ -225,9 +238,9 @@ const Comments = ({ id }: Props) => {
                     reply: [],
                 })
                 hideReplyForm()
-            } else {
+            } else if (newReply.text.length >= 10) {
                 for (let i = 0; i < newReply.text.length; i++) {
-                    if (i >= 20 && newReply.text[i] !== ' ') {
+                    if (i >= 15 && newReply.text[i] !== ' ') {
                         setNewReply({
                             avatar: '/images/unregistered-user.png',
                             name: '',
@@ -241,6 +254,27 @@ const Comments = ({ id }: Props) => {
                         break
                     }
                 }
+            } else {
+                setComments((prevState: CommentsProp[]) => {
+                    let length = comments.length
+                    let reply = comments[replyId].reply
+                    reply.splice(0, 0, newReply)
+                    if (comments.length > length) {
+                        return prevState.splice(0, 1)
+                    } else {
+                        return prevState
+                    }
+                })
+                setNewReply({
+                    avatar: '/images/unregistered-user.png',
+                    name: '',
+                    isAdmin: false,
+                    date: timeNow,
+                    text: '',
+                    email: '',
+                    reply: [],
+                })
+                hideReplyForm()
             }
         }
     }
