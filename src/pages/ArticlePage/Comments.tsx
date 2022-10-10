@@ -113,9 +113,9 @@ const Comments = ({ id }: Props) => {
                     reply: [],
                     email: '',
                 })
-            } else if (newComment.text.length >= 10) {
+            } else if (newComment.text.length >= 20) {
                 for (let i = 0; i < newComment.text.length; i++) {
-                    if (i >= 15 && newComment.text[i] !== ' ') {
+                    if (i >= 20 && newComment.text[i] !== ' ') {
                         setNewComment({
                             avatar: '/images/unregistered-user.png',
                             name: '',
@@ -238,9 +238,9 @@ const Comments = ({ id }: Props) => {
                     reply: [],
                 })
                 hideReplyForm()
-            } else if (newReply.text.length >= 10) {
+            } else if (newReply.text.length >= 20) {
                 for (let i = 0; i < newReply.text.length; i++) {
-                    if (i >= 15 && newReply.text[i] !== ' ') {
+                    if (i >= 20 && newReply.text[i] !== ' ') {
                         setNewReply({
                             avatar: '/images/unregistered-user.png',
                             name: '',
